@@ -1,5 +1,9 @@
 package com.example.leftoverrecipe.auxiliaryClasses;
 
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -20,6 +24,7 @@ public class User {
         User.userInfo.put(USERNAME, userInfo[1]);
         User.userInfo.put(EMAIL_ADDRESS, userInfo[2]);
         User.userInfo.put(PHONE_NUMBER, userInfo[3]);
+        Log.d("220284hk", "User :" + User.userInfo.toString());
     }
 
 //    public static HashMap getData() {
@@ -35,6 +40,7 @@ public class User {
     public static User getInstance() { return user; }
 
     public static User getInstance(String... userInfo) {
+        Log.d("220284hk", "User is being initialised");
         user = new User(userInfo);
         return user;
     }
@@ -68,16 +74,23 @@ public class User {
 //        dislikesRef.setValue(new ArrayList<>(dislikesSet));
 //    }
 
-    public HashSet<String> getLikesSet() { return likesSet; }
+    public static HashSet<String> getLikesSet() { return likesSet; }
 
-    public HashSet<String> getDislikesSet() { return dislikesSet; }
+    public static HashSet<String> getDislikesSet() { return dislikesSet; }
 
-    public String getFullName() { return userInfo.get(FULL_NAME); }
+    public static HashMap<String, String> getUserInfo() { return userInfo; }
 
-    public String getUsername() { return userInfo.get(USERNAME); }
+    public static String getFullName() { return userInfo.get(FULL_NAME); }
 
-    public String getEmailAddress() { return userInfo.get(EMAIL_ADDRESS); }
+    public static String getUsername() { return userInfo.get(USERNAME); }
 
-    public String getPhoneNumber() { return userInfo.get(PHONE_NUMBER); }
+    public static String getEmailAddress() { return userInfo.get(EMAIL_ADDRESS); }
 
+    public static String getPhoneNumber() { return userInfo.get(PHONE_NUMBER); }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return String.format("%s: %s\n%s: %s\n\"%s: %s\n%s: %s\n", FULL_NAME, getFullName(), USERNAME, getUsername(), EMAIL_ADDRESS, getEmailAddress(), PHONE_NUMBER, getPhoneNumber());
+    }
 }

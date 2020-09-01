@@ -60,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                         FirebaseDatabase.getInstance().getReference().child("Users").child(mFirebaseAuth.getUid()).child("User Info").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                Log.d("220284hk", snapshot.getValue().toString());
                                 HashMap<String, String> userInfo = (HashMap) snapshot.getValue();
                                 String[] userInfoArray = {
                                         userInfo.get("fullname"),

@@ -34,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void greetUser() {
-        if (User.getInstance() != null) { Toast.makeText(getApplicationContext(), "Welcome, " + User.getInstance().getFullName(), Toast.LENGTH_SHORT).show();
-        } else { Toast.makeText(getApplicationContext(), "Welcome :)", Toast.LENGTH_SHORT).show(); }
+        if (User.getInstance() != null) {
+            Toast.makeText(getApplicationContext(), "Welcome, " + User.getFullName(), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Welcome :)", Toast.LENGTH_SHORT).show();
+        }
     }
 }

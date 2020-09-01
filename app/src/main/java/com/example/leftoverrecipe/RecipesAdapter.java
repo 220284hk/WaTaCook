@@ -52,6 +52,12 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         Glide.with(context).load(recipe.getImageURL()).into(holder.mImageView);
         holder.mServingsSizeTextView.setText(recipe.getServings());
         holder.mPrepTimeTextView.setText(recipe.getPrepTime());
+        holder.mDislikeImageView.setOnClickListener(v -> {
+            recipeArray.remove(holder.getAdapterPosition());
+            notifyItemChanged(holder.getAdapterPosition());
+            notifyItemRangeRemoved(holder.getAdapterPosition(), 1);
+            if (recipeArray.size() == 0) { Toast.makeText(context, "You deleted everything!", Toast.LENGTH_SHORT).show(); }
+        });
     }
 
     @Override
@@ -63,7 +69,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         private Uri url;
         private ConstraintLayout view;
         private TextView mTitleTextView, mPrepTimeTextView, mServingsSizeTextView, id;
-        private ImageView mImageView;
+        private ImageView mImageView, mFavouriteImageView, mDislikeImageView;
 
         public RecipeViewHolder(@NonNull ConstraintLayout itemView, RecipesAdapter recipesAdapter) {
             super(itemView);
@@ -90,6 +96,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
             this.mServingsSizeTextView = itemView.findViewById(R.id.servings_textview);
             this.mImageView = itemView.findViewById(R.id.imageView);
             this.id = itemView.findViewById(R.id.id);
+            this.mFavouriteImageView = itemView.findViewById(R.id.favourite_imageView);
+            this.mDislikeImageView = itemView.findViewById(R.id.dislike_imageView);
         }
     }
 }

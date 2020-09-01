@@ -59,13 +59,11 @@ public class CreateAccountActivity extends AppCompatActivity {
     private void addUserToDatabase() {
         myRef = FirebaseDatabase.getInstance().getReference();
         userRef = myRef.child("Users");
-//        userRef.child(firebaseUser.getUid()).child("User Info").setValue(User.getInstance());
-//        userRef.child(firebaseUser.getUid()).child("Full Name").setValue(User.getInstance().getFullname());
-        HashMap<String, String> testMap = new HashMap<>();
-        testMap.put("test", "dude");
-        userRef.child(firebaseUser.getUid()).child("User Info").setValue(testMap);
-//        userRef.child(firebaseUser.getUid()).child("User Info").setValue(new HashMap().put("testing", "dude"));
-//        userRef.child(firebaseUser.getUid()).child("Full Name").setValue(User.getInstance().getFullname());
+        userRef.child(firebaseUser.getUid()).child("User Info").setValue(User.getUserInfo());
+        userRef.child(firebaseUser.getUid()).child("Full Name").setValue(User.getFullName());
+//        HashMap<String, String> testMap = new HashMap<>();
+//        testMap.put("test", "dude");
+//        userRef.child(firebaseUser.getUid()).child("User Info").setValue(testMap);
         sendVerificationEmail();
     }
 
