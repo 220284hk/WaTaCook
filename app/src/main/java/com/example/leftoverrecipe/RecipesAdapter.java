@@ -18,14 +18,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.leftoverrecipe.auxiliaryClasses.Recipe;
 
+import java.util.ArrayList;
+
 import static androidx.core.content.ContextCompat.startActivity;
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeViewHolder> {
     private LayoutInflater mInflater;
-    private Recipe[] recipeArray;
+    private ArrayList<Recipe> recipeArray;
     private Context context;
 
-    public RecipesAdapter(Context context, Recipe[] recipeArray) {
+    public RecipesAdapter(Context context, ArrayList<Recipe> recipeArray) {
         this.mInflater = LayoutInflater.from(context);
         this.recipeArray = recipeArray;
         this.context = context;
@@ -40,23 +42,21 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
-        Recipe recipe = recipeArray[position];
-        System.out.println(position);
-        System.out.println(recipe);
-        System.out.println("----");
-        if (recipe != null) {
-            holder.id.setText(recipe.getId());
-            holder.url = Uri.parse(recipe.getSourceURL().toString());
-            holder.mTitleTextView.setText(recipe.getTitle());
-            Glide.with(context).load(recipe.getImageURL()).into(holder.mImageView);
-            holder.mServingsSizeTextView.setText(recipe.getServings());
-            holder.mPrepTimeTextView.setText(recipe.getPrepTime());
-        }
+        Recipe recipe = recipeArray.get(position);
+//        System.out.println(position);
+//        System.out.println(recipe);
+//        System.out.println("----");
+        holder.id.setText(recipe.getId());
+        holder.url = Uri.parse(recipe.getSourceURL().toString());
+        holder.mTitleTextView.setText(recipe.getTitle());
+        Glide.with(context).load(recipe.getImageURL()).into(holder.mImageView);
+        holder.mServingsSizeTextView.setText(recipe.getServings());
+        holder.mPrepTimeTextView.setText(recipe.getPrepTime());
     }
 
     @Override
     public int getItemCount() {
-        return recipeArray.length;
+        return recipeArray.size();
     }
 
     public class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

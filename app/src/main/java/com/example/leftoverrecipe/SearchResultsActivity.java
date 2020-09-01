@@ -84,10 +84,10 @@ public class SearchResultsActivity extends AppCompatActivity {
         assert object != null;
         ArrayList<Recipe> arrayList = object.getArrList();
 //        System.out.println(arrayList.get(0));
-        recipesAdapter = new RecipesAdapter(this, arrayList.toArray(new Recipe[arrayList.size()]));
+        recipesAdapter = new RecipesAdapter(this, arrayList);
         recyclerView.setAdapter(recipesAdapter);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-
+        recipesAdapter.notifyDataSetChanged();
     }
 
     public void liked(View view) {
@@ -111,7 +111,7 @@ public class SearchResultsActivity extends AppCompatActivity {
             Toast.makeText(this, titleTextView.getText().toString() + " has already been disliked!", Toast.LENGTH_LONG).show();
         } else {
             User.getInstance().getDislikesSet().add(id);
-            Toast.makeText(this, titleTextView.getText().toString() + id + " has been disliked. Added to favourites", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, titleTextView.getText().toString() + id + " has been disliked. This will menu will not be shown in future searches!", Toast.LENGTH_LONG).show();
         }
     }
 }

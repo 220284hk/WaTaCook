@@ -84,10 +84,10 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
 //                    No results -> NoResultsActivity is shown. Else, put results into intent.
                     Intent intent = (results.length() == 0 ? new Intent(getContext(), NoResultsActivity.class) : new Intent(getContext(), SearchResultsActivity.class));
 //                    Turning the JSONArray into an array of recipes
-                    Recipe[] recipeArray = resultsToRecipe(results);
-                    arrayList = new ArrayList<>(Arrays.asList(recipeArray));
+                    ArrayList<Recipe> recipeArray = resultsToRecipe(results);
+//                    arrayList = new ArrayList<>(recipeArray);
                     MyParcelable object = new MyParcelable();
-                    object.setArrList(arrayList);
+                    object.setArrList(recipeArray);
                     intent.putExtra(SearchFragment.KEY, object);
                     startActivity(intent);
                     ingredientsSelected = new boolean[size];
@@ -128,9 +128,9 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private Recipe[] resultsToRecipe(JSONArray jsonArray) throws JSONException {
+    private ArrayList<Recipe> resultsToRecipe(JSONArray jsonArray) throws JSONException {
         int num = jsonArray.length(), j = 0;
-        Recipe[] recipeArray = new Recipe[num];
+        ArrayList<Recipe> recipeArray = new ArrayList<Recipe>();
         String id, sourceURL, title, imageURL, servings, prepTime;
         for (int i = 0; i < num; i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);
@@ -146,7 +146,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
             else
                 prepTime += " mins";
             String[] strings = new String[]{id, sourceURL, title, imageURL, servings, prepTime};
-            recipeArray[j++] = new Recipe(strings);
+            recipeArray.add(new Recipe(strings));
         }
         return recipeArray;
     }
