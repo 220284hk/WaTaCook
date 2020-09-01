@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme.SearchFragments"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_medium"
+    tools:context=".fragments.SearchFragment">
+
+    <TextView
+        android:id="@+id/search_fragment_title_textview"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:focusableInTouchMode="true"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_title"
+        android:textColor="@color/colorComplementaryDark"
+        android:textSize="@dimen/text_medium_large" />
+
+    <LinearLayout
+        android:id="@+id/search_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_fragment_title_textview">
+
+        <!--        <androidx.appcompat.widget.SearchView-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:defaultQueryHint="chicken">-->
+
+        <!--        </androidx.appcompat.widget.SearchView>-->
+
+        <EditText
+            android:id="@+id/search_box"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints="chicken"
+            android:inputType="textShortMessage" />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/search_bar"
+            android:foregroundTint="@color/colorPrimaryMain"
+            android:src="@drawable/search" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/search_fragment_tip_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_tip"
+        android:textColor="@color/colorTriadicOne" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/ingredients"
+        android:textColor="#777"
+        android:textSize="@dimen/text_medium_large"
+        android:theme="@style/AppTheme.SearchFragments" />
+
+    <TextView
+        android:id="@+id/fragment_meat_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/meat"
+        android:textColor="#ff593a"
+        android:theme="@style/AppTheme.SearchFragments.Title" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_chicken"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/meat_chicken"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_pork"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/meat_pork"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_beef"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/meat_beef"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_lamb"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/meat_lamb"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fish"
+        android:textColor="@color/colorBlue"
+        android:theme="@style/AppTheme.SearchFragments.Title" />
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_salmon"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/fish_salmon"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_cod"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/fish_cod"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_mackerel"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/fish_mackerel"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_tuna"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/fish_tuna"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+        </LinearLayout>
+    </HorizontalScrollView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vegetables"
+        android:textColor="@color/colorGreen"
+        android:theme="@style/AppTheme.SearchFragments.Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_meat_textview" />
+
+    <!--    <SearchView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_broccoli"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/veg_broccoli"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_pepper"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/veg_pepper"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_potatoes"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/veg_potatoes"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_carrots"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/veg_carrots"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_tomato"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/veg_tomato"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

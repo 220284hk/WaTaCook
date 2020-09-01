@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="editText_array">
+        <item>full_name</item>
+        <item>user_name</item>
+        <item>email_address</item>
+        <item>phone_number</item>
+        <item>password</item>
+    </string-array>
+    
+    <integer-array name="ingredients_images">
+        <item>@mipmap/meat_chicken</item>
+        <item>@mipmap/meat_pork</item>
+        <item>@mipmap/meat_beef</item>
+        <item>@mipmap/meat_lamb</item>
+        <item>@mipmap/fish_salmon</item>
+        <item>@mipmap/fish_cod</item>
+        <item>@mipmap/fish_mackerel</item>
+        <item>@mipmap/fish_tuna</item>
+        <item>@mipmap/veg_broccoli</item>
+        <item>@mipmap/veg_pepper</item>
+        <item>@mipmap/veg_potatoes</item>
+        <item>@mipmap/veg_carrots</item>
+        <item>@mipmap/veg_tomato</item>
+    </integer-array>
+    
+    <string-array name="ingredients_string">
+        <item>chicken</item>
+        <item>pork</item>
+        <item>beef</item>
+        <item>lamb</item>
+        <item>salmon</item>
+        <item>cod</item>
+        <item>mackerel</item>
+        <item>tuna</item>
+        <item>broccoli</item>
+        <item>pepper</item>
+        <item>potatoes</item>
+        <item>carrots</item>
+        <item>tomato</item>
+    </string-array>
+</resources>

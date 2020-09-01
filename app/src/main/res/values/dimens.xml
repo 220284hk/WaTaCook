@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Margin-->
+    <dimen name="margin_large">72dp</dimen>
+    <dimen name="margin_medium">48dp</dimen>
+    <dimen name="margin_small">24dp</dimen>
+    <dimen name="margin_x_small">16dp</dimen>
+    <dimen name="margin_xx_small">8dp</dimen>
+
+    <!--    Title-->
+    <dimen name="title_large">60sp</dimen>
+    <dimen name="title_medium">40sp</dimen>
+
+    <!--    Text-->
+    <dimen name="text_large">32sp</dimen>
+    <dimen name="text_medium_large">30sp</dimen>
+    <dimen name="text_medium">20sp</dimen>
+    <dimen name="text_medium_small">16sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+
+<!--    Images -->
+    <dimen name="small_image">100dp</dimen>
+
+</resources>

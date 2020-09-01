@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recipeConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/background_border"
+    android:padding="8dp"
+    tools:showIn="@layout/linearlayout">
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:text="@string/title_template_text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/servings_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="@string/servings_template_text"
+        app:drawableStartCompat="@drawable/servings_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/time_required_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="@string/time_template_text"
+        app:drawableLeftCompat="@drawable/timer_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/servings_textview" />
+
+
+    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="@dimen/margin_x_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_textview"
+        app:siBorderColor="@android:color/black"
+        app:siBorderWidth="8dp"
+        app:siShape="@drawable/rounded_rectangle" />
+
+    <ImageView
+        android:id="@+id/favourite_imageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@string/like_button"
+        android:onClick="liked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/servings_textview"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/favourite_pre_icon" />
+
+    <ImageView
+        android:id="@+id/dislike_imageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@string/dislike_button"
+        android:onClick="disliked"
+        app:layout_constraintBottom_toBottomOf="@+id/favourite_imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/favourite_imageView"
+        app:layout_constraintTop_toTopOf="@+id/favourite_imageView"
+        app:srcCompat="@drawable/dislike_icon"
+        app:tint="@color/colorTriadicOne" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

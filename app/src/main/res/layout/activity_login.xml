@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="64dp"
+    tools:context=".login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/image_of_logo"
+        android:src="@drawable/logo"
+        android:transitionName="@string/transition_name_logo"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="@dimen/title_large"
+            android:theme="@style/AppTheme.Lobster" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:hint="@string/enter_username"
+            app:boxStrokeColor="@color/colorPrimaryLight"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/user_login"
+            app:startIconTint="@color/colorPrimaryDark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user_name_edittext"
+                android:layout_width="match_parent"
+                android:text="220284hk@gmail.com"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:nextFocusForward="@id/password_edittext"
+                android:textColor="@color/colorPrimaryDark" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_x_small"
+            android:hint="@string/enter_password"
+            app:boxStrokeColor="@color/colorPrimaryLight"
+            app:boxStrokeWidthFocused="2dp"
+
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/lock_icon"
+            app:startIconTint="@color/colorPrimaryDark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edittext"
+                android:text="220284hk"
+                android:nextFocusForward="@id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:fontFamily="casual"
+            android:onClick="login"
+            android:text="@string/login"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            android:theme="@style/Widget.MaterialComponents.Button" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/create_account_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:onClick="createAccount"
+            android:text="@string/create_account"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            android:theme="@style/Widget.MaterialComponents.Button" />
+
+        <Button
+            android:id="@+id/next_time_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="casual"
+            android:onClick="skip"
+            android:text="@string/next_time"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryMain"
+            android:textSize="@dimen/text_small" />
+
+        <!--        <Button-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/margin_medium"-->
+        <!--            android:fontFamily="casual"-->
+        <!--            android:background="@color/black"-->
+        <!--            android:text="@string/login"-->
+        <!--            android:textColor="@color/colorTriadicTwo"-->
+        <!--            android:textSize="@dimen/text_medium"-->
+        <!--            android:textStyle="bold" />-->
+
+        <!--        <Button-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:background="@color/black"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/margin_x_small"-->
+        <!--            android:fontFamily="casual"-->
+        <!--            android:text="@string/create_account"-->
+        <!--            android:textColor="@color/colorTriadicTwo"-->
+        <!--            android:textSize="@dimen/text_medium"-->
+        <!--            android:textStyle="bold" />-->
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "860376393085",
+    "firebase_url": "https://leftoverrecipe220.firebaseio.com",
+    "project_id": "leftoverrecipe220",
+    "storage_bucket": "leftoverrecipe220.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860376393085:android:864035f1da0a6cb6db1814",
+        "android_client_info": {
+          "package_name": "com.example.leftoverrecipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860376393085-bv1mm8er89qiiecsnrrpc6njv93ff3jj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLPdwyewlnLAXTpn8GMZMslySu9WmNDv8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860376393085-bv1mm8er89qiiecsnrrpc6njv93ff3jj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

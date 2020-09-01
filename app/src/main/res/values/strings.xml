@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">LeftoverRecipe</string>
+    <string name="splash_background_image">Splash background image</string>
+    <string name="leftover_recipe">Leftover Recipe</string>
+    <string name="splash_secondary_title">Let\'s start cooking</string>
+    <!--    Login Activity -->
+    <string name="login">Login</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="create_account">Create account</string>
+    <string name="next_time">I\'ll create an account next time!</string>
+    <!--Create Account Activity-->
+    <string name="full_name">Full name</string>
+    <string name="user_name">User name</string>
+    <string name="email">Email (required)</string>
+    <string name="phone_number">Phone # (optional)</string>
+    <string name="password">Password</string>
+
+    <string name="create">Create</string>
+    <string name="welcome">Welcome!</string>
+    <string name="already_have_an_account">Already have an account?</string>
+
+    <!--    ItemView template -->
+    <string name="image_of_logo">image of logo</string>
+    <string name="transition_name_logo">TRANSITION_NAME_LOGO</string>
+    <string name="search_bar">search_bar</string>
+    <string name="title_template_text">Chicken parmesan food etc longer pieces of text and so forth</string>
+    <string name="time_template_text">25 mins</string>
+    <string name="servings_template_text">Serves 4</string>
+
+    <!--    Search fragment-->
+    <string name="search_fragment_title">What\'s in your fridge?</string>
+    <string name="search_fragment_tip">Tip: Have a quick look in your fridge to see which ingredients expire soon!</string>
+    <string name="meat">Meat</string>
+    <string name="fish">Fish</string>
+    <string name="vegetables">Vegetables</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="dislike_button">dislike_button</string>
+    <string name="like_button">like button</string>
+    <string name="no_results_p">\nUnfortunately, there are no results for the ingredients you have selected. Try checking the spelling or adding fewer ingredients. Note, it\'s for the main ingredients so it\'s not a good idea to add more than two types of meat!</string>
+    <string name="no_results_title">NO RESULTS</string>
+
+
+</resources>

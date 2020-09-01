@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme.SearchFragments"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_medium"
+    tools:context=".fragments.SearchFragment">
+
+    <TextView
+        android:id="@+id/search_fragment_title_textview"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/search_fragment_title"
+        android:textColor="@color/colorComplementaryDark"
+        android:textSize="@dimen/text_medium_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/search_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_fragment_title_textview">
+
+        <!--        <androidx.appcompat.widget.SearchView-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:defaultQueryHint="chicken">-->
+
+        <!--        </androidx.appcompat.widget.SearchView>-->
+
+        <EditText
+            android:id="@+id/search_box"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints="chicken"
+            android:inputType="textShortMessage" />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/search_bar"
+            android:foregroundTint="@color/colorPrimaryMain"
+            android:src="@drawable/search" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/search_fragment_tip_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_tip"
+        android:textColor="@color/colorComplementaryLight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_linear_layout" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="Ingredients"
+        android:textSize="@dimen/text_medium_large"
+        android:theme="@style/AppTheme.SearchFragments"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_fragment_tip_textview" />
+
+    <TextView
+        android:id="@+id/fragment_ingredients_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.SearchFragments"
+        android:textSize="@dimen/text_medium_large"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="Ingredients"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_fragment_tip_textview" />
+
+    <TextView
+        android:id="@+id/fragment_meat_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/meat"
+        android:textColor="@color/colorRed"
+        android:theme="@style/AppTheme.SearchFragments.Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_ingredients_textview" />
+
+    <TextView
+        android:id="@+id/fragment_fish_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fish"
+        android:textColor="@color/colorBlue"
+        android:theme="@style/AppTheme.SearchFragments.Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_meat_textview" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fish"
+        android:textColor="@color/colorBlue"
+        android:theme="@style/AppTheme.SearchFragments.Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_meat_textview" />
+    <!--    <SearchView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

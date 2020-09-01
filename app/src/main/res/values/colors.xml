@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryLight">#ff89a9</color>
+    <color name="colorPrimaryMain">#fb246c</color>
+    <color name="colorPrimaryDark">#d3004d</color>
+
+
+    <color name="colorComplementaryLight">#24fbb4</color>
+    <color name="colorComplementaryMain">#00e56f</color>
+    <color name="colorComplementaryDark">#00bf54</color>
+
+    <color name="colorAnalogousOne">#fb24d8</color>
+    <color name="colorAnalogousTwo">#fb4824</color>
+
+    <color name="colorTriadicOne">#fbb424</color>
+    <color name="colorTriadicTwo">#6cfb24</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+<!--    Miscellaneous-->
+    <color name="colorRed">#ff593a</color>
+    <color name="colorBlue">#00d2e1</color>
+    <color name="colorGreen">#02ee02</color>
+</resources>
