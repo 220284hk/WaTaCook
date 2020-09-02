@@ -1,5 +1,7 @@
 package com.example.leftoverrecipe.auxiliaryClasses;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +32,18 @@ public class User {
     }
 
     public static void createInstance(HashMap<String, String> userInfo) {
+        user = new User(userInfo);
+    }
+
+    public static void retrieveInstance(HashMap<String, HashMap> userData) {
+        Log.d("220284hk", "retrieveInstance: " + userData);
+        data = userData;
+        createInstance(userData.get("User Info"));
+//        likesMap = (HashMap<String, String>) (userData.get("Preferences").get("Likes"));
+//        dislikesMap = (HashMap<String, String>) (userData.get("Preferences").get("Dislikes"));
+        likesSet = (likesMap == null? new HashSet<>() : new HashSet<String>((ArrayList) userData.get("Preferences").get("Likes")));
+        dislikesSet = (likesMap == null? new HashSet<>() : new HashSet<String>((ArrayList) userData.get("Preferences").get("Dislikes")));
+//        dislikesSet = (dislikesMap == null? new HashSet<>() : new HashSet<>(dislikesMap.keySet()));
         user = new User(userInfo);
     }
 

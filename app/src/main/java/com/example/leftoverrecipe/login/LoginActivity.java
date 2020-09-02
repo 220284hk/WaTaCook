@@ -57,15 +57,13 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful() && mFirebaseAuth.getCurrentUser().isEmailVerified()) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     if (User.getInstance() == null) { //This will be the case if app has just started and the user is NOT creating a new account
-                        FirebaseDatabase.getInstance().getReference().child("Users").child(mFirebaseAuth.getUid()).child("User Info").addListenerForSingleValueEvent(new ValueEventListener() {
+                        FirebaseDatabase.getInstance().getReference().child("Users").child(mFirebaseAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (task.isSuccessful()) {
-                                    Log.d("220284hk", "oZnDataChange method: " + snapshot.getValue().toString());
-                                    HashMap<String, String> userInfo = (HashMap) snapshot.getValue();
-//                                    while (userInfo == null) {};
-//                                    user = new User(userInfoArray);
-                                    User.createInstance(userInfo);
+                                    Log.d("220284hk", "onDataChange method: " + snapshot.getValue().toString());
+                                    HashMap<String, HashMap> data = (HashMap) snapshot.getValue();
+                                    User.retrieveInstance(data);
                                     Log.d("USER", "Global user added!");
                                     startActivity(intent);
                                 } else {
