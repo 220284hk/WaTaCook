@@ -1,5 +1,6 @@
 package com.example.leftoverrecipe;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.leftoverrecipe.auxiliaryClasses.Recipe;
+import com.example.leftoverrecipe.auxiliaryClasses.User;
 
 import java.util.ArrayList;
 
@@ -43,9 +45,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipeArray.get(position);
-//        System.out.println(position);
-//        System.out.println(recipe);
-//        System.out.println("----");
         holder.id.setText(recipe.getId());
         holder.url = Uri.parse(recipe.getSourceURL().toString());
         holder.mTitleTextView.setText(recipe.getTitle());
@@ -56,7 +55,13 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
             recipeArray.remove(holder.getAdapterPosition());
             notifyItemChanged(holder.getAdapterPosition());
             notifyItemRangeRemoved(holder.getAdapterPosition(), 1);
-            if (recipeArray.size() == 0) { Toast.makeText(context, "You deleted everything!", Toast.LENGTH_SHORT).show(); }
+            TextView titleTextView = holder.mTitleTextView;
+            User.getInstance().getDislikesSet().add(recipe.getId());
+            Toast.makeText(context, titleTextView.getText().toString() + recipe.getId() + " has been disliked. This will not be shown in future searches!", Toast.LENGTH_SHORT).show();
+            if (recipeArray.size() == 0) {
+                Toast.makeText(context, "You deleted everything!", Toast.LENGTH_SHORT).show();
+                ((Activity) context).finish();
+            }
         });
     }
 

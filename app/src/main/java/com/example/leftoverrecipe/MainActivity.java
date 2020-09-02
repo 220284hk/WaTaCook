@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        Log.d("USERZ", "0 MainActivity: " + User.getInstance());
+//        Log.d("USERZ", "0 MainActivity: " + User.getInstance());
 //        System.out.println("MainActitivty: " + User.getInstance());
 //        if (firebaseAuth.getCurrentUser() == null)
 //        else

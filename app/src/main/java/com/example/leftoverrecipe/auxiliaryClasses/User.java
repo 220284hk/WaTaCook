@@ -14,7 +14,7 @@ public class User {
     private static HashMap<String, HashMap> data;
     private static HashMap<Integer, String> likesMap, dislikesMap;
     private static HashMap<String, String> userInfo;
-    private static String FULL_NAME = "Full name", USERNAME = "Username", EMAIL_ADDRESS = "Email address", PHONE_NUMBER = "Phone number";
+    public static String FULL_NAME = "Full name", USERNAME = "Username", EMAIL_ADDRESS = "Email address", PHONE_NUMBER = "Phone number";
     private static User user = null;
 
 
@@ -24,7 +24,7 @@ public class User {
         User.userInfo.put(USERNAME, userInfo[1]);
         User.userInfo.put(EMAIL_ADDRESS, userInfo[2]);
         User.userInfo.put(PHONE_NUMBER, userInfo[3]);
-        Log.d("220284hk", "User :" + User.userInfo.toString());
+        Log.d("220284hk", "User : (in user method)" + userInfo[0]);
     }
 
 //    public static HashMap getData() {
@@ -39,11 +39,17 @@ public class User {
 
     public static User getInstance() { return user; }
 
-    public static User getInstance(String... userInfo) {
-        Log.d("220284hk", "User is being initialised");
+    public static HashMap<String, String> getInstance(String... userInfo) {
+        Log.d("220284hk", "User is being initialised" + userInfo[0]);
         user = new User(userInfo);
-        return user;
+        return User.userInfo;
     }
+
+//    public static User getInstance(HashMap userInfo) {
+//        Log.d("220284hk", "User is being initialised");
+//        user = new User(userInfo);
+//        return user;
+//    }
 
     public static void setUserLikes() {
         likesMap = new HashMap<>();

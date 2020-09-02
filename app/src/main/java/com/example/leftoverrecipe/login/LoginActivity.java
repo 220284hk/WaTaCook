@@ -24,6 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
+import static com.example.leftoverrecipe.auxiliaryClasses.User.EMAIL_ADDRESS;
+import static com.example.leftoverrecipe.auxiliaryClasses.User.FULL_NAME;
+import static com.example.leftoverrecipe.auxiliaryClasses.User.PHONE_NUMBER;
+import static com.example.leftoverrecipe.auxiliaryClasses.User.USERNAME;
+
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -60,17 +65,22 @@ public class LoginActivity extends AppCompatActivity {
                         FirebaseDatabase.getInstance().getReference().child("Users").child(mFirebaseAuth.getUid()).child("User Info").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                Log.d("220284hk", snapshot.getValue().toString());
-                                HashMap<String, String> userInfo = (HashMap) snapshot.getValue();
-                                String[] userInfoArray = {
-                                        userInfo.get("fullname"),
-                                        userInfo.get("username"),
-                                        userInfo.get("emailAddress"),
-                                        userInfo.get("phoneNumber")};
+                                if (task.isSuccessful()) {
+                                    Log.d("220284hk", "oZnDataChange method: " + snapshot.getValue().toString());
+                                    HashMap<String, String> userInfo = (HashMap) snapshot.getValue();
+//                                    while (userInfo == null) {};
+                                    String[] userInfoArray = {
+                                            userInfo.get(FULL_NAME),
+                                            userInfo.get(USERNAME),
+                                            userInfo.get(EMAIL_ADDRESS),
+                                            userInfo.get(PHONE_NUMBER)};
 //                                    user = new User(userInfoArray);
-                                User.getInstance(userInfoArray);
-                                Log.d("USER", "Global user added!");
-                                startActivity(intent);
+                                    User.getInstance(userInfoArray);
+                                    Log.d("USER", "Global user added!");
+                                    startActivity(intent);
+                                } else {
+                                    System.out.println(task.getException().getCause());
+                                }
                             }
 
                             @Override
