@@ -18,7 +18,7 @@
             android:theme="@style/AppTheme.NoAnimation">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
-
+<!---->
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
@@ -27,20 +27,20 @@
 
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
-
-
+<!---->
+<!---->
              <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>
         </activity>
         <activity android:name=".login.CreateAccountActivity" android:noHistory="true" android:parentActivityName=".login.LoginActivity"/>
         <activity android:name=".MainActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+<!--             <intent-filter>-->
+<!--             <action android:name="android.intent.action.MAIN" />-->
+<!---->
+<!---->
+<!--             <category android:name="android.intent.category.LAUNCHER" />-->
+<!--             </intent-filter>-->
         </activity>
         <activity android:name=".SearchResultsActivity"
             android:launchMode="singleTask"/>

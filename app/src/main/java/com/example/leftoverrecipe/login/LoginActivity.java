@@ -24,11 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-import static com.example.leftoverrecipe.auxiliaryClasses.User.EMAIL_ADDRESS;
-import static com.example.leftoverrecipe.auxiliaryClasses.User.FULL_NAME;
-import static com.example.leftoverrecipe.auxiliaryClasses.User.PHONE_NUMBER;
-import static com.example.leftoverrecipe.auxiliaryClasses.User.USERNAME;
-
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -70,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                                     HashMap<String, String> userInfo = (HashMap) snapshot.getValue();
 //                                    while (userInfo == null) {};
 //                                    user = new User(userInfoArray);
-                                    User.getInstance(userInfo);
+                                    User.createInstance(userInfo);
                                     Log.d("USER", "Global user added!");
                                     startActivity(intent);
                                 } else {
@@ -113,4 +108,5 @@ public class LoginActivity extends AppCompatActivity {
         mUserName = findViewById(R.id.user_name_edittext);
         mPassword = findViewById(R.id.password_edittext);
 
-    }}
+    }
+}

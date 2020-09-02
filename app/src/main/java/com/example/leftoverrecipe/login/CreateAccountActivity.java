@@ -22,9 +22,15 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+import static com.example.leftoverrecipe.auxiliaryClasses.User.EMAIL_ADDRESS;
+import static com.example.leftoverrecipe.auxiliaryClasses.User.FULL_NAME;
+import static com.example.leftoverrecipe.auxiliaryClasses.User.PHONE_NUMBER;
+import static com.example.leftoverrecipe.auxiliaryClasses.User.USERNAME;
+
 public class CreateAccountActivity extends AppCompatActivity {
     private EditText[] editTextArray;
     private String[] userInfo, editTextNameArray;
+    private HashMap<String, String> userInfoMap;
     private Button createButton;
     private FirebaseAuth mFirebaseAuth;
     private DatabaseReference myRef;
@@ -40,7 +46,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         createButton.setOnClickListener(v -> {
             if (!extractStrings()) return;
             Toast.makeText(getApplicationContext(), "Attempting to make an account. Please wait...", Toast.LENGTH_SHORT).show();
-            User.getInstance(userInfo);
+            User.createInstance(userInfoMap);
             startProcess();         //Create account -> Add User info to FireDatabase --> Send verification email
         });
     }
@@ -97,7 +103,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     private boolean extractStrings() {
-        userInfo = new String[editTextNameArray.length];
+        userInfoMap = new HashMap<String, String>();
         for (int i = 0; i < editTextArray.length; i++) {
             String inputField = editTextArray[i].getText().toString();
             userInfo[i] = inputField;
@@ -106,6 +112,10 @@ public class CreateAccountActivity extends AppCompatActivity {
                 return false;
             }
         }
+        userInfoMap.put(FULL_NAME, userInfo[0]);
+        userInfoMap.put(USERNAME, userInfo[1]);
+        userInfoMap.put(EMAIL_ADDRESS, userInfo[2]);
+        userInfoMap.put(PHONE_NUMBER, userInfo[3]);
         return true;
     }
 

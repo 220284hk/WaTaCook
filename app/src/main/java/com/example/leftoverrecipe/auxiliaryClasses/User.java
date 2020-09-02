@@ -1,34 +1,40 @@
 package com.example.leftoverrecipe.auxiliaryClasses;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
 public class User {
-    //    private static FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-//    private static DatabaseReference databaseReference, likesRef, dislikesRef;
+    public static String FULL_NAME = "Full name", USERNAME = "Username", EMAIL_ADDRESS = "Email address", PHONE_NUMBER = "Phone number";
+    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    private DatabaseReference databaseReference;
     private static HashSet<String> likesSet = new HashSet<String>(), dislikesSet = new HashSet<String>();
     private static HashMap<String, HashMap> data;
-    private static HashMap<Integer, String> likesMap, dislikesMap;
+    private static HashMap<String, String> likesMap, dislikesMap;
     private static HashMap<String, String> userInfo;
-    public static String FULL_NAME = "Full name", USERNAME = "Username", EMAIL_ADDRESS = "Email address", PHONE_NUMBER = "Phone number";
-    private static User user = null;
+    public static User user;
 
+    public User(HashMap<String, String> userInfo) {
+        User.userInfo = userInfo;
+//        Log.d("220284hk", "User : (in user method)" + userIn);
+    }
 
-    public User(String... userInfo) {
-        User.userInfo = new HashMap<>();
-        User.userInfo.put(FULL_NAME, userInfo[0]);
-        User.userInfo.put(USERNAME, userInfo[1]);
-        User.userInfo.put(EMAIL_ADDRESS, userInfo[2]);
-        User.userInfo.put(PHONE_NUMBER, userInfo[3]);
-        Log.d("220284hk", "User : (in user method)" + userInfo[0]);
+    public static User getInstance() {
+        return user;
+    }
+
+    public static void createInstance(HashMap<String, String> userInfo) {
+        user = new User(userInfo);
     }
 
 
-//    public static HashMap getData() {
+//    public  HashMap getData() {
 //        data = new HashMap();
 //        setUserLikes();
 //        setUserDislikes();
@@ -38,41 +44,30 @@ public class User {
 //        return data;
 //    }
 
-//    public static User getInstance() { return user; }
-
-    public static HashMap<String, String> getInstance(String... userInfo) {
-        Log.d("220284hk", "User is being initialised" + userInfo[0]);
-        user = new User(userInfo);
-        return User.userInfo;
+    public void updateDBPreferences() {
+        setUserLikes();
+        setUserDislikes();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseAuth.getUid()).child("Preferences");
+        data = new HashMap<String, HashMap>();
+        data.put("Likes", likesMap);
+        data.put("Dislikes", dislikesMap);
+        databaseReference.setValue(data);
     }
 
-    public static HashMap<String, String> getInstance(HashMap userInfo) {
-        User.userInfo = userInfo;
-        return User.userInfo;
-    }
 
-    public static void createInstance(HashMap userInfo) {
-        User.userInfo = userInfo;
-    }
-
-//    public static User getInstance(HashMap userInfo) {
-//        Log.d("220284hk", "User is being initialised");
-//        user = new User(userInfo);
-//        return user;
-//    }
-
-    public static void setUserLikes() {
+    public void setUserLikes() {
         likesMap = new HashMap<>();
         int count = 0;
         for (String x : likesSet) {
-            likesMap.put(count++, x);
+            likesMap.put(String.valueOf(count++), x);
         }
     }
 
-    public static void setUserDislikes() {
+    public void setUserDislikes() {
+        dislikesMap = new HashMap<>();
         int count = 0;
         for (String x : dislikesSet) {
-            dislikesMap.put(count++, x);
+            dislikesMap.put(String.valueOf(count++), x);
         }
     }
 
@@ -81,6 +76,7 @@ public class User {
 //        likesRef = databaseReference.child("Likes");
 //        dislikesRef = databaseReference.child("Dislikes");
 //        likesRef.setValue(new ArrayList<>(likesSet));
+//        setUserLikes();
 //    }
 
 //    public void updateDislikesSet() {

@@ -33,6 +33,16 @@ public class MainActivity extends AppCompatActivity {
         greetUser();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("220284hk", "MainActivity onStop method preupdateDB");
+        if (User.getInstance() != null) {
+            User.getInstance().updateDBPreferences();
+            Log.d("220284hk", "MainActivity onStop method postupdateDB");
+        }
+    }
+
     private void greetUser() {
         if (User.getInstance() != null) {
             Toast.makeText(getApplicationContext(), "Welcome, " + User.getFullName(), Toast.LENGTH_SHORT).show();
