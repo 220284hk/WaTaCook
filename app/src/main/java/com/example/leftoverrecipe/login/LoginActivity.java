@@ -69,13 +69,8 @@ public class LoginActivity extends AppCompatActivity {
                                     Log.d("220284hk", "oZnDataChange method: " + snapshot.getValue().toString());
                                     HashMap<String, String> userInfo = (HashMap) snapshot.getValue();
 //                                    while (userInfo == null) {};
-                                    String[] userInfoArray = {
-                                            userInfo.get(FULL_NAME),
-                                            userInfo.get(USERNAME),
-                                            userInfo.get(EMAIL_ADDRESS),
-                                            userInfo.get(PHONE_NUMBER)};
 //                                    user = new User(userInfoArray);
-                                    User.getInstance(userInfoArray);
+                                    User.getInstance(userInfo);
                                     Log.d("USER", "Global user added!");
                                     startActivity(intent);
                                 } else {

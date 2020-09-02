@@ -94,10 +94,10 @@ public class SearchResultsActivity extends AppCompatActivity {
         TextView idTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(0);
         TextView titleTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(1);
         String id = idTextView.getText().toString();
-        if (User.getInstance().getLikesSet().contains(id)) {
+        if (User.getLikesSet().contains(id)) {
             Toast.makeText(this, titleTextView.getText().toString() + " has already been liked!", Toast.LENGTH_LONG).show();
         } else {
-            User.getInstance().getLikesSet().add(id);
+            User.getLikesSet().add(id);
             Toast.makeText(this, titleTextView.getText().toString() + id + " has been liked. Added to favourites", Toast.LENGTH_LONG).show();
             ((ImageView) view).setImageResource(R.drawable.favourite_post_icon);
         }
@@ -107,10 +107,10 @@ public class SearchResultsActivity extends AppCompatActivity {
         TextView idTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(0);
         TextView titleTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(1);
         String id = idTextView.getText().toString();
-        if (User.getInstance().getDislikesSet().contains(id)) {
+        if (User.getDislikesSet().contains(id)) {
             Toast.makeText(this, titleTextView.getText().toString() + " has already been disliked!", Toast.LENGTH_LONG).show();
         } else {
-            User.getInstance().getDislikesSet().add(id);
+            User.getDislikesSet().add(id);
             Toast.makeText(this, titleTextView.getText().toString() + id + " has been disliked. This will menu will not be shown in future searches!", Toast.LENGTH_LONG).show();
         }
     }

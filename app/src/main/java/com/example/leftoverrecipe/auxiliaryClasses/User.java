@@ -27,6 +27,7 @@ public class User {
         Log.d("220284hk", "User : (in user method)" + userInfo[0]);
     }
 
+
 //    public static HashMap getData() {
 //        data = new HashMap();
 //        setUserLikes();
@@ -37,12 +38,21 @@ public class User {
 //        return data;
 //    }
 
-    public static User getInstance() { return user; }
+//    public static User getInstance() { return user; }
 
     public static HashMap<String, String> getInstance(String... userInfo) {
         Log.d("220284hk", "User is being initialised" + userInfo[0]);
         user = new User(userInfo);
         return User.userInfo;
+    }
+
+    public static HashMap<String, String> getInstance(HashMap userInfo) {
+        User.userInfo = userInfo;
+        return User.userInfo;
+    }
+
+    public static void createInstance(HashMap userInfo) {
+        User.userInfo = userInfo;
     }
 
 //    public static User getInstance(HashMap userInfo) {

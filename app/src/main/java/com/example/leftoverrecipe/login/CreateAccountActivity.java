@@ -68,7 +68,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     private void startProcess() {
-        mFirebaseAuth.createUserWithEmailAndPassword(User.getInstance().getEmailAddress(), userInfo[4]).addOnCompleteListener(CreateAccountActivity.this, new OnCompleteListener<AuthResult>() {
+        mFirebaseAuth.createUserWithEmailAndPassword(User.getEmailAddress(), userInfo[4]).addOnCompleteListener(CreateAccountActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {

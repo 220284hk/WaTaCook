@@ -135,7 +135,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         for (int i = 0; i < num; i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);
             id = object.getString("id");
-            if (User.getInstance().getDislikesSet().contains(id)) { continue; }
+            if (User.getDislikesSet().contains(id)) { continue; }
             sourceURL = object.getString("sourceUrl");
             title = i + " " + object.getString("title");
             imageURL = String.format("https://spoonacular.com/recipeImages/%s-480x360.jpg", object.get("id"));
