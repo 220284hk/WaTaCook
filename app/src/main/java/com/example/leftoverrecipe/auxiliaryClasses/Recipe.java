@@ -4,6 +4,8 @@ import android.media.Image;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Objects;
+
 public class Recipe implements Parcelable {
     public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {
         @Override
@@ -84,7 +86,6 @@ public class Recipe implements Parcelable {
         return sourceURL;
     }
 
-
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(id);
@@ -93,5 +94,18 @@ public class Recipe implements Parcelable {
         parcel.writeString(imageURL);
         parcel.writeString(servings);
         parcel.writeString(prepTime);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Recipe recipe = (Recipe) o;
+        return id.equals(recipe.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

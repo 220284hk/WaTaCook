@@ -90,28 +90,28 @@ public class SearchResultsActivity extends AppCompatActivity {
         recipesAdapter.notifyDataSetChanged();
     }
 
-    public void liked(View view) {
-        TextView idTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(0);
-        TextView titleTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(1);
-        String id = idTextView.getText().toString();
-        if (User.getLikesSet().contains(id)) {
-            Toast.makeText(this, titleTextView.getText().toString() + " has already been liked!", Toast.LENGTH_LONG).show();
-        } else {
-            User.getLikesSet().add(id);
-            Toast.makeText(this, titleTextView.getText().toString() + id + " has been liked. Added to favourites", Toast.LENGTH_LONG).show();
-            ((ImageView) view).setImageResource(R.drawable.favourite_post_icon);
-        }
-    }
+//    public void liked(View view) {
+//        TextView idTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(0);
+//        TextView titleTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(1);
+//        String id = idTextView.getText().toString();
+//        if (User.getLikesSet().contains(id)) {
+//            Toast.makeText(this, titleTextView.getText().toString() + " has already been liked!", Toast.LENGTH_LONG).show();
+//        } else {
+//            User.getLikesSet().add(recipe);
+//            Toast.makeText(this, titleTextView.getText().toString() + id + " has been liked. Added to favourites", Toast.LENGTH_LONG).show();
+//            ((ImageView) view).setImageResource(R.drawable.favourite_post_icon);
+//        }
+//    }
 
-    public void disliked(View view) {
-        TextView idTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(0);
-        TextView titleTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(1);
-        String id = idTextView.getText().toString();
-        if (User.getDislikesSet().contains(id)) {
-            Toast.makeText(this, titleTextView.getText().toString() + " has already been disliked!", Toast.LENGTH_LONG).show();
-        } else {
-            User.getDislikesSet().add(id);
-            Toast.makeText(this, titleTextView.getText().toString() + id + " has been disliked. This will menu will not be shown in future searches!", Toast.LENGTH_LONG).show();
-        }
-    }
+//    public void disliked(View view) {
+//        TextView idTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(0);
+//        TextView titleTextView = (TextView) ((ViewGroup) view.getParent()).getChildAt(1);
+//        String id = idTextView.getText().toString();
+//        if (User.getDislikesSet().contains(id)) {
+//            Toast.makeText(this, titleTextView.getText().toString() + " has already been disliked!", Toast.LENGTH_LONG).show();
+//        } else {
+//            User.getDislikesSet().add(id);
+//            Toast.makeText(this, titleTextView.getText().toString() + id + " has been disliked. This will menu will not be shown in future searches!", Toast.LENGTH_LONG).show();
+//        }
+//    }
 }

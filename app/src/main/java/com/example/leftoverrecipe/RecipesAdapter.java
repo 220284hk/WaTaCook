@@ -56,11 +56,24 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
             notifyItemChanged(holder.getAdapterPosition());
             notifyItemRangeRemoved(holder.getAdapterPosition(), 1);
             TextView titleTextView = holder.mTitleTextView;
-            User.getDislikesSet().add(recipe.getId());
+            User.getDislikesSet().add(recipe);
             Toast.makeText(context, titleTextView.getText().toString() + recipe.getId() + " has been disliked. This will not be shown in future searches!", Toast.LENGTH_SHORT).show();
             if (recipeArray.size() == 0) {
                 Toast.makeText(context, "You deleted everything!", Toast.LENGTH_SHORT).show();
                 ((Activity) context).finish();
+            }
+        });
+        holder.mLikesImageView.setOnClickListener(v -> {
+            if ( ((ImageView) v).getContentDescription() == null || ((ImageView) v).getContentDescription().equals("not filled")) {
+                User.getLikesSet().add(recipe);
+                ((ImageView) v).setImageResource(R.drawable.favourite_post_icon);
+                ((ImageView) v).setContentDescription("filled");
+                Toast.makeText(context, recipe.getTitle() + recipe.getId() + " has been liked. It will appear in the favourites page!", Toast.LENGTH_SHORT).show();
+            } else {
+                v.setContentDescription(context.getResources().getString(R.string.filled));
+                ((ImageView) v).setImageResource(R.drawable.favourite_pre_icon);
+                User.getLikesSet().remove(recipe);
+//                ((ImageView) v).setImageDrawable(context.getResources().getDrawable(R.drawable.favourite_post_icon));
             }
         });
     }
@@ -75,7 +88,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         private Uri url;
         private ConstraintLayout view;
         private TextView mTitleTextView, mPrepTimeTextView, mServingsSizeTextView, id;
-        private ImageView mImageView, mFavouriteImageView, mDislikeImageView;
+        private ImageView mImageView, mLikesImageView, mDislikeImageView;
         public RecipeViewHolder(@NonNull ConstraintLayout itemView, RecipesAdapter recipesAdapter) {
             super(itemView);
             setupViews();
@@ -100,7 +113,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
             this.mServingsSizeTextView = itemView.findViewById(R.id.servings_textview);
             this.mImageView = itemView.findViewById(R.id.imageView);
             this.id = itemView.findViewById(R.id.id);
-            this.mFavouriteImageView = itemView.findViewById(R.id.favourite_imageView);
+            this.mLikesImageView = itemView.findViewById(R.id.likes_imageView);
             this.mDislikeImageView = itemView.findViewById(R.id.dislike_imageView);
         }
     }

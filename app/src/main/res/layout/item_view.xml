@@ -67,11 +67,9 @@
         app:siShape="@drawable/rounded_rectangle" />
 
     <ImageView
-        android:id="@+id/favourite_imageView"
+        android:id="@+id/likes_imageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:contentDescription="@string/like_button"
-        android:onClick="liked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -84,11 +82,10 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:contentDescription="@string/dislike_button"
-        android:onClick="disliked"
-        app:layout_constraintBottom_toBottomOf="@+id/favourite_imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/likes_imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/favourite_imageView"
-        app:layout_constraintTop_toTopOf="@+id/favourite_imageView"
+        app:layout_constraintStart_toEndOf="@+id/likes_imageView"
+        app:layout_constraintTop_toTopOf="@+id/likes_imageView"
         app:srcCompat="@drawable/dislike_icon"
         app:tint="@color/colorTriadicOne" />
 
