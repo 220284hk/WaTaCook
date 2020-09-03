@@ -70,6 +70,7 @@
         android:id="@+id/likes_imageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:onClick="pleaseLogIn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -86,8 +87,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/likes_imageView"
         app:layout_constraintTop_toTopOf="@+id/likes_imageView"
+        android:onClick="pleaseLogIn"
         app:srcCompat="@drawable/dislike_icon"
-        app:tint="@color/colorTriadicOne" />
+        app:tint="@color/colorAnalogousTwo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

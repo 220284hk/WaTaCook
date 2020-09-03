@@ -53,7 +53,7 @@ public class User {
             }
             if (preferences.get(DISLIKES) != null) {
                 for (Map.Entry<String, HashMap> x: ((HashMap<String, HashMap>) preferences.get(DISLIKES)).entrySet()) {
-                    likesMap.put(x.getKey(), new Recipe(x.getValue()));
+                    dislikesMap.put(x.getKey(), new Recipe(x.getValue()));
                 }
             }
             System.out.println("After retrieval: dislikesMap:" + dislikesMap.size());

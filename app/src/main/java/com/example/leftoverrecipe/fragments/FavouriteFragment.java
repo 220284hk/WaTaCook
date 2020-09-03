@@ -32,7 +32,9 @@ public class FavouriteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setUpRecyclerView();
+        if (User.getInstance() != null) {
+            setUpRecyclerView();
+        }
     }
 
     private void setUpRecyclerView() {

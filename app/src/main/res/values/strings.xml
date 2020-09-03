@@ -45,5 +45,6 @@
     <string name="nFilled">not filled</string>
     <string name="search">Search</string>
     <string name="favourites">Favourites</string>
+    <string name="please_log_in">Please log in to use this feature :)</string>
 
 </resources>

@@ -70,7 +70,7 @@
 ////                User.getLikesSet().add(recipe);
 //                User.getLikesMap().put(recipe.getId(), recipe);
 //                ((ImageView) v).setImageResource(R.drawable.favourite_post_icon);
-//                ((ImageView) v).setContentDescription("filled");
+//                ((ImageView) v).setContentDescription(FILLED);
 //                Toast.makeText(context, recipe.getTitle() + recipe.getId() + " has been liked. It will appear in the favourites page!", Toast.LENGTH_SHORT).show();
 //            } else {
 //                v.setContentDescription(context.getResources().getString(R.string.filled));

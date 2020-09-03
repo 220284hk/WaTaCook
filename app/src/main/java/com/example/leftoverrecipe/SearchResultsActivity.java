@@ -1,6 +1,8 @@
 package com.example.leftoverrecipe;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,4 +37,7 @@ public class SearchResultsActivity extends AppCompatActivity {
         recipesAdapter.notifyDataSetChanged();
     }
 
+    public void pleaseLogIn(View view) {
+        Toast.makeText(getApplicationContext(), R.string.please_log_in, Toast.LENGTH_SHORT).show();
+    }
 }
