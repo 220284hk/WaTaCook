@@ -45,8 +45,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipeArray.get(position);
+        System.out.println(recipe);
         holder.id.setText(recipe.getId());
-        holder.url = Uri.parse(recipe.getSourceURL().toString());
+        holder.url = Uri.parse(recipe.getSourceURL());
         holder.mTitleTextView.setText(recipe.getTitle());
         Glide.with(context).load(recipe.getImageURL()).into(holder.mImageView);
         holder.mServingsSizeTextView.setText(recipe.getServings());

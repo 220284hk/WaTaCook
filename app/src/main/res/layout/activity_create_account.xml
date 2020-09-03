@@ -62,7 +62,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/user_name"
-                android:text=TAG
+                android:text="220284hk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textShortMessage" />
@@ -109,7 +109,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
-                android:text=TAG
+                android:text="220284hk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />

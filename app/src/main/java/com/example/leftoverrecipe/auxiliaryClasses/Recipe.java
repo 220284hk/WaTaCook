@@ -4,7 +4,14 @@ import android.media.Image;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
 import java.util.Objects;
+
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.ID;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.READY_IN_MINUTES;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.SERVINGS;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.SOURCE_URL;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.TITLE;
 
 public class Recipe implements Parcelable {
     public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {
@@ -28,6 +35,16 @@ public class Recipe implements Parcelable {
         this.imageURL = info[3];
         this.servings = info[4];
         this.prepTime = info[5];
+//        this.image = image;
+    }
+
+    public Recipe(HashMap<String, String> info) {
+        this.id = info.get(ID);
+        this.sourceURL = info.get(SOURCE_URL);
+        this.title = info.get(TITLE);
+        this.imageURL =  String.format("https://spoonacular.com/recipeImages/%s-480x360.jpg", info.get(ID));
+        this.servings = info.get(SERVINGS);
+        this.prepTime = info.get(READY_IN_MINUTES);
 //        this.image = image;
     }
 
@@ -73,7 +90,7 @@ public class Recipe implements Parcelable {
     public String toString() {
         return "Recipe{" +
                 "id='" + id + '\'' +
-                ", sourceURL='" + sourceURL + '\'' +
+                ", sourceUrl='" + sourceURL + '\'' +
                 ", title='" + title + '\'' +
                 ", imageURL='" + imageURL + '\'' +
                 ", servings='" + servings + '\'' +

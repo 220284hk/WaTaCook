@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.leftoverrecipe.MainActivity;
 import com.example.leftoverrecipe.R;
+import com.example.leftoverrecipe.auxiliaryClasses.Recipe;
+import com.example.leftoverrecipe.auxiliaryClasses.Strings;
 import com.example.leftoverrecipe.auxiliaryClasses.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.TAG;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.USERS;
 
 public class LoginActivity extends AppCompatActivity {
@@ -63,11 +66,11 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (task.isSuccessful()) {
-                                    // Log.d(TAG, "onDataChange method: " + snapshot.getValue().toString());
+                                     Log.d(TAG, "onDataChange method: " + snapshot.getValue().toString());
                                     HashMap<String, HashMap> data = (HashMap) snapshot.getValue();
                                     Log.d("LoginActivity: ", "Data retrieved from firebase: " + data);
                                     User.retrieveInstance(data);
-                                    // Log.d("USER", "Global user added!");
+                                     Log.d("USER", "Global user added!");
                                     startActivity(intent);
                                 } else {
                                     System.out.println(task.getException().getCause());

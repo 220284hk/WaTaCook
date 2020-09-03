@@ -23,8 +23,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.leftoverrecipe.MyParcelable;
 import com.example.leftoverrecipe.NoResultsActivity;
 import com.example.leftoverrecipe.R;
-import com.example.leftoverrecipe.auxiliaryClasses.Recipe;
 import com.example.leftoverrecipe.SearchResultsActivity;
+import com.example.leftoverrecipe.auxiliaryClasses.Recipe;
 import com.example.leftoverrecipe.auxiliaryClasses.User;
 import com.example.leftoverrecipe.viewmodel.SearchViewModel;
 
@@ -33,13 +33,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import static com.example.leftoverrecipe.auxiliaryClasses.Strings.*;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.ID;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.READY_IN_MINUTES;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.SERVINGS;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.SOURCE_URL;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.TITLE;
 
 @SuppressWarnings("ConstantConditions")
 public class SearchFragment extends Fragment implements View.OnClickListener {
     public final static String KEY = "REQUEST_RESULT";
+    private static int NUMBER_OF_RECIPES = 10;
     private ImageView searchButton;
     private EditText searchText;
     private SearchViewModel mViewModel;
@@ -49,7 +53,6 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
     private ArrayList arrayList;
     private boolean[] ingredientsSelected;
     private int size, count;
-    private static int NUMBER_OF_RECIPES = 10;
 
     public static SearchFragment newInstance() {
         return new SearchFragment();

@@ -8,13 +8,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.DISLIKES;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.EMAIL_ADDRESS;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.FULL_NAME;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.LIKES;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.PHONE_NUMBER;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.PREFERENCES;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.USERNAME;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.USERS;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.USER_INFO;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.TAG;
 
 public class User {
     public static User user;
@@ -34,21 +41,20 @@ public class User {
         Log.d(TAG, "retrieveInstance: " + userData);
         data = userData;
         createInstance(userData.get(USER_INFO));
-        HashMap<String, HashMap> preferences = userData.get("Preferences");
+        HashMap<String, HashMap> preferences = userData.get(PREFERENCES);
+        likesMap = new HashMap<>();
+        dislikesMap = new HashMap<>();
         if (preferences == null) {      //New account or no history of preferences
-            likesMap = new HashMap<>();
-            dislikesMap = new HashMap<>();
-            return;
         } else {
-            if (preferences.get("Likes") == null) {
-                likesMap = new HashMap<>();
-            } else {
-                likesMap = preferences.get("Likes");
+            if (preferences.get(LIKES) != null) {
+                for (Map.Entry<String, HashMap> x: ((HashMap<String, HashMap>) preferences.get(LIKES)).entrySet()) {
+                    likesMap.put(x.getKey(), new Recipe(x.getValue()));
+                }
             }
-            if (preferences.get("Dislikes") == null) {
-                dislikesMap = new HashMap<>();
-            } else {
-                dislikesMap = preferences.get("Dislikes");
+            if (preferences.get(DISLIKES) == null) {
+                for (Map.Entry<String, HashMap> x: ((HashMap<String, HashMap>) preferences.get(DISLIKES)).entrySet()) {
+                    likesMap.put(x.getKey(), new Recipe(x.getValue()));
+                }
             }
             System.out.println("After retrieval: dislikesMap:" + dislikesMap.size());
             System.out.println("After retrieval: likesMap:" + likesMap.size());
@@ -56,12 +62,12 @@ public class User {
     }
 
     public void updateDBPreferences() {
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseAuth.getUid()).child("Preferences");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child(USERS).child(firebaseAuth.getUid()).child(PREFERENCES);
         data = new HashMap<String, HashMap>();
-        data.put("Likes", likesMap);
-        data.put("Dislikes", dislikesMap);
-        System.out.println("0.0 likesMap: " + likesMap.toString());
-        System.out.println("0.0 dislikesMap: " + dislikesMap.toString());
+        data.put(LIKES, likesMap);
+        data.put(DISLIKES, dislikesMap);
+        System.out.println("updateDBPreferences likesMap: " + likesMap);
+        System.out.println("updateDBPreferences dislikesMap: " + dislikesMap);
 //        System.out.println("0.0 likesSet: " + likesSet.toString());
 //        System.out.println("0.0 dislikesSet: " + dislikesSet.toString());
         databaseReference.setValue(data);
