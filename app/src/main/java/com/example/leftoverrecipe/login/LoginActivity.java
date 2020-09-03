@@ -61,10 +61,11 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (task.isSuccessful()) {
-                                    Log.d("220284hk", "onDataChange method: " + snapshot.getValue().toString());
+                                    // Log.d("220284hk", "onDataChange method: " + snapshot.getValue().toString());
                                     HashMap<String, HashMap> data = (HashMap) snapshot.getValue();
+                                    Log.d("LoginActivity: ", "Data retrieved from firebase: " + data);
                                     User.retrieveInstance(data);
-                                    Log.d("USER", "Global user added!");
+                                    // Log.d("USER", "Global user added!");
                                     startActivity(intent);
                                 } else {
                                     System.out.println(task.getException().getCause());

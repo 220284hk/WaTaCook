@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-//        Log.d("USERZ", "0 MainActivity: " + User.getInstance());
+//        // Log.d("USERZ", "0 MainActivity: " + User.getInstance());
 //        System.out.println("MainActitivty: " + User.getInstance());
 //        if (firebaseAuth.getCurrentUser() == null)
 //        else
@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("220284hk", "MainActivity onStop method preupdateDB");
         if (User.getInstance() != null) {
+             Log.d("220284hk", "MainActivity onStop method preupdateDB");
             User.getInstance().updateDBPreferences();
-            Log.d("220284hk", "MainActivity onStop method postupdateDB");
+             Log.d("220284hk", "MainActivity onStop method postupdateDB");
         }
     }
 

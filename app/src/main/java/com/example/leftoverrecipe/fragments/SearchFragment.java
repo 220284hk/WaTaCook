@@ -166,6 +166,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
 //        Ingredients listeners
         for (int i = 0; i < size; i++) {
             String ingredientID = "ingredient_" + ingredientsStringArray[i];
+//            Log.d("220284hk", "SearchFragment issue with: " + ingredientID + " " + i);
             int resID = getResources().getIdentifier(ingredientID, "id", getActivity().getPackageName());
             ingredientsImages[i] = ((ImageView) getActivity().findViewById(resID));
             ingredientsImages[i].setOnClickListener(this);

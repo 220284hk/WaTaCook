@@ -17,11 +17,11 @@
         <item>@mipmap/fish_cod</item>
         <item>@mipmap/fish_mackerel</item>
         <item>@mipmap/fish_tuna</item>
-        <item>@mipmap/veg_broccoli</item>
-        <item>@mipmap/veg_pepper</item>
-        <item>@mipmap/veg_potatoes</item>
-        <item>@mipmap/veg_carrots</item>
         <item>@mipmap/veg_tomato</item>
+        <item>@mipmap/veg_carrot</item>
+        <item>@mipmap/veg_broccoli</item>
+        <item>@mipmap/veg_cauliflower</item>
+        <item>@mipmap/veg_red_onion</item>
     </integer-array>
     
     <string-array name="ingredients_string">
@@ -33,10 +33,10 @@
         <item>cod</item>
         <item>mackerel</item>
         <item>tuna</item>
-        <item>broccoli</item>
-        <item>pepper</item>
-        <item>potatoes</item>
-        <item>carrots</item>
         <item>tomato</item>
+        <item>carrot</item>
+        <item>broccoli</item>
+        <item>cauliflower</item>
+        <item>red_onion</item>
     </string-array>
 </resources>

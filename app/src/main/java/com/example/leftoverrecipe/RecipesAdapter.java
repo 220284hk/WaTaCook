@@ -71,11 +71,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
     }
 
     public class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
         private Uri url;
         private ConstraintLayout view;
         private TextView mTitleTextView, mPrepTimeTextView, mServingsSizeTextView, id;
         private ImageView mImageView, mFavouriteImageView, mDislikeImageView;
-
         public RecipeViewHolder(@NonNull ConstraintLayout itemView, RecipesAdapter recipesAdapter) {
             super(itemView);
             setupViews();
@@ -90,7 +90,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
                 startActivity(view.getContext(), intent, null);
             else
                 Log.d("ImplicitIntents", "Can't access URL");
-
         }
 
         private void setupViews() {

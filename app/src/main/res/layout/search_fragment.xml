@@ -29,13 +29,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_fragment_title_textview">
 
-        <!--        <androidx.appcompat.widget.SearchView-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            app:defaultQueryHint="chicken">-->
-
-        <!--        </androidx.appcompat.widget.SearchView>-->
-
         <EditText
             android:id="@+id/search_box"
             android:layout_width="0dp"
@@ -75,6 +68,7 @@
         android:id="@+id/fragment_meat_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/meat"
         android:textColor="#ff593a"
         android:theme="@style/AppTheme.SearchFragments.Title" />
@@ -93,6 +87,7 @@
                 android:layout_width="@dimen/small_image"
                 android:layout_height="@dimen/small_image"
                 android:layout_margin="@dimen/margin_xx_small"
+                android:scaleType="fitXY"
                 android:src="@mipmap/meat_chicken"
                 android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                 app:siBorderColor="@android:color/black"
@@ -104,6 +99,7 @@
                 android:layout_width="@dimen/small_image"
                 android:layout_height="@dimen/small_image"
                 android:layout_margin="@dimen/margin_xx_small"
+                android:scaleType="fitXY"
                 android:src="@mipmap/meat_pork"
                 android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                 app:siBorderColor="@android:color/black"
@@ -115,6 +111,7 @@
                 android:layout_width="@dimen/small_image"
                 android:layout_height="@dimen/small_image"
                 android:layout_margin="@dimen/margin_xx_small"
+                android:scaleType="fitXY"
                 android:src="@mipmap/meat_beef"
                 android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                 app:siBorderColor="@android:color/black"
@@ -126,6 +123,7 @@
                 android:layout_width="@dimen/small_image"
                 android:layout_height="@dimen/small_image"
                 android:layout_margin="@dimen/margin_xx_small"
+                android:scaleType="fitXY"
                 android:src="@mipmap/meat_lamb"
                 android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                 app:siBorderColor="@android:color/black"
@@ -137,6 +135,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/fish"
         android:textColor="@color/colorBlue"
         android:theme="@style/AppTheme.SearchFragments.Title" />
@@ -194,20 +193,17 @@
                 app:siShape="@drawable/rounded_rectangle" />
         </LinearLayout>
     </HorizontalScrollView>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/vegetables"
         android:textColor="@color/colorGreen"
         android:theme="@style/AppTheme.SearchFragments.Title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_meat_textview" />
 
-    <!--    <SearchView-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -216,6 +212,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_tomato"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/veg_tomato"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/ingredient_carrot"
+                android:layout_width="@dimen/small_image"
+                android:layout_height="@dimen/small_image"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:src="@mipmap/veg_carrot"
+                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
+                app:siBorderColor="@android:color/black"
+                app:siBorderWidth="8dp"
+                app:siShape="@drawable/rounded_rectangle" />
 
             <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
                 android:id="@+id/ingredient_broccoli"
@@ -229,47 +247,27 @@
                 app:siShape="@drawable/rounded_rectangle" />
 
             <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
-                android:id="@+id/ingredient_pepper"
+                android:id="@+id/ingredient_cauliflower"
                 android:layout_width="@dimen/small_image"
                 android:layout_height="@dimen/small_image"
                 android:layout_margin="@dimen/margin_xx_small"
-                android:src="@mipmap/veg_pepper"
+                android:src="@mipmap/veg_cauliflower"
                 android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                 app:siBorderColor="@android:color/black"
                 app:siBorderWidth="8dp"
                 app:siShape="@drawable/rounded_rectangle" />
 
             <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
-                android:id="@+id/ingredient_potatoes"
+                android:id="@+id/ingredient_red_onion"
                 android:layout_width="@dimen/small_image"
                 android:layout_height="@dimen/small_image"
                 android:layout_margin="@dimen/margin_xx_small"
-                android:src="@mipmap/veg_potatoes"
+                android:src="@mipmap/veg_red_onion"
                 android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                 app:siBorderColor="@android:color/black"
                 app:siBorderWidth="8dp"
                 app:siShape="@drawable/rounded_rectangle" />
 
-            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
-                android:id="@+id/ingredient_carrots"
-                android:layout_width="@dimen/small_image"
-                android:layout_height="@dimen/small_image"
-                android:layout_margin="@dimen/margin_xx_small"
-                android:src="@mipmap/veg_carrots"
-                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
-                app:siBorderColor="@android:color/black"
-                app:siBorderWidth="8dp"
-                app:siShape="@drawable/rounded_rectangle" />
-            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
-                android:id="@+id/ingredient_tomato"
-                android:layout_width="@dimen/small_image"
-                android:layout_height="@dimen/small_image"
-                android:layout_margin="@dimen/margin_xx_small"
-                android:src="@mipmap/veg_tomato"
-                android:theme="@style/AppTheme.SearchFragments.IngredientImage"
-                app:siBorderColor="@android:color/black"
-                app:siBorderWidth="8dp"
-                app:siShape="@drawable/rounded_rectangle" />
         </LinearLayout>
     </HorizontalScrollView>
 </LinearLayout>

@@ -16,7 +16,7 @@ public class User {
     public static String FULL_NAME = "Full name", USERNAME = "Username", EMAIL_ADDRESS = "Email address", PHONE_NUMBER = "Phone number";
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private DatabaseReference databaseReference;
-    private static HashSet<String> likesSet = new HashSet<String>(), dislikesSet = new HashSet<String>();
+    private static HashSet<String> likesSet, dislikesSet;
     private static HashMap<String, HashMap> data;
     private static HashMap<String, String> likesMap, dislikesMap;
     private static HashMap<String, String> userInfo;
@@ -24,7 +24,7 @@ public class User {
 
     public User(HashMap<String, String> userInfo) {
         User.userInfo = userInfo;
-//        Log.d("220284hk", "User : (in user method)" + userIn);
+//        // Log.d("220284hk", "User : (in user method)" + userIn);
     }
 
     public static User getInstance() {
@@ -36,14 +36,15 @@ public class User {
     }
 
     public static void retrieveInstance(HashMap<String, HashMap> userData) {
-        Log.d("220284hk", "retrieveInstance: " + userData);
+         Log.d("220284hk", "retrieveInstance: " + userData);
         data = userData;
         createInstance(userData.get("User Info"));
-//        likesMap = (HashMap<String, String>) (userData.get("Preferences").get("Likes"));
-//        dislikesMap = (HashMap<String, String>) (userData.get("Preferences").get("Dislikes"));
-        likesSet = (likesMap == null? new HashSet<>() : new HashSet<String>((ArrayList) userData.get("Preferences").get("Likes")));
-        dislikesSet = (likesMap == null? new HashSet<>() : new HashSet<String>((ArrayList) userData.get("Preferences").get("Dislikes")));
-//        dislikesSet = (dislikesMap == null? new HashSet<>() : new HashSet<>(dislikesMap.keySet()));
+        Log.d("220284hk", "dislikesMap:" + dislikesMap);
+        ArrayList dislikesArray = (ArrayList) userData.get("Preferences").get("Dislikes");
+        ArrayList likesArray = (ArrayList) userData.get("Preferences").get("Likes");
+        likesSet = (likesArray == null? new HashSet<>() : new HashSet<String>(likesArray));
+        dislikesSet = (dislikesArray == null? new HashSet<>() : new HashSet<String>(dislikesArray));
+        Log.d("220284hk", "dislikesSet:" + dislikesSet);
         user = new User(userInfo);
     }
 
@@ -65,6 +66,10 @@ public class User {
         data = new HashMap<String, HashMap>();
         data.put("Likes", likesMap);
         data.put("Dislikes", dislikesMap);
+        System.out.println("likesMap: " + likesMap.toString());
+        System.out.println("dislikesMap: " + dislikesMap.toString());
+        System.out.println("likesSet: " + likesSet.toString());
+        System.out.println("dislikesSet: " + dislikesSet.toString());
         databaseReference.setValue(data);
     }
 
