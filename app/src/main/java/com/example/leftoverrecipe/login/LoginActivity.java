@@ -24,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.USERS;
+
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -57,11 +59,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful() && mFirebaseAuth.getCurrentUser().isEmailVerified()) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     if (User.getInstance() == null) { //This will be the case if app has just started and the user is NOT creating a new account
-                        FirebaseDatabase.getInstance().getReference().child("Users").child(mFirebaseAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                        FirebaseDatabase.getInstance().getReference().child(USERS).child(mFirebaseAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (task.isSuccessful()) {
-                                    // Log.d("220284hk", "onDataChange method: " + snapshot.getValue().toString());
+                                    // Log.d(TAG, "onDataChange method: " + snapshot.getValue().toString());
                                     HashMap<String, HashMap> data = (HashMap) snapshot.getValue();
                                     Log.d("LoginActivity: ", "Data retrieved from firebase: " + data);
                                     User.retrieveInstance(data);

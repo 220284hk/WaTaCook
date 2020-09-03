@@ -29,7 +29,7 @@ import java.util.HashSet;
 public class SearchResultsActivity extends AppCompatActivity {
     private static String LIKE = "like", DISLIKE = "dislike";
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseAuth.getUid()).child("Preferences");
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(USERS).child(firebaseAuth.getUid()).child("Preferences");
     private DatabaseReference likesRef = databaseReference.child("Likes");
     private DatabaseReference dislikesRef = databaseReference.child("Dislikes");
     private HashSet<String> likesSet, dislikesSet;

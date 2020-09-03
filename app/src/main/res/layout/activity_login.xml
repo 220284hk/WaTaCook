@@ -75,7 +75,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_edittext"
-                android:text="220284hk"
+                android:text=TAG
                 android:nextFocusForward="@id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

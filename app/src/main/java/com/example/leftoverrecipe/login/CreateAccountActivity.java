@@ -22,10 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-import static com.example.leftoverrecipe.auxiliaryClasses.User.EMAIL_ADDRESS;
-import static com.example.leftoverrecipe.auxiliaryClasses.User.FULL_NAME;
-import static com.example.leftoverrecipe.auxiliaryClasses.User.PHONE_NUMBER;
-import static com.example.leftoverrecipe.auxiliaryClasses.User.USERNAME;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.*;
 
 public class CreateAccountActivity extends AppCompatActivity {
     private EditText[] editTextArray;
@@ -64,12 +61,12 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     private void addUserToDatabase() {
         myRef = FirebaseDatabase.getInstance().getReference();
-        userRef = myRef.child("Users");
-        userRef.child(firebaseUser.getUid()).child("User Info").setValue(User.getUserInfo());
-        userRef.child(firebaseUser.getUid()).child("Full Name").setValue(User.getFullName());
+        userRef = myRef.child(USERS);
+        userRef.child(firebaseUser.getUid()).child(USER_INFO).setValue(User.getUserInfo());
+        userRef.child(firebaseUser.getUid()).child(FULL_NAME).setValue(User.getFullName());
 //        HashMap<String, String> testMap = new HashMap<>();
 //        testMap.put("test", "dude");
-//        userRef.child(firebaseUser.getUid()).child("User Info").setValue(testMap);
+//        userRef.child(firebaseUser.getUid()).child(USER_INFO).setValue(testMap);
         sendVerificationEmail();
     }
 

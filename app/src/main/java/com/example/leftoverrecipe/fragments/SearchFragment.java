@@ -35,6 +35,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.*;
+
 @SuppressWarnings("ConstantConditions")
 public class SearchFragment extends Fragment implements View.OnClickListener {
     public final static String KEY = "REQUEST_RESULT";
@@ -94,10 +96,10 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
                     count = 0;
                     searchText.setText("");
                 } catch (JSONException e) {
-                    Log.e("hi", "JSON ERROR", e.getCause());
+                    Log.e("JSON ERROR", "JSON ERROR", e.getCause());
                 }
             }, error -> {
-                Log.e("hi", "list error" + error, error);
+                Log.e("JSON ERROR", "list error" + error, error);
             });
             requestQueue.add(request);
         } else {
@@ -134,13 +136,13 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         String id, sourceURL, title, imageURL, servings, prepTime;
         for (int i = 0; i < num; i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);
-            id = object.getString("id");
+            id = object.getString(ID);
             if (User.getDislikesMap().containsKey(id)) { continue; }
-            sourceURL = object.getString("sourceUrl");
-            title = i + " " + object.getString("title");
-            imageURL = String.format("https://spoonacular.com/recipeImages/%s-480x360.jpg", object.get("id"));
-            servings = "Serves: " + object.getString("servings");
-            prepTime = object.getString("readyInMinutes");
+            sourceURL = object.getString(SOURCE_URL);
+            title = i + " " + object.getString(TITLE);
+            imageURL = String.format("https://spoonacular.com/recipeImages/%s-480x360.jpg", object.get(ID));
+            servings = "Serves: " + object.getString(SERVINGS);
+            prepTime = object.getString(READY_IN_MINUTES);
             if (Integer.parseInt(prepTime) > 99)
                 prepTime = "99+ mins";
             else
@@ -166,7 +168,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
 //        Ingredients listeners
         for (int i = 0; i < size; i++) {
             String ingredientID = "ingredient_" + ingredientsStringArray[i];
-//            Log.d("220284hk", "SearchFragment issue with: " + ingredientID + " " + i);
+//            Log.d(TAG, "SearchFragment issue with: " + ingredientID + " " + i);
             int resID = getResources().getIdentifier(ingredientID, "id", getActivity().getPackageName());
             ingredientsImages[i] = ((ImageView) getActivity().findViewById(resID));
             ingredientsImages[i].setOnClickListener(this);

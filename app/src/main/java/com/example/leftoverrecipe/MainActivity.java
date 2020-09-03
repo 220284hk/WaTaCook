@@ -15,8 +15,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.*;
+
 public class MainActivity extends AppCompatActivity {
-    private DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("Full Name");
+    private DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child(USERS).child(FirebaseAuth.getInstance().getUid()).child(FULL_NAME);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         if (User.getInstance() != null) {
-             Log.d("220284hk", "MainActivity onStop method preupdateDB");
+             Log.d(TAG, "MainActivity onStop method preupdateDB");
             User.getInstance().updateDBPreferences();
-             Log.d("220284hk", "MainActivity onStop method postupdateDB");
+             Log.d(TAG, "MainActivity onStop method postupdateDB");
         }
     }
 

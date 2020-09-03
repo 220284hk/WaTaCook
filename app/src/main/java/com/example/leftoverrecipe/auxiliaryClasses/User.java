@@ -8,16 +8,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Map;
+
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.EMAIL_ADDRESS;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.FULL_NAME;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.PHONE_NUMBER;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.USERNAME;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.USER_INFO;
 
 public class User {
-    public static String FULL_NAME = "Full name", USERNAME = "Username", EMAIL_ADDRESS = "Email address", PHONE_NUMBER = "Phone number";
     public static User user;
-//    private static HashSet<Recipe> likesSet, dislikesSet;
     private static HashMap<String, HashMap> data;
     private static HashMap<String, Recipe> likesMap, dislikesMap;
     private static HashMap<String, String> userInfo;
@@ -26,26 +26,16 @@ public class User {
 
     public User(HashMap<String, String> userInfo) {
         User.userInfo = userInfo;
-//        // Log.d("220284hk", "User : (in user method)" + userIn);
     }
 
-    public static User getInstance() {
-        return user;
-    }
-
-    public static void createInstance(HashMap<String, String> userInfo) {
-        user = new User(userInfo);
-    }
+    public static void createInstance(HashMap<String, String> userInfo) { user = new User(userInfo); }
 
     public static void retrieveInstance(HashMap<String, HashMap> userData) {
-        Log.d("220284hk", "retrieveInstance: " + userData);
+        Log.d(TAG, "retrieveInstance: " + userData);
         data = userData;
-        createInstance(userData.get("User Info"));
-//        User has no previous preferences
-//        likesSet = new HashSet<Recipe>();
-//        dislikesSet = new HashSet<Recipe>();
+        createInstance(userData.get(USER_INFO));
         HashMap<String, HashMap> preferences = userData.get("Preferences");
-        if (preferences == null) {
+        if (preferences == null) {      //New account or no history of preferences
             likesMap = new HashMap<>();
             dislikesMap = new HashMap<>();
             return;
@@ -54,96 +44,16 @@ public class User {
                 likesMap = new HashMap<>();
             } else {
                 likesMap = preferences.get("Likes");
-//                for (Map.Entry<String, Recipe> x : likesMap.entrySet()) {
-//                    likesSet.add(x.getValue());
-//                }
             }
             if (preferences.get("Dislikes") == null) {
                 dislikesMap = new HashMap<>();
             } else {
                 dislikesMap = preferences.get("Dislikes");
-//                for (Map.Entry<String, Recipe> x : dislikesMap.entrySet()) {
-//                    dislikesSet.add(x.getValue());
-//                }
             }
-            System.out.println("After retrieval: dislikesMap:" + dislikesMap.size() );
-//            System.out.println("After retrieval: dislikesSet:" + dislikesSet.size() );
-            System.out.println("After retrieval: likesMap:" + likesMap.size() );
-//            System.out.println("After retrieval: likesSet:" + likesSet.size() );
-//                System.out.println(likesMap.get("74172"));
-//                System.out.println("likesMap: " + likesMap);
-//                System.out.println("likesMap: " + likesMap.values());
-//                HashMap<String, String> testMap = new HashMap<>();
-//                testMap.put("hlelo" , "lheolhe");
-//                System.out.println(testMap);
-//                for (Collection x: likesMap.values()) {
-//                    System.out.println(x);
-//                }
-//                likesSet.addAll(likesMap.values());
-//                likesSet = new HashSet<Recipe>(likesMap.values());
-//                HashSet<Recipe> test = new HashSet<Recipe>();
-//                test.add(testRecipe);
-//                System.out.println(likesSet);
-//                System.out.println(test);
-//            likesSet = (likesMap == null ? new HashSet<>() : new HashSet(likesMap.values()));
-
-//            User has preferences but no history of dislikes
-//            if (userData.get("Preferences").get("Dislikes") == null)
-//                dislikesSet = new HashSet<Recipe>();
-//            else {
-//                dislikesMap = (HashMap) userData.get("Preferences").get("Dislikes");
-//                dislikesSet = new HashSet<Recipe>(dislikesMap.values());
-//            }
-//                User has history of dislikes.
-//            RISKY TEST
-//                dislikesSet = (dislikesMap == null ? new HashSet<>() : new HashSet(dislikesMap.values()));
-//        dislikesMap = (HashMap) userData.get("Preferences").get("Dislikes");
-//        likesMap = (HashMap) userData.get("Preferences").get("Likes");
-//            Log.d("220284hk", "dislikesMap.values:" + dislikesMap.values());
+            System.out.println("After retrieval: dislikesMap:" + dislikesMap.size());
+            System.out.println("After retrieval: likesMap:" + likesMap.size());
         }
-//        Log.d("220284hk", "dislikesSet:" + dislikesSet + "\nlikesSet:" + likesSet);
-//        user = new User(userInfo);
     }
-
-
-//    public  HashMap getData() {
-//        data = new HashMap();
-//        setUserLikes();
-//        setUserDislikes();
-//        data.put("Likes", new HashMap<>(likesMap));
-//        data.put("Dislikes", new HashMap<>(dislikesMap));
-//        data.put("User Info", new HashMap<>(userInfo));
-//        return data;
-//    }
-
-//    public static HashSet<Recipe> getLikesSet() { return likesSet; }
-//
-//    public static HashSet<Recipe> getDislikesSet() { return dislikesSet; }
-
-    public static HashMap<String, String> getUserInfo() { return userInfo; }
-
-//    public void updateLikesSet() {
-//        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseAuth.getUid()).child("Preferences");
-//        likesRef = databaseReference.child("Likes");
-//        dislikesRef = databaseReference.child("Dislikes");
-//        likesRef.setValue(new ArrayList<>(likesSet));
-//        setUserLikes();
-//    }
-
-//    public void updateDislikesSet() {
-//        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseAuth.getUid()).child("Preferences");
-//        likesRef = databaseReference.child("Likes");
-//        dislikesRef = databaseReference.child("Dislikes");
-//        dislikesRef.setValue(new ArrayList<>(dislikesSet));
-//    }
-
-    public static String getFullName() { return userInfo.get(FULL_NAME); }
-
-    public static String getUsername() { return userInfo.get(USERNAME); }
-
-    public static String getEmailAddress() { return userInfo.get(EMAIL_ADDRESS); }
-
-    public static String getPhoneNumber() { return userInfo.get(PHONE_NUMBER); }
 
     public void updateDBPreferences() {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseAuth.getUid()).child("Preferences");
@@ -157,21 +67,24 @@ public class User {
         databaseReference.setValue(data);
     }
 
-//        LinkedHashSet linkedHashSet = new LinkedHashSet();
-//        linkedHashSet.add("hello");
-//        Recipe x = likesSet.forEach();
-//        Recipe[] likesArray = (Recipe[]) likesSet.toArray();
-//        for (int i = 0; i < likesSet.size(); i++) {
-//            likesMap.put(likesArray[i].getId(), likesArray[i]);
-//        }
 
-    public static HashMap<String, Recipe> getLikesMap() {
-        return likesMap;
+    public static User getInstance() {
+        return user;
     }
 
-    public static HashMap<String, Recipe> getDislikesMap() {
-        return dislikesMap;
-    }
+    public static HashMap<String, String> getUserInfo() { return userInfo; }
+
+    public static String getFullName() { return userInfo.get(FULL_NAME); }
+
+    public static String getUsername() { return userInfo.get(USERNAME); }
+
+    public static String getEmailAddress() { return userInfo.get(EMAIL_ADDRESS); }
+
+    public static String getPhoneNumber() { return userInfo.get(PHONE_NUMBER); }
+
+    public static HashMap<String, Recipe> getLikesMap() { return likesMap; }
+
+    public static HashMap<String, Recipe> getDislikesMap() { return dislikesMap; }
 
     @NonNull
     @Override

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.leftoverrecipe.auxiliaryClasses.User;
 import com.example.leftoverrecipe.viewmodel.FavouriteViewModel;
 import com.example.leftoverrecipe.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +29,7 @@ public class FavouriteFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        if (firebaseAuth.getCurrentUser() == null)
+        if (User.getInstance() == null)
             return inflater.inflate(R.layout.favourite_fragment_not_logged_in, container, false);
         else
             return inflater.inflate(R.layout.favourite_fragment, container, false);

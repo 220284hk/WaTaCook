@@ -28,7 +28,7 @@
 //    private Button createButton;
 //    //    private FirebaseDatabase mFirebaseDatabase;
 //    private FirebaseAuth mFirebaseAuth;
-//    private DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users");
+//    private DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child(USERS);
 //    private FirebaseUser firebaseUser;
 //    private User user;
 //
@@ -75,11 +75,11 @@
 //    private boolean addUserToDatabase() {
 //        firebaseUser = mFirebaseAuth.getCurrentUser();
 //        final AtomicBoolean flag = new AtomicBoolean();
-//        myRef.child(firebaseUser.getUid()).child("User Info").setValue(user).addOnCompleteListener(t -> {
+//        myRef.child(firebaseUser.getUid()).child(USER_INFO).setValue(user).addOnCompleteListener(t -> {
 //            flag.set(t.isSuccessful());
 ////                Toast.makeText(getApplicationContext(), t.getException().getMessage(), Toast.LENGTH_SHORT).show();
 //        });
-//        myRef.child(firebaseUser.getUid()).child("Full Name").setValue(user.getFullname()).addOnCompleteListener(t -> {
+//        myRef.child(firebaseUser.getUid()).child(FULL_NAME).setValue(user.getFullname()).addOnCompleteListener(t -> {
 //            if (!t.isSuccessful()) {
 //                Toast.makeText(getApplicationContext(), t.getException().getMessage(), Toast.LENGTH_SHORT).show();
 //                flag.set(false);
