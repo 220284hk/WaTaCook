@@ -8,8 +8,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Map;
 
 public class User {
@@ -19,7 +21,6 @@ public class User {
     private static HashMap<String, HashMap> data;
     private static HashMap<String, Recipe> likesMap, dislikesMap;
     private static HashMap<String, String> userInfo;
-    private static Recipe testRecipe = new Recipe(new String[]{"0", "1", "2", "3", "4", "5"});
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private DatabaseReference databaseReference;
 
@@ -43,15 +44,28 @@ public class User {
 //        User has no previous preferences
         likesSet = new HashSet<Recipe>();
         dislikesSet = new HashSet<Recipe>();
-        HashMap temp = userData.get("Preferences");
-        if (temp == null) {
+        HashMap<String, HashMap> preferences = userData.get("Preferences");
+        if (preferences == null) {
+            likesMap = new HashMap<>();
+            dislikesMap = new HashMap<>();
             return;
         } else {
-            if (temp.get("Likes") == null || temp.get("Dislikes") == null) {return;}
-                likesMap = (HashMap) userData.get("Preferences").get("Likes");
+            if (preferences.get("Likes") == null) {
+                likesMap = new HashMap<>();
+            } else {
+                likesMap = preferences.get("Likes");
                 for (Map.Entry<String, Recipe> x : likesMap.entrySet()) {
                     likesSet.add(x.getValue());
                 }
+            }
+            if (preferences.get("Dislikes") == null) {
+                dislikesMap = new HashMap<>();
+            } else {
+                dislikesMap = preferences.get("Dislikes");
+                for (Map.Entry<String, Recipe> x : dislikesMap.entrySet()) {
+                    dislikesSet.add(x.getValue());
+                }
+            }
 //                System.out.println(likesMap.get("74172"));
 //                System.out.println("likesMap: " + likesMap);
 //                System.out.println("likesMap: " + likesMap.values());
@@ -142,23 +156,39 @@ public class User {
     }
 
     public void setUserLikes() {
-        likesMap = new HashMap<>();
-        int count = 0;
-        System.out.println("likesSet: " + likesSet);
-        for (Recipe x : likesSet) {
-            likesMap.put(x.getId(), x);
-            System.out.println("testing");
+//        likesMap = new HashMap<>();
+        HashSet testSet = new HashSet();
+        testSet.add("testing");
+        testSet.add("yikes");
+        testSet.add("friend");
+        for (Object x: testSet) {
+            System.out.println(x);
+            System.out.println(((String) x));
         }
+//        System.out.println(testSet);
+//        System.out.println("setUserLikes: likesSet" + likesSet);
+//        System.out.println("setUserLikes: likesMap" + likesMap);
+        for (Object x : likesSet) {
+//            likesMap.put(x.getId(), x);
+            System.out.println(x);
+        }
+//        LinkedHashSet linkedHashSet = new LinkedHashSet();
+//        linkedHashSet.add("hello");
+//        Recipe x = likesSet.forEach();
+//        Recipe[] likesArray = (Recipe[]) likesSet.toArray();
+//        for (int i = 0; i < likesSet.size(); i++) {
+//            likesMap.put(likesArray[i].getId(), likesArray[i]);
+//        }
     }
 
     public void setUserDislikes() {
-        dislikesMap = new HashMap<String, Recipe>();
-        System.out.println(dislikesSet);
-//        for ((String) x : dislikesSet) {
+//        dislikesMap = new HashMap<String, Recipe>();
+        for (Recipe x : dislikesSet) {
+            System.out.println(x);
 //            dislikesMap.put(x.getId(), x);
 //            System.out.println(x);
 //            System.out.println(x.getId());
-//        }
+        }
     }
 
     @NonNull
