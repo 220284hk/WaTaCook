@@ -1,9 +1,7 @@
-package com.example.leftoverrecipe;
+package com.example.leftoverrecipe.auxiliaryClasses;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import com.example.leftoverrecipe.auxiliaryClasses.Recipe;
 
 import java.util.ArrayList;
 

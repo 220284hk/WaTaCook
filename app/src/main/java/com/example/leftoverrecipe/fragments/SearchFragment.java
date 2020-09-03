@@ -20,7 +20,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.leftoverrecipe.MyParcelable;
+import com.example.leftoverrecipe.auxiliaryClasses.MyParcelable;
 import com.example.leftoverrecipe.NoResultsActivity;
 import com.example.leftoverrecipe.R;
 import com.example.leftoverrecipe.SearchResultsActivity;

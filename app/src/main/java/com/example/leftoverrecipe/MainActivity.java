@@ -2,7 +2,6 @@ package com.example.leftoverrecipe;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +15,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import static com.example.leftoverrecipe.auxiliaryClasses.Strings.*;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.FULL_NAME;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.TAG;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.USERS;
 
 public class MainActivity extends AppCompatActivity {
     private DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child(USERS).child(FirebaseAuth.getInstance().getUid()).child(FULL_NAME);
@@ -35,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         if (User.getInstance() != null) {
-             Log.d(TAG, "MainActivity onStop method preupdateDB");
+            Log.d(TAG, "MainActivity onStop method preupdateDB");
             User.getInstance().updateDBPreferences();
-             Log.d(TAG, "MainActivity onStop method postupdateDB");
+            Log.d(TAG, "MainActivity onStop method postupdateDB");
         }
     }
 
