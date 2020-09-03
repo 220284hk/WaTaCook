@@ -47,7 +47,7 @@
 //    public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
 //        Recipe recipe = recipeArray.get(position);
 //        holder.id.setText(recipe.getId());
-//        holder.url = Uri.parse(recipe.getSourceURL().toString());
+//        holder.url = Uri.parse(recipe.getSourceUrl().toString());
 //        holder.mTitleTextView.setText(recipe.getTitle());
 //        Glide.with(context).load(recipe.getImageURL()).into(holder.mImageView);
 //        holder.mServingsSizeTextView.setText(recipe.getServings());

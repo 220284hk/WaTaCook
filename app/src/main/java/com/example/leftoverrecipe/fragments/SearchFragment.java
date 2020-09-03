@@ -136,12 +136,12 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
     private ArrayList<Recipe> resultsToRecipe(JSONArray jsonArray) throws JSONException {
         int num = jsonArray.length(), j = 0;
         ArrayList<Recipe> recipeArray = new ArrayList<Recipe>();
-        String id, sourceURL, title, imageURL, servings, prepTime;
+        String id, sourceUrl, title, imageURL, servings, prepTime;
         for (int i = 0; i < num; i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);
             id = object.getString(ID);
             if (User.getDislikesMap().containsKey(id)) { continue; }
-            sourceURL = object.getString(SOURCE_URL);
+            sourceUrl = object.getString(SOURCE_URL);
             title = i + " " + object.getString(TITLE);
             imageURL = String.format("https://spoonacular.com/recipeImages/%s-480x360.jpg", object.get(ID));
             servings = "Serves: " + object.getString(SERVINGS);
@@ -150,7 +150,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
                 prepTime = "99+ mins";
             else
                 prepTime += " mins";
-            String[] strings = new String[]{id, sourceURL, title, imageURL, servings, prepTime};
+            String[] strings = new String[]{id, sourceUrl, title, imageURL, servings, prepTime};
             recipeArray.add(new Recipe(strings));
         }
         return recipeArray;

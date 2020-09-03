@@ -25,12 +25,12 @@ public class Recipe implements Parcelable {
             return new Recipe[size];
         }
     };
-    private String id, sourceURL, title, imageURL, servings, prepTime;
+    private String id, sourceUrl, title, imageURL, servings, prepTime;
     private Image image;
 
     public Recipe(String[] info) {
         this.id = info[0];
-        this.sourceURL = info[1];
+        this.sourceUrl = info[1];
         this.title = info[2];
         this.imageURL = info[3];
         this.servings = info[4];
@@ -38,9 +38,11 @@ public class Recipe implements Parcelable {
 //        this.image = image;
     }
 
+
+
     public Recipe(HashMap<String, String> info) {
         this.id = info.get(ID);
-        this.sourceURL = info.get(SOURCE_URL);
+        this.sourceUrl = info.get(SOURCE_URL);
         this.title = info.get(TITLE);
         this.imageURL =  String.format("https://spoonacular.com/recipeImages/%s-480x360.jpg", info.get(ID));
         this.servings = info.get(SERVINGS);
@@ -50,7 +52,7 @@ public class Recipe implements Parcelable {
 
     protected Recipe(Parcel in) {
         id = in.readString();
-        sourceURL = in.readString();
+        sourceUrl = in.readString();
         title = in.readString();
         imageURL = in.readString();
         servings = in.readString();
@@ -77,6 +79,10 @@ public class Recipe implements Parcelable {
         return prepTime;
     }
 
+    public String getSourceUrl() {
+        return sourceUrl;
+    }
+
     public Image getImage() {
         return image;
     }
@@ -90,7 +96,7 @@ public class Recipe implements Parcelable {
     public String toString() {
         return "Recipe{" +
                 "id='" + id + '\'' +
-                ", sourceUrl='" + sourceURL + '\'' +
+                ", sourceUrl='" + sourceUrl + '\'' +
                 ", title='" + title + '\'' +
                 ", imageURL='" + imageURL + '\'' +
                 ", servings='" + servings + '\'' +
@@ -99,14 +105,10 @@ public class Recipe implements Parcelable {
                 '}';
     }
 
-    public String getSourceURL() {
-        return sourceURL;
-    }
-
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(id);
-        parcel.writeString(sourceURL);
+        parcel.writeString(sourceUrl);
         parcel.writeString(title);
         parcel.writeString(imageURL);
         parcel.writeString(servings);

@@ -12,8 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.leftoverrecipe.MainActivity;
 import com.example.leftoverrecipe.R;
-import com.example.leftoverrecipe.auxiliaryClasses.Recipe;
-import com.example.leftoverrecipe.auxiliaryClasses.Strings;
 import com.example.leftoverrecipe.auxiliaryClasses.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -55,10 +53,11 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view) {
         if (isFieldEmpty()) { return; }
-//        Toast.makeText(getApplicationContext(), "Attempting to log in...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Attempting to log in...", Toast.LENGTH_SHORT).show();
         mFirebaseAuth.signInWithEmailAndPassword(mUserName.getText().toString(), mPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+//                User has email AND is verified
                 if (task.isSuccessful() && mFirebaseAuth.getCurrentUser().isEmailVerified()) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     if (User.getInstance() == null) { //This will be the case if app has just started and the user is NOT creating a new account
@@ -66,11 +65,11 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (task.isSuccessful()) {
-                                     Log.d(TAG, "onDataChange method: " + snapshot.getValue().toString());
+                                    Log.d(TAG, "onDataChange method: " + snapshot.getValue().toString());
                                     HashMap<String, HashMap> data = (HashMap) snapshot.getValue();
                                     Log.d("LoginActivity: ", "Data retrieved from firebase: " + data);
                                     User.retrieveInstance(data);
-                                     Log.d("USER", "Global user added!");
+                                    Log.d("USER", "Global user added!");
                                     startActivity(intent);
                                 } else {
                                     System.out.println(task.getException().getCause());

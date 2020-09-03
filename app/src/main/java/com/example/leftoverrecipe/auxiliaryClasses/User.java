@@ -51,7 +51,7 @@ public class User {
                     likesMap.put(x.getKey(), new Recipe(x.getValue()));
                 }
             }
-            if (preferences.get(DISLIKES) == null) {
+            if (preferences.get(DISLIKES) != null) {
                 for (Map.Entry<String, HashMap> x: ((HashMap<String, HashMap>) preferences.get(DISLIKES)).entrySet()) {
                     likesMap.put(x.getKey(), new Recipe(x.getValue()));
                 }
