@@ -48,4 +48,8 @@
     <string name="favourites">Favourites</string>
     <string name="please_log_in">Please log in to use this feature :)</string>
 
+    <!--    Easter Egg-->
+    <string name="easter_egg">Give Hyun money</string>
+    <string name="easter_string">Thank you for your support\n\nMy bank is 농협\nAccount number: 302-1213-34...</string>
+
 </resources>

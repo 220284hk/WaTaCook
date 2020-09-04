@@ -20,6 +20,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.leftoverrecipe.EasterEgg;
 import com.example.leftoverrecipe.auxiliaryClasses.MyParcelable;
 import com.example.leftoverrecipe.NoResultsActivity;
 import com.example.leftoverrecipe.R;
@@ -50,7 +51,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
     private RequestQueue requestQueue;
     private ImageView[] ingredientsImages;
     private String[] ingredientsStringArray;
-    private ArrayList arrayList;
+//    private ArrayList arrayList;
     private boolean[] ingredientsSelected;
     private int size, count;
 
@@ -81,7 +82,11 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
 //        Search button clicked
         if (view instanceof ImageButton) {
             String ingredients = searchText.getText().toString();
-            if (ingredients.equals("")) return;
+            if (ingredients.isEmpty()) return;
+            if (ingredients.equals(getString(R.string.easter_egg))) {
+                startActivity(new Intent(getContext(), EasterEgg.class));
+                return;
+            }
             String url = String.format("https://api.spoonacular.com/recipes/search?query=%s&number=%s&apiKey=29345819847c4e6f89d18c63baca3cab", ingredients, NUMBER_OF_RECIPES);
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
                 try {
