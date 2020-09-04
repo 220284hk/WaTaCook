@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:padding="10dp"
-        android:text="@string/title_template_text"
+        android:text="@string/title_template_text_long"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,8 +56,8 @@
 
     <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/large_image"
+        android:layout_height="@dimen/large_image"
         android:layout_margin="@dimen/margin_x_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +68,8 @@
 
     <ImageView
         android:id="@+id/likes_imageView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/small_icon"
+        android:layout_height="@dimen/small_icon"
         android:onClick="pleaseLogIn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,16 +80,15 @@
 
     <ImageView
         android:id="@+id/dislike_imageView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/small_icon"
+        android:layout_height="@dimen/small_icon"
         android:contentDescription="@string/dislike_button"
         app:layout_constraintBottom_toBottomOf="@+id/likes_imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/likes_imageView"
         app:layout_constraintTop_toTopOf="@+id/likes_imageView"
         android:onClick="pleaseLogIn"
-        app:srcCompat="@drawable/dislike_icon"
-        app:tint="@color/colorAnalogousTwo" />
+        app:srcCompat="@drawable/dislike_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

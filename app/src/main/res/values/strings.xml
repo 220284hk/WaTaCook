@@ -24,7 +24,8 @@
     <string name="image_of_logo">image of logo</string>
     <string name="transition_name_logo">TRANSITION_NAME_LOGO</string>
     <string name="search_bar">search_bar</string>
-    <string name="title_template_text">Chicken parmesan food etc longer pieces of text and so forth</string>
+    <string name="title_template_text_long">Chicken parmesan food etc longer pieces of text and so forth</string>
+    <string name="title_template_text_short">Chicken parmesan food</string>
     <string name="time_template_text">25 mins</string>
     <string name="servings_template_text">Serves 4</string>
 
@@ -40,7 +41,7 @@
     <string name="no_results_p">\nUnfortunately, there are no results for the ingredients you have selected. Try checking the spelling or adding fewer ingredients. Note, it\'s for the main ingredients so it\'s not a good idea to add more than two types of meat!</string>
     <string name="no_results_title">NO RESULTS</string>
 
-<!--    Recipes adapter-->
+    <!--    Recipes adapter-->
     <string name="filled">filled</string>
     <string name="nFilled">not filled</string>
     <string name="search">Search</string>

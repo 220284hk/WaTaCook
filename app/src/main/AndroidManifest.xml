@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/logo_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".EasterEgg"></activity>
         <activity
             android:name=".login.SplashScreen"
             android:noHistory="true"
@@ -22,29 +23,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".login.LoginActivity">
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-<!---->
-<!---->
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+        <activity android:name=".login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!--  -->
+                <!--  -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".login.CreateAccountActivity" android:noHistory="true" android:parentActivityName=".login.LoginActivity"/>
+        <activity
+            android:name=".login.CreateAccountActivity"
+            android:noHistory="true"
+            android:parentActivityName=".login.LoginActivity" />
         <activity android:name=".MainActivity">
 
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
-<!---->
-<!---->
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!--  -->
+            <!--  -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".SearchResultsActivity"
-            android:launchMode="singleTask"/>
-        <activity android:name=".NoResultsActivity"
-            android:launchMode="singleTask"/>
+        <activity
+            android:name=".SearchResultsActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".NoResultsActivity"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>
