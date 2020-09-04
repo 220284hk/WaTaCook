@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class SearchResultsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecipesAdapter recipesAdapter;
+    private static Integer ONE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class SearchResultsActivity extends AppCompatActivity {
         MyParcelable object = b.getParcelable(SearchFragment.KEY);
         assert object != null;
         ArrayList<Recipe> arrayList = object.getArrList();
-        recipesAdapter = new RecipesAdapter(this, arrayList);
+        recipesAdapter = new RecipesAdapter(this, arrayList, ONE);
         recyclerView.setAdapter(recipesAdapter);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recipesAdapter.notifyDataSetChanged();

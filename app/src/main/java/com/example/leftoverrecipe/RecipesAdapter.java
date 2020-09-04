@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,59 +31,68 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
     private LayoutInflater mInflater;
     private ArrayList<Recipe> recipeArray;
     private Context context;
+    private Integer type;
 
-    public RecipesAdapter(Context context, ArrayList<Recipe> recipeArray) {
+    public RecipesAdapter(Context context, ArrayList<Recipe> recipeArray, Integer type) {
         this.mInflater = LayoutInflater.from(context);
         this.recipeArray = recipeArray;
         this.context = context;
+        this.type = type;
     }
 
     @NonNull
     @Override
     public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ConstraintLayout constraintLayout = (ConstraintLayout) mInflater.inflate(R.layout.item_view, parent, false);
-        return new RecipeViewHolder(constraintLayout, this);
+        ConstraintLayout constraintLayout;
+        if (type == 1) {
+            constraintLayout = (ConstraintLayout) mInflater.inflate(R.layout.item_view, parent, false);
+            return new RecipeViewHolder(constraintLayout, this);
+        } else {
+            CardView cardView = (CardView) mInflater.inflate(R.layout.card_view, parent, false);
+            return new RecipeViewHolder(cardView, this);
+        }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipeArray.get(position);
-        System.out.println(recipe);
-        holder.id.setText(recipe.getId());
         holder.url = Uri.parse(recipe.getSourceUrl());
         holder.mTitleTextView.setText(recipe.getTitle());
         Glide.with(context).load(recipe.getImageURL()).into(holder.mImageView);
-        holder.mServingsSizeTextView.setText(recipe.getServings());
-        holder.mPrepTimeTextView.setText(recipe.getPrepTime());
-        if (User.getInstance() != null) {
-            holder.mDislikeImageView.setOnClickListener(v -> {
-                recipeArray.remove(holder.getAdapterPosition());
-                notifyItemChanged(holder.getAdapterPosition());
-                notifyItemRangeRemoved(holder.getAdapterPosition(), 1);
-                TextView titleTextView = holder.mTitleTextView;
+        if (type == 1 ) {
+            holder.id.setText(recipe.getId());
+            holder.mServingsSizeTextView.setText(recipe.getServings());
+            holder.mPrepTimeTextView.setText(recipe.getPrepTime());
+            if (User.getInstance() != null) {
+                holder.mDislikeImageView.setOnClickListener(v -> {
+                    recipeArray.remove(holder.getAdapterPosition());
+                    notifyItemChanged(holder.getAdapterPosition());
+                    notifyItemRangeRemoved(holder.getAdapterPosition(), 1);
+                    TextView titleTextView = holder.mTitleTextView;
 //            User.getDislikesSet().add(recipe);
-                User.getDislikesMap().put(recipe.getId(), recipe);
-                User.getLikesMap().remove(recipe.getId());
-                Toast.makeText(context, titleTextView.getText().toString() + recipe.getId() + " has been disliked. This will not be shown in future searches!", Toast.LENGTH_SHORT).show();
-                if (recipeArray.size() == 0) {
-                    Toast.makeText(context, "You deleted everything!", Toast.LENGTH_SHORT).show();
-                    ((Activity) context).finish();
-                }
-            });
-            holder.mLikesImageView.setOnClickListener(v -> {
-                if ( ((ImageView) v).getContentDescription() == null || ((ImageView) v).getContentDescription().equals(NOT_FILLED)) {
-                    User.getLikesMap().put(recipe.getId(), recipe);
-                    ((ImageView) v).setImageResource(R.drawable.favourite_post_icon);
-                    ((ImageView) v).setContentDescription(FILLED);
-                    Toast.makeText(context, recipe.getTitle() + recipe.getId() + " has been liked. It will appear in the favourites page!", Toast.LENGTH_SHORT).show();
-                } else {
-                    v.setContentDescription(context.getResources().getString(R.string.filled));
-                    ((ImageView) v).setImageResource(R.drawable.favourite_pre_icon);
-                    User.getDislikesMap().remove(recipe.getId());
+                    User.getDislikesMap().put(recipe.getId(), recipe);
+                    User.getLikesMap().remove(recipe.getId());
+                    Toast.makeText(context, titleTextView.getText().toString() + recipe.getId() + " has been disliked. This will not be shown in future searches!", Toast.LENGTH_SHORT).show();
+                    if (recipeArray.size() == 0) {
+                        Toast.makeText(context, "You deleted everything!", Toast.LENGTH_SHORT).show();
+                        ((Activity) context).finish();
+                    }
+                });
+                holder.mLikesImageView.setOnClickListener(v -> {
+                    if ( ((ImageView) v).getContentDescription() == null || ((ImageView) v).getContentDescription().equals(NOT_FILLED)) {
+                        User.getLikesMap().put(recipe.getId(), recipe);
+                        ((ImageView) v).setImageResource(R.drawable.favourite_post_icon);
+                        ((ImageView) v).setContentDescription(FILLED);
+                        Toast.makeText(context, recipe.getTitle() + recipe.getId() + " has been liked. It will appear in the favourites page!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        v.setContentDescription(context.getResources().getString(R.string.filled));
+                        ((ImageView) v).setImageResource(R.drawable.favourite_pre_icon);
+                        User.getDislikesMap().remove(recipe.getId());
 //                User.getLikesSet().remove(recipe);
 //                ((ImageView) v).setImageDrawable(context.getResources().getDrawable(R.drawable.favourite_post_icon));
-                }
-            });
+                    }
+                });
+            }
         }
     }
 
@@ -95,10 +105,16 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
 
         private Uri url;
         private ConstraintLayout view;
+        private CardView cardView;
         private TextView mTitleTextView, mPrepTimeTextView, mServingsSizeTextView, id;
         private ImageView mImageView, mLikesImageView, mDislikeImageView;
         public RecipeViewHolder(@NonNull ConstraintLayout itemView, RecipesAdapter recipesAdapter) {
             super(itemView);
+            setupViews();
+        }
+
+        public RecipeViewHolder(@NonNull CardView cardView, RecipesAdapter recipesAdapter) {
+            super(cardView);
             setupViews();
         }
 
@@ -114,15 +130,20 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         }
 
         private void setupViews() {
-            this.view = itemView.findViewById(R.id.recipeConstraintLayout);
-            this.view.setOnClickListener(this);
+            if (type == 1) {
+                this.view = itemView.findViewById(R.id.recipeConstraintLayout);
+                this.mPrepTimeTextView = itemView.findViewById(R.id.time_required_textview);
+                this.mServingsSizeTextView = itemView.findViewById(R.id.servings_textview);
+                this.mLikesImageView = itemView.findViewById(R.id.likes_imageView);
+                this.mDislikeImageView = itemView.findViewById(R.id.dislike_imageView);
+                this.view.setOnClickListener(this);
+            } else {
+                this.cardView = itemView.findViewById(R.id.cardView);
+                this.cardView.setOnClickListener(this);
+            }
             this.mTitleTextView = itemView.findViewById(R.id.title_textview);
-            this.mPrepTimeTextView = itemView.findViewById(R.id.time_required_textview);
-            this.mServingsSizeTextView = itemView.findViewById(R.id.servings_textview);
             this.mImageView = itemView.findViewById(R.id.imageView);
             this.id = itemView.findViewById(R.id.id);
-            this.mLikesImageView = itemView.findViewById(R.id.likes_imageView);
-            this.mDislikeImageView = itemView.findViewById(R.id.dislike_imageView);
         }
     }
 }

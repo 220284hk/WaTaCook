@@ -23,9 +23,9 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class FavouriteFragment extends Fragment {
-
-    private FavouriteViewModel mViewModel;
-    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    private static Integer TWO = 2;
+//    private FavouriteViewModel mViewModel;
+//    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private RecyclerView recyclerView;
     private RecipesAdapter recipesAdapter;
 
@@ -46,7 +46,7 @@ public class FavouriteFragment extends Fragment {
         }
 //        Log.d(TAG, "2 arrayList" + arrayList);
 
-        recipesAdapter = new RecipesAdapter(getContext(), arrayList);
+        recipesAdapter = new RecipesAdapter(getContext(), arrayList, TWO);
         recyclerView.setAdapter(recipesAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

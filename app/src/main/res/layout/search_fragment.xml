@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_height="wrap_content"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         style="@style/AppTheme.SearchFragments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -80,7 +80,8 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -92,6 +93,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:scaleType="fitXY"
                     android:src="@mipmap/meat_chicken"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
@@ -104,6 +106,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:scaleType="fitXY"
                     android:src="@mipmap/meat_pork"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
@@ -116,6 +119,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:scaleType="fitXY"
                     android:src="@mipmap/meat_beef"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
@@ -128,6 +132,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:scaleType="fitXY"
                     android:src="@mipmap/meat_lamb"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
@@ -147,7 +152,8 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -159,6 +165,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:src="@mipmap/fish_salmon"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                     app:siBorderColor="@android:color/black"
@@ -170,6 +177,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:src="@mipmap/fish_cod"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                     app:siBorderColor="@android:color/black"
@@ -181,6 +189,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:src="@mipmap/fish_mackerel"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                     app:siBorderColor="@android:color/black"
@@ -192,6 +201,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:src="@mipmap/fish_tuna"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                     app:siBorderColor="@android:color/black"
@@ -212,7 +222,8 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -224,6 +235,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:src="@mipmap/veg_tomato"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                     app:siBorderColor="@android:color/black"
@@ -235,6 +247,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:src="@mipmap/veg_carrot"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                     app:siBorderColor="@android:color/black"
@@ -246,6 +259,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:src="@mipmap/veg_broccoli"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                     app:siBorderColor="@android:color/black"
@@ -257,6 +271,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:src="@mipmap/veg_cauliflower"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                     app:siBorderColor="@android:color/black"
@@ -268,6 +283,7 @@
                     android:layout_width="@dimen/small_image"
                     android:layout_height="@dimen/small_image"
                     android:layout_margin="@dimen/margin_xx_small"
+                    android:background="@drawable/background_border_2"
                     android:src="@mipmap/veg_red_onion"
                     android:theme="@style/AppTheme.SearchFragments.IngredientImage"
                     app:siBorderColor="@android:color/black"

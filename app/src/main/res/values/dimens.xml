@@ -20,5 +20,6 @@
 
 <!--    Images -->
     <dimen name="small_image">100dp</dimen>
+    <dimen name="smaller_image">80dp</dimen>
 
 </resources>
