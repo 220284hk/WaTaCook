@@ -1,6 +1,5 @@
 package com.example.leftoverrecipe.auxiliaryClasses;
 
-import android.media.Image;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -26,7 +25,7 @@ public class Recipe implements Parcelable {
         }
     };
     private String id, sourceUrl, title, imageURL, servings, prepTime;
-    private Image image;
+//    private Image image;
 
     public Recipe(String[] info) {
         this.id = info[0];
@@ -39,12 +38,11 @@ public class Recipe implements Parcelable {
     }
 
 
-
     public Recipe(HashMap<String, String> info) {
         this.id = info.get(ID);
         this.sourceUrl = info.get(SOURCE_URL);
         this.title = info.get(TITLE);
-        this.imageURL =  String.format("https://spoonacular.com/recipeImages/%s-480x360.jpg", info.get(ID));
+        this.imageURL = String.format("https://spoonacular.com/recipeImages/%s-480x360.jpg", info.get(ID));
         this.servings = info.get(SERVINGS);
         this.prepTime = info.get(READY_IN_MINUTES);
 //        this.image = image;
@@ -83,9 +81,9 @@ public class Recipe implements Parcelable {
         return sourceUrl;
     }
 
-    public Image getImage() {
-        return image;
-    }
+//    public Image getImage() {
+//        return image;
+//    }
 
     @Override
     public int describeContents() {
@@ -101,7 +99,7 @@ public class Recipe implements Parcelable {
                 ", imageURL='" + imageURL + '\'' +
                 ", servings='" + servings + '\'' +
                 ", prepTime='" + prepTime + '\'' +
-                ", image=" + image +
+//                ", image=" + image +
                 '}';
     }
 
