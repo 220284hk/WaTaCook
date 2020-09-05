@@ -11,13 +11,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.leftoverrecipe.auxiliaryClasses.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import static com.example.leftoverrecipe.auxiliaryClasses.Strings.FULL_NAME;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.TAG;
-import static com.example.leftoverrecipe.auxiliaryClasses.Strings.USERS;
 
 public class MainActivity extends AppCompatActivity {
 //    private DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child(USERS).child(FirebaseAuth.getInstance().getUid()).child(FULL_NAME);

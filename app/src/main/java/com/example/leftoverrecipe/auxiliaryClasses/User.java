@@ -35,7 +35,11 @@ public class User {
         User.userInfo = userInfo;
     }
 
-    public static void createInstance(HashMap<String, String> userInfo) { user = new User(userInfo); }
+    public static void createInstance(HashMap<String, String> userInfo) {
+        likesMap = new HashMap<>();
+        dislikesMap = new HashMap<>();
+        user = new User(userInfo); 
+    }
 
     public static void retrieveInstance(HashMap<String, HashMap> userData) {
         Log.d(TAG, "retrieveInstance: " + userData);
@@ -45,6 +49,7 @@ public class User {
         likesMap = new HashMap<>();
         dislikesMap = new HashMap<>();
         if (preferences == null) {      //New account or no history of preferences
+
         } else {
             if (preferences.get(LIKES) != null) {
                 for (Map.Entry<String, HashMap> x: ((HashMap<String, HashMap>) preferences.get(LIKES)).entrySet()) {

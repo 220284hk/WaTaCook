@@ -39,18 +39,24 @@ public class FavouriteFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         if (User.getInstance() != null) {
             setUpRecyclerView();
-            resetButton = view.findViewById(R.id.reset_button);
-            createAlertDialog();
+            setUpViews();
             resetButton.setOnClickListener(v -> {
                 alertDialog.show();
+
+                setUpRecyclerView();
             });
-            showDeletedButton = view.findViewById(R.id.show_deleted);
             showDeletedButton.setOnClickListener(v -> {
                 startActivity(new Intent(getActivity(), TempDeleteActivity.class));
             });
 
 
         }
+    }
+
+    private void setUpViews() {
+        resetButton = getActivity().findViewById(R.id.reset_button);
+        showDeletedButton = getActivity().findViewById(R.id.show_deleted);
+        createAlertDialog();
     }
 
     private void createAlertDialog() {

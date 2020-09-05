@@ -37,7 +37,7 @@
                 android:focusableInTouchMode="true"
                 android:text="@string/welcome"
                 android:textAllCaps="true"
-                android:textColor="@color/colorPrimaryLight"
+                android:textColor="@color/colorPrimaryMain"
 
                 android:textSize="@dimen/title_large"
                 android:theme="@style/AppTheme.Lobster" />
@@ -84,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:text="220284hk@gmail.com" />
+                    android:text="" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

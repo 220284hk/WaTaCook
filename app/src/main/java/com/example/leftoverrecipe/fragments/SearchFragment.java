@@ -39,6 +39,7 @@ import static com.example.leftoverrecipe.auxiliaryClasses.Strings.ID;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.READY_IN_MINUTES;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.SERVINGS;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.SOURCE_URL;
+import static com.example.leftoverrecipe.auxiliaryClasses.Strings.TAG;
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.TITLE;
 
 @SuppressWarnings("ConstantConditions")
@@ -145,6 +146,8 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         for (int i = 0; i < num; i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);
             id = object.getString(ID);
+//            Log.d(TAG, "User.getInstance().toString: " + User.getInstance().toString());
+//            Log.d(TAG, "User.getDislikeMap().toString(): " + User.getDislikesMap().toString());
             if (User.getInstance() != null && User.getDislikesMap().containsKey(id)) {
                 System.out.println(User.getDislikesMap());
                 System.out.println(User.getDislikesMap().get(id));
