@@ -60,7 +60,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         holder.url = Uri.parse(recipe.getSourceUrl());
         holder.mTitleTextView.setText(recipe.getTitle());
         Glide.with(context).load(recipe.getImageURL()).into(holder.mImageView);
-        Log.d(TAG, holder.mImageView.toString());
+//        Log.d(TAG, holder.mImageView.toString());
         if (type == 1) {
             holder.id.setText(recipe.getId());
             holder.mServingsSizeTextView.setText(recipe.getServings());

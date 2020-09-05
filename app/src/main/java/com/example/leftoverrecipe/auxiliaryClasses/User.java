@@ -50,14 +50,16 @@ public class User {
                 for (Map.Entry<String, HashMap> x: ((HashMap<String, HashMap>) preferences.get(LIKES)).entrySet()) {
                     likesMap.put(x.getKey(), new Recipe(x.getValue()));
                 }
+                Log.d(TAG, "retrieveInstance, likesMap size: " + likesMap.size());
             }
             if (preferences.get(DISLIKES) != null) {
                 for (Map.Entry<String, HashMap> x: ((HashMap<String, HashMap>) preferences.get(DISLIKES)).entrySet()) {
                     dislikesMap.put(x.getKey(), new Recipe(x.getValue()));
                 }
+                Log.d(TAG, "retrieveInstance, dislikesMap size: " + dislikesMap.size());
             }
-            System.out.println("After retrieval: dislikesMap:" + dislikesMap.size());
-            System.out.println("After retrieval: likesMap:" + likesMap.size());
+//            System.out.println("After retrieval: dislikesMap:" + dislikesMap.size());
+//            System.out.println("After retrieval: likesMap:" + likesMap.size());
         }
     }
 
@@ -71,6 +73,11 @@ public class User {
 //        System.out.println("0.0 likesSet: " + likesSet.toString());
 //        System.out.println("0.0 dislikesSet: " + dislikesSet.toString());
         databaseReference.setValue(data);
+    }
+
+    public void resetPreferences() {
+        likesMap.clear();
+        dislikesMap.clear();
     }
 
 

@@ -101,6 +101,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     private boolean extractStrings() {
         userInfoMap = new HashMap<String, String>();
+        userInfo = new String[5];
         for (int i = 0; i < editTextArray.length; i++) {
             String inputField = editTextArray[i].getText().toString();
             userInfo[i] = inputField;
