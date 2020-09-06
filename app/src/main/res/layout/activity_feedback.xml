@@ -1,32 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".mainMenuActivities.FeedbackActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/activity_feedback_title"
-        style="@style/AppTheme.BasicActivity"
-        android:text="@string/feedback_title"
-        android:textSize="@dimen/title_medium"
-        android:layout_marginBottom="@dimen/margin_small"
-        app:layout_constraintBottom_toTopOf="@+id/activity_about_paragraph"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/activity_about_paragraph"
-        style="@style/AppTheme.BasicActivity.paragraph"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/feedback_paragraph"
-        android:textSize="@dimen/text_medium_small"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        tools:context=".mainMenuActivities.FeedbackActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/activity_feedback_title"
+            style="@style/AppTheme.BasicActivity"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/feedback_title"
+            android:textSize="@dimen/title_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/activity_feedback_paragraph"
+            style="@style/AppTheme.BasicActivity.paragraph"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/feedback_paragraph"
+            android:textSize="@dimen/text_medium_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_feedback_title" />
+
+        <TextView
+            android:id="@+id/activity_feedback_nsfaq_title"
+            style="@style/AppTheme.BasicActivity"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/feedback_nsfaq_title"
+            android:textSize="@dimen/title_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_feedback_paragraph" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_feedback_nsfaq_title">
+
+            <TextView
+                style="@style/AppTheme.BasicActivity.paragraph"
+                android:text="Here are some answers to the questions you may have!"
+                android:textSize="@dimen/text_medium_small" />
+
+            <TextView
+                style="@style/AppTheme.BasicActivity.paragraph"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Your app sucks"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_medium_small" />
+
+            <TextView
+                style="@style/AppTheme.BasicActivity.paragraph"
+                android:text="Err.. that's not really a question but I am working hard on it!"
+                android:textSize="@dimen/text_medium_small" />
+
+            <TextView
+                style="@style/AppTheme.BasicActivity.paragraph"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="I input my information incorrectly, can I change it?"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_medium_small" />
+
+            <TextView
+                style="@style/AppTheme.BasicActivity.paragraph"
+                android:text="Unfortunately, that feature is not yet available. Please send me an email with the info you would like to change and I'll see what I can do :)"
+                android:textSize="@dimen/text_medium_small" />
+
+            <TextView
+                style="@style/AppTheme.BasicActivity.paragraph"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="What features are you going to implement next?"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_medium_small" />
+
+            <TextView
+                style="@style/AppTheme.BasicActivity.paragraph"
+                android:text="I want to implement a filter feature for favourited recipes and enable users to organise it in a meaningful way (and preserve it)."
+                android:textSize="@dimen/text_medium_small" />
+
+            <TextView
+                style="@style/AppTheme.BasicActivity.paragraph"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="I have a great app idea that will make us billionaires. We can split it! Do you want to work with me?"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_medium_small" />
+
+            <TextView
+                style="@style/AppTheme.BasicActivity.paragraph"
+                android:text="Sure thing! Click on the link below to send me an email!"
+                android:textSize="@dimen/text_medium_small" />
+            <Button
+                android:id="@+id/activity_feedback_email_me_button"
+                android:layout_gravity="center"
+                android:text="email me!"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

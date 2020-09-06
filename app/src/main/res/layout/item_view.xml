@@ -67,10 +67,10 @@
         app:siShape="@drawable/rounded_rectangle" />
 
     <ImageView
+        android:layout_marginLeft="@dimen/margin_nano"
         android:id="@+id/likes_imageView"
         android:layout_width="@dimen/small_icon"
         android:layout_height="@dimen/small_icon"
-        android:layout_marginLeft="@dimen/margin_x_small"
         android:onClick="pleaseLogIn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/servings_textview"
@@ -81,7 +81,6 @@
         android:id="@+id/dislike_imageView"
         android:layout_width="@dimen/small_icon"
         android:layout_height="@dimen/small_icon"
-        android:layout_marginLeft="@dimen/margin_x_small"
         android:contentDescription="@string/dislike_button"
         android:onClick="pleaseLogIn"
         app:layout_constraintBottom_toBottomOf="@+id/likes_imageView"

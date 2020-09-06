@@ -6,18 +6,18 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="@dimen/margin_xx_small"
+    app:cardCornerRadius="@dimen/margin_x_x_small"
     android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:padding="@dimen/margin_xx_small"
+        android:padding="@dimen/margin_x_x_small"
         android:background="@drawable/background_border_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
             android:id="@+id/imageView"
-            android:layout_margin="@dimen/margin_xx_small"
+            android:layout_margin="@dimen/margin_x_x_small"
             android:layout_width="@dimen/smaller_image"
             android:layout_height="@dimen/smaller_image"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_small"
-            android:padding="@dimen/margin_xx_small"
+            android:padding="@dimen/margin_x_x_small"
             android:text="@string/title_template_text_short"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -46,7 +46,7 @@
             android:layout_width="@dimen/small_icon"
             android:layout_height="@dimen/small_icon"
             android:backgroundTint="@color/colorPrimaryMain"
-            android:padding="@dimen/margin_xx_small"
+            android:padding="@dimen/margin_x_x_small"
             android:src="@drawable/share_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/title_textview"
@@ -56,7 +56,7 @@
             android:id="@+id/dislike_imageView"
             android:layout_width="@dimen/small_icon"
             android:layout_height="@dimen/small_icon"
-            android:padding="@dimen/margin_xx_small"
+            android:padding="@dimen/margin_x_x_small"
             android:src="@drawable/dislike_icon"
             app:layout_constraintBottom_toBottomOf="@+id/title_textview"
             app:layout_constraintEnd_toEndOf="parent"

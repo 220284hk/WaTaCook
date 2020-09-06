@@ -9,7 +9,8 @@
     <dimen name="margin_medium_small">36dp</dimen>
     <dimen name="margin_small">24dp</dimen>
     <dimen name="margin_x_small">16dp</dimen>
-    <dimen name="margin_xx_small">8dp</dimen>
+    <dimen name="margin_x_x_small">8dp</dimen>
+    <dimen name="margin_nano">4dp</dimen>
 
     <!--    Title-->
     <dimen name="title_large">60sp</dimen>
