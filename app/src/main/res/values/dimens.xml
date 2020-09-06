@@ -24,7 +24,8 @@
     <dimen name="text_small">12sp</dimen>
 
     <!--    Images -->
-    <dimen name="large_image">200dp</dimen>
+    <dimen name="large_image">200dp</dimen> //appears to be too big
+    <dimen name="medium_image">150dp</dimen>
     <dimen name="small_image">100dp</dimen>
     <dimen name="smaller_image">80dp</dimen>
     <dimen name="small_icon">40dp</dimen>

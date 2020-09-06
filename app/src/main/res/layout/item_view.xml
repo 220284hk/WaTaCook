@@ -56,8 +56,8 @@
 
     <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
         android:id="@+id/imageView"
-        android:layout_width="@dimen/large_image"
-        android:layout_height="@dimen/large_image"
+        android:layout_width="@dimen/medium_image"
+        android:layout_height="@dimen/medium_image"
         android:layout_margin="@dimen/margin_x_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,10 +70,9 @@
         android:id="@+id/likes_imageView"
         android:layout_width="@dimen/small_icon"
         android:layout_height="@dimen/small_icon"
+        android:layout_marginLeft="@dimen/margin_x_small"
         android:onClick="pleaseLogIn"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/servings_textview"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:srcCompat="@drawable/favourite_pre_icon" />
@@ -82,12 +81,12 @@
         android:id="@+id/dislike_imageView"
         android:layout_width="@dimen/small_icon"
         android:layout_height="@dimen/small_icon"
+        android:layout_marginLeft="@dimen/margin_x_small"
         android:contentDescription="@string/dislike_button"
+        android:onClick="pleaseLogIn"
         app:layout_constraintBottom_toBottomOf="@+id/likes_imageView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/likes_imageView"
         app:layout_constraintTop_toTopOf="@+id/likes_imageView"
-        android:onClick="pleaseLogIn"
         app:srcCompat="@drawable/dislike_icon" />
 
 

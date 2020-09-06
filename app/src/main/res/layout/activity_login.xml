@@ -46,7 +46,7 @@
             app:boxStrokeColor="@color/colorPrimaryLight"
             app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
-            app:startIconDrawable="@drawable/user_login"
+            app:startIconDrawable="@drawable/user_login_icon"
             app:startIconTint="@color/colorPrimaryDark">
 
             <com.google.android.material.textfield.TextInputEditText

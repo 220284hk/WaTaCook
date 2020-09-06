@@ -99,4 +99,9 @@
     <string name="about_p">As a person who seldom cooked, I often found myself wasting a tremendous amount of food. I would buy lots of ingredients to make a specific dish and then would invariably end up not knowing what to do with the leftover!\n\nThis led to the ingredients waiting in the fridge patiently, until it expired, and would meet its ultimate demise - the food waste bin. Therefore, I created this app to try and reduce food waste and inspire similar people to cook more often and reduce waste!</string>
     <string name="no_results_image_content_description">no_results_activity_background_image</string>
 
+<!--    feedback page-->
+    <string name="feedback_settings">Give feedback</string>
+    <string name="feedback_title">I welcome your feedback!</string>
+    <string name="feedback_paragraph">Hello, thank you for taking the time to test out/use my application. As you can probably tell, it\'s early stages and has a lot of bugs. Some of the bugs I am aware of, others I am not. However, as users (as wonderful as yourself) provide me with constructive feedback, I will slowly but surely catch ALL of them. If you have any suggestions for possible features, I would love to hear them as well. Please email me at <u><b>WaTaCookServices@gmail.com</b></u></string>
+
 </resources>

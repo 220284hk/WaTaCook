@@ -47,10 +47,10 @@
             android:layout_height="@dimen/small_icon"
             android:backgroundTint="@color/colorPrimaryMain"
             android:padding="@dimen/margin_xx_small"
-            android:src="@drawable/ic_share"
+            android:src="@drawable/share_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/title_textview"
-            tools:srcCompat="@drawable/ic_share" />
+            tools:srcCompat="@drawable/share_icon" />
 
         <ImageView
             android:id="@+id/dislike_imageView"

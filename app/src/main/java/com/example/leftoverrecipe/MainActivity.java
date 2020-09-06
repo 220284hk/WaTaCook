@@ -14,6 +14,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.leftoverrecipe.mainMenuActivities.AboutActivity;
+import com.example.leftoverrecipe.mainMenuActivities.FeedbackActivity;
 import com.example.leftoverrecipe.mainMenuActivities.TempDeleteActivity;
 import com.example.leftoverrecipe.auxiliaryClasses.User;
 import com.example.leftoverrecipe.mainMenuActivities.UserInfoActivity;
@@ -66,9 +67,10 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.userInfo_settings:
                 Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
-                userMenuSelected();
+                startActivity(new Intent(this, UserInfoActivity.class));
                 return true;
-            case R.id.reset_settings:
+            case R.id.feedback_settings:
+                startActivity(new Intent(this, FeedbackActivity.class));
 //                Toast.makeText(getApplicationContext(), "Reset clicked", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.show_dislikes_settings:
@@ -87,8 +89,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void userMenuSelected() {
-        Intent intent = new Intent(this, UserInfoActivity.class);
-        startActivity(intent);
-    }
 }

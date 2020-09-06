@@ -52,7 +52,7 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/search_bar"
             android:foregroundTint="@color/colorPrimaryMain"
-            android:src="@drawable/search" />
+            android:src="@drawable/search_icon" />
 
     </LinearLayout>
 
