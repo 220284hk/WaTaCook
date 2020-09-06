@@ -1,16 +1,20 @@
 package com.example.leftoverrecipe;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.leftoverrecipe.auxiliaryClasses.User;
+import com.example.leftoverrecipe.mainMenuActivities.UserInfo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import static com.example.leftoverrecipe.auxiliaryClasses.Strings.TAG;
@@ -51,6 +55,34 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(), "Welcome :)", Toast.LENGTH_SHORT).show();
         }
+    }
 
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.userInfo_settings:
+                Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                userMenuSelected();
+                return true;
+            case R.id.reset_settings:
+                Toast.makeText(getApplicationContext(), "Reset clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.check_updates_settings:
+                Toast.makeText(getApplicationContext(), "There are no updates at this time", Toast.LENGTH_SHORT).show();
+                //TODO
+                return true;
+            case R.id.about_settings:
+                Toast.makeText(getApplicationContext(), "Abouts clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void userMenuSelected() {
+        Intent intent = new Intent(this, UserInfo.class);
+        startActivity(intent);
     }
 }

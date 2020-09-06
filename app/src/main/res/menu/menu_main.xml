@@ -3,8 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.myapplication.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/userInfo_settings"
         android:orderInCategory="100"
-        android:title="Settings"
+        android:icon="@drawable/user_login"
+        android:title="@string/user_info"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/reset_settings"
+        android:orderInCategory="200"
+        android:icon="@drawable/restore_icon"
+        android:title="@string/reset_settings"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/show_dislikes_settings"
+        android:orderInCategory="300"
+        android:title="@string/show_dislikes"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/check_updates_settings"
+        android:orderInCategory="400"
+        android:title="@string/check_for_updates"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/about_settings"
+        android:orderInCategory="500"
+        android:title="@string/about"
+        app:showAsAction="never" />
+
+
 </menu>

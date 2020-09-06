@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -39,11 +40,26 @@ public class FavouriteFragment extends Fragment {
     private Button resetButton, showDeletedButton;
     private AlertDialog alertDialog;
 
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        ((AppCompatActivity)getActivity()).getMenuInflater().inflate(R.menu.menu_main, menu);
-    }
+//    @Override
+//    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+//        super.onCreateOptionsMenu(menu, inflater);
+//        ((AppCompatActivity)getActivity()).getMenuInflater().inflate(R.menu.menu_main, menu);
+//    }
+
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+////        return super.onOptionsItemSelected(item);
+//        switch (item.getItemId()) {
+//            case R.id.userInfo_settings:
+//                Toast.makeText(getContext(), "Settings", Toast.LENGTH_SHORT).show();
+//                return true;
+//            case R.id.reset_settings:
+//                Toast.makeText(getContext(), "Reset clicked", Toast.LENGTH_SHORT).show();
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

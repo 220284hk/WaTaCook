@@ -95,7 +95,15 @@ public class User {
                 databaseReference.removeValue().addOnCompleteListener(a -> {
                     if (a.isSuccessful()) {
                         databaseReference.setValue(data).addOnCompleteListener( s -> {
-                            Log.d(TAG, "updateDBPreferences executed perfectly. All data has been uploaded without issue");
+                            if (s.isSuccessful()) {
+                                tempRef.removeValue().addOnCompleteListener(k -> {
+                                    if (k.isSuccessful()) {
+                                        Log.d(TAG, "updateDBPreferences executed perfectly. All data has been uploaded without issue");
+                                    } else {
+                                        Log.d(TAG, "updateDBPreferences almost executed perfectly. It failed to delete the TEMP node");
+                                    }
+                                });
+                            }
                         });
                     } else {
                         Log.d(TAG, "updateDBPreferences failed to remove user preferences data");

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="padding_default">32dp</dimen>
+    <dimen name="padding_large">64dp</dimen>
+
     <!--    Margin-->
     <dimen name="margin_large">72dp</dimen>
     <dimen name="margin_medium">48dp</dimen>

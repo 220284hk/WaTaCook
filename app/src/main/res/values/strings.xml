@@ -79,7 +79,19 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!--    Toolbar menu-->
+    <string name="user_info">User info</string>
+    <string name="reset_favourites">Reset favourites</string>
+    <string name="reset_dislikes">Reset dislikes</string>
+    <string name="about">About</string>
+    <string name="check_for_updates">Check for updates</string>
+    <string name="show_dislikes">Show dislikes</string>
+
+    <!--    menu template strings-->
+    <string name="full_name_template">Full name: Mr Smith</string>
+    <string name="user_name_template">Username: smithAgent101</string>
+    <string name="email_address_template">Email address: smithagent@gmail.com</string>
+    <string name="phone_number_template">Phone number: 010 1234 5678</string>
+    <string name="reset_settings">reset_settings</string>
 
 </resources>

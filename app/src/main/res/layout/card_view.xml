@@ -6,12 +6,11 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="@dimen/margin_x_small"
+    app:cardCornerRadius="@dimen/margin_xx_small"
     android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:padding="@dimen/margin_xx_small"
-
         android:background="@drawable/background_border_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
