@@ -4,12 +4,14 @@
         <item name="colorPrimary">@color/colorPrimaryMain</item>
         <item name="fontFamily">casual</item>
     </style>
-    <style name="AppTheme.Lobster" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+
+    <style name="AppTheme.Lobster" >
         <item name="colorPrimary">@color/colorPrimaryMain</item>
         <item name="fontFamily">@font/lobster</item>
     </style>
+
     <style name="AppTheme.Negative" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
-<!--        <item name="colorPrimary">@color/colorPrimaryMain</item>-->
+        <!--        <item name="colorPrimary">@color/colorPrimaryMain</item>-->
         <item name="fontFamily">@font/lobster</item>
         <item name="android:textSize">@dimen/text_medium_small</item>
         <item name="paddingStart">@dimen/margin_large</item>
@@ -19,17 +21,29 @@
     <style name="AppTheme.NoAnimation">
         <item name="android:windowAnimationStyle">@null</item>
     </style>
+
     <style name="AppTheme.SearchFragments">
         <item name="android:textColor">@color/colorComplementaryDark</item>
     </style>
+
     <style name="AppTheme.SearchFragments.Title">
         <item name="android:textSize">@dimen/text_medium</item>
     </style>
+
     <style name="AppTheme.SearchFragments.IngredientImage">
         <item name="android:textSize">@dimen/text_medium</item>
         <item name="android:layout_margin">@dimen/margin_large</item>
-<!--        <item name="android:layout_margin">5dp</item>-->
+        <!--        <item name="android:layout_margin">5dp</item>-->
 
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

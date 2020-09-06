@@ -2,6 +2,7 @@ package com.example.leftoverrecipe;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
         NavController controller = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navBar, controller);
         greetUser();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     @Override

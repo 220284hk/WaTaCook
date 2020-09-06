@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +28,7 @@ import com.example.leftoverrecipe.auxiliaryClasses.User;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 
 public class FavouriteFragment extends Fragment {
     private static Integer TWO = 2;
@@ -35,28 +40,36 @@ public class FavouriteFragment extends Fragment {
     private AlertDialog alertDialog;
 
     @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        ((AppCompatActivity)getActivity()).getMenuInflater().inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         if (User.getInstance() != null) {
             setUpRecyclerView();
             setUpViews();
-            resetButton.setOnClickListener(v -> {
-                alertDialog.show();
-
-                setUpRecyclerView();
-            });
-            showDeletedButton.setOnClickListener(v -> {
-                startActivity(new Intent(getActivity(), TempDeleteActivity.class));
-            });
+            Toolbar toolbar = view.findViewById(R.id.toolbar);
+            ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+//            resetButton.setOnClickListener(v -> {
+//                alertDialog.show();
+//
+//                setUpRecyclerView();
+//            });
+//            showDeletedButton.setOnClickListener(v -> {
+//                startActivity(new Intent(getActivity(), TempDeleteActivity.class));
+//            });
 
 
         }
     }
 
     private void setUpViews() {
-        resetButton = getActivity().findViewById(R.id.reset_button);
-        showDeletedButton = getActivity().findViewById(R.id.show_deleted);
-        createAlertDialog();
+//        resetButton = getActivity().findViewById(R.id.reset_button);
+//        showDeletedButton = getActivity().findViewById(R.id.show_deleted);
+//        createAlertDialog();
     }
 
     private void createAlertDialog() {
