@@ -50,8 +50,8 @@
 
     <!--    Easter Egg-->
     <string name="easter_egg">Give Hyun money</string>
-    <string name="easter_string">Thank you for your support\n\nMy bank is 농협\nAccount number: 302-1213-34...\n\nHaha just kidding!</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="easter_egg_title">You found it!</string>
+    <string name="easter_egg_paragraph">Thank you for your support\n\nMy bank is 농협\nAccount number: 302-1213-34...\n\nHaha, just kidding!</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -94,8 +94,9 @@
     <string name="phone_number_template">Phone number: 010 1234 5678</string>
     <string name="reset_settings">reset_settings</string>
 
-<!--    about page-->
+    <!--    about page-->
     <string name="about_title">What\'s this ABOAT, eh?</string>
-    <string name="about_p">As a person who seldom cooked, I often found myself wasting a tremendous amount of food. I would buy lots of ingredients to make a specific dish and then would invariably end up not knowing what to do with the leftover ingredients.\n\nThis led to the recipe waiting in the fridge patiently, until it had expired, and would meet it\'s ultimate demise - the food waste bin. Therefore, I created this app to try and reduce food waste and inspire similar people to cook more often.</string>
+    <string name="about_p">As a person who seldom cooked, I often found myself wasting a tremendous amount of food. I would buy lots of ingredients to make a specific dish and then would invariably end up not knowing what to do with the leftover!\n\nThis led to the ingredients waiting in the fridge patiently, until it expired, and would meet its ultimate demise - the food waste bin. Therefore, I created this app to try and reduce food waste and inspire similar people to cook more often and reduce waste!</string>
+    <string name="no_results_image_content_description">no_results_activity_background_image</string>
 
 </resources>

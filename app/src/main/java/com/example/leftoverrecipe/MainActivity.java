@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 userMenuSelected();
                 return true;
             case R.id.reset_settings:
-                Toast.makeText(getApplicationContext(), "Reset clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Reset clicked", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.show_dislikes_settings:
                 startActivity(new Intent(this, TempDeleteActivity.class));
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 //TODO
                 return true;
             case R.id.about_settings:
-                Toast.makeText(getApplicationContext(), "Abouts clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Abouts clicked", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, AboutActivity.class));
                 return true;
             default:

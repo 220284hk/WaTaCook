@@ -7,13 +7,18 @@
     tools:context=".EasterEgg">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/easter_egg_title_textView"
+        style="@style/AppTheme.BasicActivity"
+        android:text="@string/easter_egg_title"
+        app:layout_constraintBottom_toTopOf="@+id/easter_egg_paragraph_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/easter_egg_paragraph_textView"
+        style="@style/AppTheme.BasicActivity.paragraph"
         android:gravity="center"
-        android:textSize="@dimen/text_medium"
-        android:textColor="@color/colorPrimaryMain"
-        android:text="@string/easter_string"
+        android:text="@string/easter_egg_paragraph"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

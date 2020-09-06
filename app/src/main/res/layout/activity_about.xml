@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/padding_large"
     tools:context=".mainMenuActivities.AboutActivity">
 
     <TextView
-        style="@style/AppTheme.LargeText"
-        android:text="@string/about_title" />
+        android:id="@+id/activity_about_title"
+        style="@style/AppTheme.BasicActivity"
+        android:text="@string/about_title"
+        android:textSize="@dimen/title_medium"
+        android:layout_marginBottom="@dimen/margin_small"
+        app:layout_constraintBottom_toTopOf="@+id/activity_about_paragraph"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/activity_about_paragraph"
+        style="@style/AppTheme.BasicActivity.paragraph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/about_p"
-        android:textSize="@dimen/text_medium_small" />
+        android:textSize="@dimen/text_medium_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

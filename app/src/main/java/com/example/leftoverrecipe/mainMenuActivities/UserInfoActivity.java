@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.leftoverrecipe.R;
@@ -23,13 +24,24 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     private Button dislikesButton, favouritesButton;
     private AlertDialog.Builder alertDialogBuilder;
     private AlertDialog dialog;
+    private TextView fullName, username, phoneNumber, emailAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
         initialiseViews();
+        setText();
         attachListeners();
+    }
+
+    private void setText() {
+        fullName.setText(String.format("Full name: %s", User.getFullName()));
+        username.setText(String.format("Username: %s", User.getUsername()));
+        emailAddress.setText(String.format("Email address: %s", User.getEmailAddress()));
+        if (User.getPhoneNumber() != null) {
+            phoneNumber.setText(String.format("Phone number: %s", User.getPhoneNumber()));
+        }
     }
 
     private void attachListeners() {
@@ -38,19 +50,24 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initialiseViews() {
-        favouritesButton = findViewById(R.id.reset_favourites_button);
+        favouritesButton = findViewById(R.id.user_info_reset_favourites_button);
         dislikesButton = findViewById(R.id.reset_dislikes_button);
         alertDialogBuilder = new AlertDialog.Builder(this);
+        fullName = findViewById(R.id.user_info_full_name_textView);
+        username = findViewById(R.id.user_info_user_name_textView);
+        phoneNumber = findViewById(R.id.user_info_phone_number_textView);
+        emailAddress = findViewById(R.id.user_info_email_address_textView);
+
     }
 
     @Override
     public void onClick(View view) {
         if (view.getTag().equals(getResources().getString(R.string.reset_favourites))) {
-            alertDialogBuilder.setTitle("Reset Likes");
+            alertDialogBuilder.setTitle("Reset favourites?");
             alertDialogBuilder.setMessage("Are you sure you wish to reset favourited recipes? This process is irreversible");
             FLAG = 1;
         } else {
-            alertDialogBuilder.setTitle("Reset dislikes");
+            alertDialogBuilder.setTitle("Reset dislikes?");
             alertDialogBuilder.setMessage("Are you sure you wish to reset disliked recipes? This process is irreversible");
             FLAG = 0;
         }

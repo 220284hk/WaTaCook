@@ -8,28 +8,17 @@
 
     <TextView
         android:id="@+id/no_results_title_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="2dp"
-        android:paddingStart="@dimen/margin_large"
-        android:paddingEnd="@dimen/margin_large"
+        style="@style/AppTheme.BasicActivity"
         android:text="@string/no_results_title"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="56sp"
         app:layout_constraintBottom_toTopOf="@+id/no_results_p"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/no_results_p"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="2dp"
+        style="@style/AppTheme.BasicActivity.paragraph"
         android:text="@string/no_results_p"
-        android:textSize="@dimen/text_medium_small"
-        android:paddingStart="@dimen/margin_large"
-        android:paddingEnd="@dimen/margin_large"
-        android:textColor="@color/colorAnalogousTwo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,5 +34,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/no_results_image_content_description" />
 </androidx.constraintlayout.widget.ConstraintLayout>
