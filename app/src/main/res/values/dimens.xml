@@ -16,7 +16,7 @@
 
     <!--    Text-->
     <dimen name="text_large">32sp</dimen>
-    <dimen name="text_medium_large">30sp</dimen>
+    <dimen name="text_medium_large">28sp</dimen>
     <dimen name="text_medium">20sp</dimen>
     <dimen name="text_medium_small">16sp</dimen>
     <dimen name="text_small">12sp</dimen>

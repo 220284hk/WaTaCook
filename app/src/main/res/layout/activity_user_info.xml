@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/padding_large"
     android:orientation="vertical"
-    tools:context=".mainMenuActivities.UserInfo">
+    tools:context=".mainMenuActivities.UserInfoActivity">
 
     <TextView
         android:id="@+id/full_name_textView"

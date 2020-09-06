@@ -1,4 +1,4 @@
-package com.example.leftoverrecipe.auxiliaryClasses;
+package com.example.leftoverrecipe.mainMenuActivities;
 
 import android.os.Bundle;
 
@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.leftoverrecipe.R;
 import com.example.leftoverrecipe.RecipesAdapter;
+import com.example.leftoverrecipe.auxiliaryClasses.Recipe;
+import com.example.leftoverrecipe.auxiliaryClasses.User;
 
 import java.util.ArrayList;
 import java.util.Map;

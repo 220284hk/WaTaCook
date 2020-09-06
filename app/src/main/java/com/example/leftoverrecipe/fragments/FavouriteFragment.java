@@ -1,12 +1,8 @@
 package com.example.leftoverrecipe.fragments;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -24,12 +20,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.leftoverrecipe.R;
 import com.example.leftoverrecipe.RecipesAdapter;
 import com.example.leftoverrecipe.auxiliaryClasses.Recipe;
-import com.example.leftoverrecipe.auxiliaryClasses.TempDeleteActivity;
 import com.example.leftoverrecipe.auxiliaryClasses.User;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.Objects;
 
 public class FavouriteFragment extends Fragment {
     private static Integer TWO = 2;
@@ -74,9 +68,7 @@ public class FavouriteFragment extends Fragment {
 //
 //                setUpRecyclerView();
 //            });
-//            showDeletedButton.setOnClickListener(v -> {
-//                startActivity(new Intent(getActivity(), TempDeleteActivity.class));
-//            });
+
 
 
         }

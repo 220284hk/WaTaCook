@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/logo_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mainMenuActivities.UserInfo"></activity>
-        <activity android:name=".auxiliaryClasses.TempDeleteActivity" />
+        <activity android:name=".mainMenuActivities.AboutActivity"></activity>
+        <activity android:name=".mainMenuActivities.UserInfoActivity" />
+        <activity android:name=".mainMenuActivities.TempDeleteActivity" />
         <activity android:name=".EasterEgg" />
         <activity
             android:name=".login.SplashScreen"
@@ -44,7 +45,7 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".SearchResultsActivity"
             android:launchMode="singleTask" />

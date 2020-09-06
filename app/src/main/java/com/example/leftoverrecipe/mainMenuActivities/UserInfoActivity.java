@@ -18,7 +18,7 @@ import static android.content.DialogInterface.BUTTON_NEGATIVE;
 import static android.content.DialogInterface.BUTTON_NEUTRAL;
 import static android.content.DialogInterface.BUTTON_POSITIVE;
 
-public class UserInfo extends AppCompatActivity implements View.OnClickListener, AlertDialog.OnClickListener {
+public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener, AlertDialog.OnClickListener {
     private static int FLAG;
     private Button dislikesButton, favouritesButton;
     private AlertDialog.Builder alertDialogBuilder;
@@ -71,7 +71,7 @@ public class UserInfo extends AppCompatActivity implements View.OnClickListener,
                     Toast.makeText(getApplicationContext(), "Likes has been reset. Adios", Toast.LENGTH_SHORT).show();
                     User.getLikesMap().clear();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Dislikes has been reset. tschüß!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Dislikes has been reset. Tschüß!", Toast.LENGTH_SHORT).show();
                     User.getDislikesMap().clear();
                 }
                 User.getInstance().updateDBPreferences();
