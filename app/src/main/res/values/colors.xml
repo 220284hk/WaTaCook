@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimaryLight">#ff89a9</color>
+<!--    <color name="colorPrimaryLight">#ff89a9</color>-->
+    <color name="colorPrimaryLight">#ffc8ba</color>
     <color name="colorPrimaryMain">#ff7f60</color>
-<!--    <color name="colorPrimaryMain">#fb246c</color>-->
-    <color name="colorPrimaryDark">#d3004d</color>
+
+    <!--    <color name="colorPrimaryMain">#fb246c</color>-->
+    <!--    <color name="colorPrimaryDark">#d3004d</color>-->
+    <color name="colorPrimaryDark">#fe441d</color>
 
 
     <color name="colorComplementaryLight">#24fbb4</color>
@@ -18,8 +21,14 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
 
-<!--    Miscellaneous-->
+    <!--    Miscellaneous-->
     <color name="colorRed">#ff593a</color>
     <color name="colorBlue">#00d2e1</color>
     <color name="colorGreen">#02ee02</color>
+
+    <color name="colorDarkGrey">#444444</color>
+    <color name="colorLightGrey">#777777</color>
+
+    <!--    Error block-->
+    <color name="colorOne">#777777</color>
 </resources>

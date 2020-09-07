@@ -47,13 +47,14 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
     private static int NUMBER_OF_RECIPES = 10;
     private ImageView searchButton;
     private EditText searchText;
-    private SearchViewModel mViewModel;
+//    private SearchViewModel mViewModel;
     private RequestQueue requestQueue;
     private ImageView[] ingredientsImages;
     private String[] ingredientsStringArray;
 //    private ArrayList arrayList;
     private boolean[] ingredientsSelected;
     private int size, count;
+    private static int LIMIT = 3;
 
     public static SearchFragment newInstance() {
         return new SearchFragment();
@@ -62,7 +63,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(SearchViewModel.class);
+//        mViewModel = ViewModelProviders.of(this).get(SearchViewModel.class);
 //        Find all views
         initialiseViews();
         attachListeners();
@@ -122,15 +123,18 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
 //            AND check to see if 3 items are already added
             if (ingredientsSelected[indexSelected]) {
                 Toast.makeText(getContext(), "You've already selected this!", Toast.LENGTH_SHORT).show();
-            } else if (count == 3) {
-                Toast.makeText(getContext(), "It's not recommended that you add more than 3 items!", Toast.LENGTH_SHORT).show();
+            } else if (count == LIMIT) {
+                Toast.makeText(getContext(), "It's not recommended that you add more than " + LIMIT + " items!", Toast.LENGTH_SHORT).show();
             } else {
                 ingredientsSelected[indexSelected] = true;
                 count++;
                 if (searchText.getText().toString().equals("")) {
                     searchText.setText(ingredientsStringArray[indexSelected]);
                 } else {
-                    searchText.setText(String.format("%s, %s", searchText.getText().toString(), ingredientsStringArray[indexSelected]));
+                    if (!ingredientsStringArray[indexSelected].equals("red_onion"))
+                        searchText.setText(String.format("%s, %s", searchText.getText().toString(), ingredientsStringArray[indexSelected]));
+                    else
+                        searchText.setText(String.format("%s, %s", searchText.getText().toString(), "red onion"));
                 }
             }
 

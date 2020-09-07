@@ -36,13 +36,6 @@
         <item name="fontFamily">@font/lobster</item>
     </style>
 
-    <style name="AppTheme.Negative" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
-        <!--        <item name="colorPrimary">@color/colorPrimaryMain</item>-->
-        <item name="fontFamily">@font/lobster</item>
-        <item name="android:textSize">@dimen/text_medium_small</item>
-        <item name="paddingStart">@dimen/margin_large</item>
-        <item name="android:textColor">@color/colorAnalogousTwo</item>
-    </style>
 
     <style name="AppTheme.NoAnimation">
         <item name="android:windowAnimationStyle">@null</item>

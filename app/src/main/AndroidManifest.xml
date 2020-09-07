@@ -28,14 +28,14 @@
         <activity
             android:name="com.hyunkwak.watacook.login.LoginActivity"
             android:launchMode="singleTask"
-            android:noHistory="true"/>
+            android:noHistory="true" />
         <activity
             android:name="com.hyunkwak.watacook.login.CreateAccountActivity"
             android:noHistory="true"
             android:parentActivityName="com.hyunkwak.watacook.login.LoginActivity" />
         <activity
             android:name="com.hyunkwak.watacook.MainActivity"
-            android:launchMode="singleTask"
+            android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.hyunkwak.watacook.SearchResultsActivity"

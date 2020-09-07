@@ -104,5 +104,6 @@
     <string name="feedback_paragraph">Hello, thank you for taking the time to test out/use my application. As you can probably tell, it\'s early stages and has a lot of bugs. Some of the bugs I am aware of, others I am not. However, as users (as wonderful as yourself) provide me with constructive feedback, I will slowly but surely catch ALL of them. If you have any suggestions for possible features, I would love to hear them as well. Please email me at <u><b>WaTaCookServices@gmail.com</b></u></string>
     <string name="feedback_nsfaq_title">NSFAQ (Not So Frequently Asked Questions)</string>
     <string name="feedback_nsfaq_paragraph">Here are some questions that I anticipate will be asked\n\nWhy is your app so rubbish?\nErr... not really a question, but it\'s a work in progress...</string>
+    <string name="please_login_p">Please log in \nto use this feature!</string>
 
 </resources>
