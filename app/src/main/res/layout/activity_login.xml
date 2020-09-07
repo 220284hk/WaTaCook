@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="@string/login"
             android:textAllCaps="true"
-            android:textColor="@color/colorPrimaryLight"
+            android:textColor="@color/colorPrimaryMain"
             android:textSize="@dimen/title_large"
             android:theme="@style/AppTheme.Lobster" />
 
@@ -113,7 +113,7 @@
             android:onClick="skip"
             android:text="@string/next_time"
             android:textAllCaps="false"
-            android:textColor="@color/colorPrimaryMain"
+            android:textColor="@color/colorLightGrey"
             android:textSize="@dimen/text_small" />
 
         <!--        <Button-->

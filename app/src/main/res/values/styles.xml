@@ -7,9 +7,9 @@
 
 
     <style name="AppTheme.LargeText">
-        <item name="android:textSize">@dimen/text_large</item>
-        <item name="android:layout_marginBottom">@dimen/margin_medium_small</item>
-        <item name="android:textColor">@color/colorPrimaryMain</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:layout_marginBottom">@dimen/margin_small</item>
+        <item name="android:textColor">@color/colorLightGrey</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>

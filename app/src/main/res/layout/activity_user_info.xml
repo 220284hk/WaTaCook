@@ -14,7 +14,7 @@
         <TextView
             android:id="@+id/user_info_title"
             style="@style/AppTheme.BasicActivity"
-            android:textSize="@dimen/title_medium"
+            android:textSize="@dimen/title_medium_large"
             android:layout_marginBottom="@dimen/margin_medium"
             android:text="User Info" />
 

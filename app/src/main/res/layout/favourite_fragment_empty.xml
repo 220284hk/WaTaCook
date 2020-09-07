@@ -24,17 +24,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-<!--            <Button-->
-<!--                android:id="@+id/reset_button"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Reset saved preferences" />-->
+            <!--            <Button-->
+            <!--                android:id="@+id/reset_button"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Reset saved preferences" />-->
 
-<!--            <Button-->
-<!--                android:id="@+id/show_deleted"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Show deleted" />-->
+            <!--            <Button-->
+            <!--                android:id="@+id/show_deleted"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Show deleted" />-->
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -44,11 +44,10 @@
         android:id="@+id/face_imageView"
         android:layout_width="@dimen/medium_image"
         android:layout_height="@dimen/medium_image"
-
+        android:layout_marginBottom="@dimen/smaller_image"
         app:layout_constraintBottom_toBottomOf="@+id/menu_imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="@dimen/smaller_image"
         app:srcCompat="@drawable/face_icon" />
 
     <ImageView
@@ -65,9 +64,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_marginTop="@dimen/margin_small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="Looks awfully empty here...\nThere are no recipes here... yet."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -2,6 +2,7 @@ package com.hyunkwak.watacook;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,4 +42,5 @@ public class SearchResultsActivity extends AppCompatActivity {
     public void pleaseLogIn(View view) {
         Toast.makeText(getApplicationContext(), R.string.please_log_in, Toast.LENGTH_SHORT).show();
     }
+
 }

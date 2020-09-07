@@ -66,27 +66,33 @@
         app:siBorderWidth="8dp"
         app:siShape="@drawable/rounded_rectangle" />
 
-    <ImageView
-        android:layout_marginLeft="@dimen/margin_nano"
-        android:id="@+id/likes_imageView"
-        android:layout_width="@dimen/small_icon"
-        android:layout_height="@dimen/small_icon"
-        android:onClick="pleaseLogIn"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/servings_textview"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/favourite_pre_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-    <ImageView
-        android:id="@+id/dislike_imageView"
-        android:layout_width="@dimen/small_icon"
-        android:layout_height="@dimen/small_icon"
-        android:contentDescription="@string/dislike_button"
-        android:onClick="pleaseLogIn"
-        app:layout_constraintBottom_toBottomOf="@+id/likes_imageView"
-        app:layout_constraintStart_toEndOf="@+id/likes_imageView"
-        app:layout_constraintTop_toTopOf="@+id/likes_imageView"
-        app:srcCompat="@drawable/dislike_icon" />
+        <ImageView
+            android:id="@+id/likes_imageView"
+            android:layout_width="@dimen/small_icon"
+            android:layout_height="@dimen/small_icon"
+            android:layout_marginLeft="@dimen/margin_nano"
+            android:onClick="pleaseLogIn"
+            app:srcCompat="@drawable/favourite_pre_icon" />
+
+        <ImageView
+            android:id="@+id/dislike_imageView"
+            android:layout_width="@dimen/small_icon"
+            android:layout_height="@dimen/small_icon"
+            android:contentDescription="@string/dislike_button"
+            android:onClick="pleaseLogIn"
+            app:srcCompat="@drawable/dislike_icon"
+            app:tint="@color/dislikes" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

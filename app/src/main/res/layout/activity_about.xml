@@ -22,6 +22,7 @@
         style="@style/AppTheme.BasicActivity.paragraph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorLightGrey"
         android:text="@string/about_p"
         android:textSize="@dimen/text_medium_small"
         app:layout_constraintBottom_toBottomOf="parent"

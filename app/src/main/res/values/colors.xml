@@ -31,4 +31,5 @@
 
     <!--    Error block-->
     <color name="colorOne">#777777</color>
+    <color name="dislikes">#7700acf6</color>
 </resources>
