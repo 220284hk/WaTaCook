@@ -66,4 +66,36 @@
 <!--        <item name="android:colorBackground">@color/white</item>-->
     </style>
 
+    <!-- Alert Dialog -->
+    <style name="ThemeOverlay.MaterialComponents.MaterialAlertDialog_Background" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <!-- Background Color-->
+<!--        <item name="android:background">@color/.....</item>-->
+        <!-- Text Color for title and message -->
+<!--        <item name="colorOnSurface">@color/colorRed</item>-->
+        <item name="titleTextColor">@color/colorRed</item>
+        <!-- Style for positive button -->
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <!-- Style for negative button -->
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="@style/Widget.MaterialComponents.Button">
+        <!-- text color for the button -->
+        <item name="android:textColor">@color/black</item>
+        <!-- Background tint for the button -->
+<!--        <item name="backgroundTint">@color/colorGreen</item>-->
+<!--        <item name="colorPrimary">@color/colorGreen</item>-->
+<!--        <item name="android:background">@drawable/background_border</item>-->
+<!--        <item name="colorPrimary">@color/colorGreen</item>-->
+<!--        <item name="colorAccent">@color/colorGreen</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorGreen</item>-->
+<!--        <item name="backgroundColor">@color/colorGreen</item>-->
+    </style>
+
+    <style name="NegativeButtonStyle" parent="@style/Widget.MaterialComponents.Button">
+        <!-- text color for the button -->
+        <item name="android:textColor">@color/colorLightGrey</item>
+        <!-- Background tint for the button -->
+<!--        <item name="backgroundTint">@color/primaryDarkColor</item>-->
+    </style>
 </resources>

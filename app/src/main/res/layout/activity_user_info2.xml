@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mainMenuActivities.UserInfoActivity">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_default">
+
+        <TextView
+            android:id="@+id/user_info_title"
+            style="@style/AppTheme.BasicActivity"
+            android:textSize="@dimen/title_medium_large"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="User Info" />
+
+        <TextView
+            android:id="@+id/user_info_full_name_textView"
+            style="@style/AppTheme.LargeText"
+            android:text="@string/full_name_template" />
+
+        <TextView
+            android:id="@+id/user_info_user_name_textView"
+            style="@style/AppTheme.LargeText"
+            android:text="@string/user_name_template" />
+
+        <TextView
+            android:id="@+id/user_info_email_address_textView"
+            style="@style/AppTheme.LargeText"
+            android:text="@string/email_address_template" />
+
+        <TextView
+            android:id="@+id/user_info_phone_number_textView"
+            style="@style/AppTheme.LargeText"
+            android:text="@string/phone_number_template" />
+
+        <Button
+            android:id="@+id/user_info_reset_favourites_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="@string/reset_favourites"
+            android:text="@string/reset_favourites" />
+
+        <Button
+            android:id="@+id/reset_dislikes_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="@string/reset_dislikes"
+            android:text="@string/reset_dislikes" />
+    </LinearLayout>
+</ScrollView>

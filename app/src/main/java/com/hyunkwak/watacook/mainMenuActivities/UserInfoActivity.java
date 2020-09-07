@@ -49,7 +49,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     private void initialiseViews() {
         favouritesButton = findViewById(R.id.user_info_reset_favourites_button);
         dislikesButton = findViewById(R.id.reset_dislikes_button);
-        alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder = new AlertDialog.Builder(this, R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Background);
         fullName = findViewById(R.id.user_info_full_name_textView);
         username = findViewById(R.id.user_info_user_name_textView);
         phoneNumber = findViewById(R.id.user_info_phone_number_textView);
@@ -61,17 +61,18 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if (view.getTag().equals(getResources().getString(R.string.reset_favourites))) {
             alertDialogBuilder.setTitle("Reset favourites?");
-            alertDialogBuilder.setMessage("Are you sure you wish to reset favourited recipes? This process is irreversible");
+            alertDialogBuilder.setMessage("Are you sure you wish to reset favourited recipes? This process is irreversible.");
             FLAG = 1;
         } else {
             alertDialogBuilder.setTitle("Reset dislikes?");
-            alertDialogBuilder.setMessage("Are you sure you wish to reset disliked recipes? This process is irreversible");
+            alertDialogBuilder.setMessage("Are you sure you wish to reset disliked recipes? This process is irreversible.");
             FLAG = 0;
         }
-        alertDialogBuilder.setPositiveButton("I am sure dood!", this);
-        alertDialogBuilder.setNegativeButton("I'll think about it!", this);
+        alertDialogBuilder.setPositiveButton("Yes!", this);
+        alertDialogBuilder.setNegativeButton("Hmm, I'll think about it..", this);
         dialog = alertDialogBuilder.create();
         dialog.show();
+//        dialog.getButton(BUTTON_POSITIVE).setBackgroundColor(getColor(R.color.colorGreen));
     }
 
     @Override
