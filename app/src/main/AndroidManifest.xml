@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.leftoverrecipe">
+    package="com.hyunkwak.watacook">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,46 +12,42 @@
         android:roundIcon="@mipmap/logo_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mainMenuActivities.FeedbackActivity"></activity>
-        <activity android:name=".mainMenuActivities.AboutActivity" />
-        <activity android:name=".mainMenuActivities.UserInfoActivity" />
-        <activity android:name=".mainMenuActivities.TempDeleteActivity" />
-        <activity android:name=".EasterEgg" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="true" />
+
         <activity
-            android:name=".login.SplashScreen"
+            android:name="com.hyunkwak.watacook.login.SplashScreen"
             android:noHistory="true"
             android:theme="@style/AppTheme.NoAnimation">
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-
-
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
-            android:name=".login.LoginActivity"
+            android:name="com.hyunkwak.watacook.login.LoginActivity"
             android:launchMode="singleTask"
-            android:noHistory="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
+            android:noHistory="true"/>
         <activity
-            android:name=".login.CreateAccountActivity"
+            android:name="com.hyunkwak.watacook.login.CreateAccountActivity"
             android:noHistory="true"
-            android:parentActivityName=".login.LoginActivity" />
+            android:parentActivityName="com.hyunkwak.watacook.login.LoginActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.hyunkwak.watacook.MainActivity"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".SearchResultsActivity"
+            android:name="com.hyunkwak.watacook.SearchResultsActivity"
             android:launchMode="singleTask" />
         <activity
-            android:name=".NoResultsActivity"
+            android:name="com.hyunkwak.watacook.NoResultsActivity"
             android:launchMode="singleTask" />
+        <activity android:name="com.hyunkwak.watacook.mainMenuActivities.FeedbackActivity" />
+        <activity android:name="com.hyunkwak.watacook.mainMenuActivities.AboutActivity" />
+        <activity android:name="com.hyunkwak.watacook.mainMenuActivities.UserInfoActivity" />
+        <activity android:name="com.hyunkwak.watacook.mainMenuActivities.TempDeleteActivity" />
+        <activity android:name="com.hyunkwak.watacook.EasterEgg" />
     </application>
 
 </manifest>

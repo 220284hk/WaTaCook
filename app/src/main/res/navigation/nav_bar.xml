@@ -12,12 +12,12 @@
 <!--        tools:layout="@layout/news_fragment" />-->
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.leftoverrecipe.fragments.SearchFragment"
+        android:name="com.hyunkwak.watacook.fragments.SearchFragment"
         android:label="search_fragment"
         tools:layout="@layout/search_fragment" />
     <fragment
         android:id="@+id/favouriteFragment"
-        android:name="com.example.leftoverrecipe.fragments.FavouriteFragment"
+        android:name="com.hyunkwak.watacook.fragments.FavouriteFragment"
         android:label="favourite_fragment"
         tools:layout="@layout/favourite_fragment" />
 </navigation>

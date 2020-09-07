@@ -83,8 +83,8 @@
                     android:id="@+id/email_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:text="" />
+                    android:text="220284hk@gmail.com"
+                    android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

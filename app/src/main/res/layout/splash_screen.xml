@@ -24,7 +24,7 @@
         android:layout_marginTop="136dp"
         android:theme="@style/AppTheme.Lobster"
         android:letterSpacing=".2"
-        android:text="@string/leftover_recipe"
+        android:text="@string/app_name"
         android:textColor="@color/colorPrimaryMain"
         android:textSize="@dimen/title_medium"
         android:textStyle="bold"
