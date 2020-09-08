@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_small">32dp</dimen>
+    <dimen name="padding_default">64dp</dimen>
+    <dimen name="padding_large">128dp</dimen>
+
+    <!--    Margin-->
+    <dimen name="margin_large">144dp</dimen>
+    <dimen name="margin_medium">96dp</dimen>
+    <dimen name="margin_medium_small">72dp</dimen>
+    <dimen name="margin_small">48dp</dimen>
+    <dimen name="margin_x_small">32dp</dimen>
+    <dimen name="margin_x_x_small">16dp</dimen>
+    <dimen name="margin_nano">8dp</dimen>
+
+    <!--    Title-->
+    <dimen name="title_large">80sp</dimen>
+    <dimen name="title_medium_large">70sp</dimen>
+    <dimen name="title_medium">60sp</dimen>
+    <dimen name="title_small">50sp</dimen>
+
+    <!--    Text-->
+    <dimen name="text_large">64sp</dimen>
+    <dimen name="text_medium_large">56sp</dimen>
+    <dimen name="text_medium">40sp</dimen>
+    <dimen name="text_medium_small">32sp</dimen>
+    <dimen name="text_small">24sp</dimen>
+
+    <!--    Images -->
+    <dimen name="large_image">400dp</dimen> //appears to be too big
+    <dimen name="medium_image">300dp</dimen>
+    <dimen name="small_image">200dp</dimen>
+    <dimen name="smaller_image">160dp</dimen>
+    <dimen name="small_icon">80dp</dimen>
+    <!--
+    Because the window insets on round devices are larger than 15dp, this padding only applies
+    to square screens.
+    -->
+    <dimen name="box_inset_layout_padding">0dp</dimen>
+
+    <!--
+    This padding applies to both square and round screens. The total padding between the buttons
+    and the window insets is box_inset_layout_padding (above variable) on square screens and
+    inner_frame_layout_padding (below variable) on round screens.
+    -->
+    <dimen name="inner_frame_layout_padding">5dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="small_screen_image_logo">100dp</dimen>
+    <dimen name="splash_image">400dp</dimen>
+
+</resources>

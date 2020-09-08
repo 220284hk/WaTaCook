@@ -5,13 +5,13 @@
     android:id="@+id/constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="64dp"
+    android:padding="@dimen/padding_large"
     tools:context=".login.LoginActivity">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/smaller_image"
+        android:layout_height="@dimen/smaller_image"
         android:contentDescription="@string/image_of_logo"
         android:src="@drawable/logo"
         android:transitionName="@string/transition_name_logo"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
-            android:hint="@string/enter_username"
+            android:hint="@string/enter_emailaddresss"
             app:boxStrokeColor="@color/colorPrimaryLight"
             app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
@@ -52,7 +52,6 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/user_name_edittext"
                 android:layout_width="match_parent"
-                android:text="220284hk@gmail.com"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:nextFocusForward="@id/password_edittext"
@@ -65,17 +64,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_x_small"
-            android:hint="@string/enter_password"
             app:boxStrokeColor="@color/colorPrimaryLight"
             app:boxStrokeWidthFocused="2dp"
-
+            android:hint="@string/enter_password"
             app:endIconMode="password_toggle"
             app:startIconDrawable="@drawable/lock_icon"
             app:startIconTint="@color/colorPrimaryDark">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_edittext"
-                android:text="220284hk"
                 android:nextFocusForward="@id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

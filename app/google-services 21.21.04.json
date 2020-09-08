@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1035468633561",
+    "firebase_url": "https://watacook-41fe0.firebaseio.com",
+    "project_id": "watacook-41fe0",
+    "storage_bucket": "watacook-41fe0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035468633561:android:a0fffc7aaf6f5ccffb55c8",
+        "android_client_info": {
+          "package_name": "com.hyunkwak.watacook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035468633561-piajn9hl0920dr9lvn2pnclmbn4pba3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8Z9XDvpKSABTZnT5jo_pf1lvuevaiTVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035468633561-piajn9hl0920dr9lvn2pnclmbn4pba3d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

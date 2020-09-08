@@ -2,8 +2,10 @@ package com.hyunkwak.watacook.login;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -39,6 +41,11 @@ public class SplashScreen extends AppCompatActivity {
         //        TEMP
         FirebaseAuth.getInstance().signOut();           //TEMP TO DELETE
         setAnimation();
+
+        Configuration configuration = getResources().getConfiguration();
+        int screenWidthDp = configuration.screenWidthDp; //The current width of the available screen space, in dp units, corresponding to screen width resource qualifier.
+        int smallestScreenWidthDp = configuration.smallestScreenWidthDp; //T
+        Log.d("SCREEN", "smallestSWdp:" + smallestScreenWidthDp + "screenwitdthdp:"  + screenWidthDp);
 
         new Handler().postDelayed(new Runnable() {
             @Override

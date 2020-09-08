@@ -11,7 +11,7 @@
         android:id="@+id/activity_about_title"
         style="@style/AppTheme.BasicActivity"
         android:text="@string/about_title"
-        android:textSize="@dimen/title_medium"
+        android:textSize="@dimen/title_small"
         android:layout_marginBottom="@dimen/margin_small"
         app:layout_constraintBottom_toTopOf="@+id/activity_about_paragraph"
         app:layout_constraintEnd_toEndOf="parent"

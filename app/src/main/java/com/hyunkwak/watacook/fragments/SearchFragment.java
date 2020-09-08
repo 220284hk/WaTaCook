@@ -155,7 +155,8 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
                 continue;
             }
             sourceUrl = object.getString(SOURCE_URL);
-            title = i + " " + object.getString(TITLE);
+//            title = i + " " + object.getString(TITLE);
+            title = object.getString(TITLE);
             imageURL = String.format("https://spoonacular.com/recipeImages/%s-480x360.jpg", object.get(ID));
             servings = "Serves: " + object.getString(SERVINGS);
             prepTime = object.getString(READY_IN_MINUTES);

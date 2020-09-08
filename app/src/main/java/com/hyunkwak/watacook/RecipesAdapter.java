@@ -78,7 +78,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
                         User.getLikesMap().put(recipe.getId(), recipe);
                         ((ImageView) v).setImageResource(R.drawable.favourite_post_icon);
                         ((ImageView) v).setContentDescription(FILLED);
-                        Toast.makeText(context, recipe.getTitle() + recipe.getId() + " has been liked. It will appear in the favourites page!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, recipe.getTitle() + " has been liked. It will appear in the favourites page!", Toast.LENGTH_SHORT).show();
                     } else {
                         v.setContentDescription(NOT_FILLED);
                         ((ImageView) v).setImageResource(R.drawable.favourite_pre_icon);
@@ -92,7 +92,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
                     TextView titleTextView = holder.mTitleTextView;
                     User.getDislikesMap().put(recipe.getId(), recipe);
                     User.getLikesMap().remove(recipe.getId());
-                    Toast.makeText(context, titleTextView.getText().toString() + recipe.getId() + " has been disliked. This will not be shown in future searches!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, titleTextView.getText().toString() + " has been disliked. This will not be shown in future searches!", Toast.LENGTH_SHORT).show();
                     if (recipeArray.size() == 0) {
                         Toast.makeText(context, "You deleted everything!", Toast.LENGTH_SHORT).show();
                         ((Activity) context).finish();
@@ -115,7 +115,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
                 TextView titleTextView = holder.mTitleTextView;
                 User.getDislikesMap().put(recipe.getId(), recipe);
                 User.getLikesMap().remove(recipe.getId());
-                Toast.makeText(context, titleTextView.getText().toString() + recipe.getId() + " has been disliked. This will not be shown in future searches!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, titleTextView.getText().toString() + " has been disliked. This will not be shown in future searches!", Toast.LENGTH_SHORT).show();
             });
         }
     }

@@ -1,0 +1,301 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.hyunkwak.watacook"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:6:5-79
+12-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:25:5-68
+13-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:25:22-65
+14    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+14-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:26:5-110
+14-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:26:22-107
+15
+16    <application
+16-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:8:5-51:19
+17        android:allowBackup="true"
+17-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:9:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cc21c9aa3de42729fdf108ae11dad5af/core-1.3.1/AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:extractNativeLibs="false"
+21        android:icon="@drawable/logo"
+21-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:10:9-38
+22        android:label="@string/app_name"
+22-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:11:9-41
+23        android:roundIcon="@drawable/logo"
+23-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:12:9-43
+24        android:supportsRtl="true"
+24-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:13:9-35
+25        android:theme="@style/AppTheme" >
+25-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:14:9-40
+26        <meta-data
+26-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:15:9-17:36
+27            android:name="firebase_analytics_collection_enabled"
+27-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:16:13-65
+28            android:value="true" />
+28-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:17:13-33
+29
+30        <activity
+30-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:19:9-27:20
+31            android:name="com.hyunkwak.watacook.login.SplashScreen"
+31-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:20:13-68
+32            android:noHistory="true"
+32-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:21:13-37
+33            android:theme="@style/AppTheme.NoAnimation" >
+33-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:22:13-56
+34            <intent-filter>
+34-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:23:13-26:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:24:17-69
+35-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:24:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:25:17-77
+37-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:25:27-74
+38            </intent-filter>
+39        </activity>
+40        <activity
+40-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:28:9-31:40
+41            android:name="com.hyunkwak.watacook.login.LoginActivity"
+41-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:29:13-69
+42            android:launchMode="singleTask"
+42-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:30:13-44
+43            android:noHistory="true" />
+43-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:31:13-37
+44        <activity
+44-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:32:9-35:86
+45            android:name="com.hyunkwak.watacook.login.CreateAccountActivity"
+45-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:33:13-77
+46            android:noHistory="true"
+46-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:34:13-37
+47            android:parentActivityName="com.hyunkwak.watacook.login.LoginActivity" />
+47-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:35:13-83
+48        <activity
+48-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:36:9-39:55
+49            android:name="com.hyunkwak.watacook.MainActivity"
+49-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:37:13-62
+50            android:launchMode="singleTop"
+50-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:38:13-43
+51            android:windowSoftInputMode="adjustPan" />
+51-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:39:13-52
+52        <activity
+52-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:40:9-42:47
+53            android:name="com.hyunkwak.watacook.SearchResultsActivity"
+53-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:41:13-71
+54            android:launchMode="singleTask" />
+54-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:42:13-44
+55        <activity
+55-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:43:9-45:47
+56            android:name="com.hyunkwak.watacook.NoResultsActivity"
+56-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:44:13-67
+57            android:launchMode="singleTask" />
+57-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:45:13-44
+58        <activity android:name="com.hyunkwak.watacook.mainMenuActivities.FeedbackActivity" />
+58-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:46:9-94
+58-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:46:19-91
+59        <activity android:name="com.hyunkwak.watacook.mainMenuActivities.AboutActivity" />
+59-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:47:9-91
+59-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:47:19-88
+60        <activity android:name="com.hyunkwak.watacook.mainMenuActivities.UserInfoActivity" />
+60-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:48:9-94
+60-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:48:19-91
+61        <activity android:name="com.hyunkwak.watacook.mainMenuActivities.DislikedActivity" />
+61-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:49:9-94
+61-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:49:19-91
+62        <activity android:name="com.hyunkwak.watacook.EasterEgg" />
+62-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:50:9-68
+62-->/Users/HyunKwak/AndroidStudioProjects/AndroidFundamentals/WaTaCook/app/src/main/AndroidManifest.xml:50:19-65
+63
+64        <service
+64-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/32c776dbde1545d4a05d7c028faf3f0b/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:13:9-19:19
+65            android:name="com.google.firebase.components.ComponentDiscoveryService"
+65-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/32c776dbde1545d4a05d7c028faf3f0b/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:14:13-84
+66            android:directBootAware="true"
+66-->[com.google.firebase:firebase-common:19.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/895c00878ca22d739bd6b038a27b3f05/jetified-firebase-common-19.3.1/AndroidManifest.xml:35:13-43
+67            android:exported="false" >
+67-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/32c776dbde1545d4a05d7c028faf3f0b/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:15:13-37
+68            <meta-data
+68-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/32c776dbde1545d4a05d7c028faf3f0b/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:16:13-18:85
+69                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+69-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/32c776dbde1545d4a05d7c028faf3f0b/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:17:17-115
+70                android:value="com.google.firebase.components.ComponentRegistrar" />
+70-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/32c776dbde1545d4a05d7c028faf3f0b/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:18:17-82
+71            <meta-data
+71-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:36:13-38:85
+72                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+72-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:37:17-109
+73                android:value="com.google.firebase.components.ComponentRegistrar" />
+73-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:38:17-82
+74            <meta-data
+74-->[com.google.firebase:firebase-database:19.4.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/3f9eb162317f2cd44530995edc2b88ce/jetified-firebase-database-19.4.0/AndroidManifest.xml:32:13-34:85
+75                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+75-->[com.google.firebase:firebase-database:19.4.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/3f9eb162317f2cd44530995edc2b88ce/jetified-firebase-database-19.4.0/AndroidManifest.xml:33:17-109
+76                android:value="com.google.firebase.components.ComponentRegistrar" />
+76-->[com.google.firebase:firebase-database:19.4.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/3f9eb162317f2cd44530995edc2b88ce/jetified-firebase-database-19.4.0/AndroidManifest.xml:34:17-82
+77            <meta-data
+77-->[com.google.android.gms:play-services-measurement-api:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/5b5dfce37b03868b73ed486ad1d89df2/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:30:13-32:85
+78                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+78-->[com.google.android.gms:play-services-measurement-api:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/5b5dfce37b03868b73ed486ad1d89df2/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:31:17-139
+79                android:value="com.google.firebase.components.ComponentRegistrar" />
+79-->[com.google.android.gms:play-services-measurement-api:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/5b5dfce37b03868b73ed486ad1d89df2/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:32:17-82
+80            <meta-data
+80-->[com.google.firebase:firebase-installations:16.3.3] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a34270b0e4f0ff8e5f4b668586f0ebea/jetified-firebase-installations-16.3.3/AndroidManifest.xml:17:13-19:85
+81                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+81-->[com.google.firebase:firebase-installations:16.3.3] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a34270b0e4f0ff8e5f4b668586f0ebea/jetified-firebase-installations-16.3.3/AndroidManifest.xml:18:17-127
+82                android:value="com.google.firebase.components.ComponentRegistrar" />
+82-->[com.google.firebase:firebase-installations:16.3.3] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a34270b0e4f0ff8e5f4b668586f0ebea/jetified-firebase-installations-16.3.3/AndroidManifest.xml:19:17-82
+83        </service>
+84
+85        <activity
+85-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:24:9-31:50
+86            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+86-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:25:13-85
+87            android:excludeFromRecents="true"
+87-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:26:13-46
+88            android:exported="true"
+88-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:27:13-36
+89            android:launchMode="singleTask"
+89-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:28:13-44
+90            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+90-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:29:13-102
+91            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+91-->[com.google.firebase:firebase-auth:19.3.2] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/a359acd3a9858dcef4a952bf17d6143b/jetified-firebase-auth-19.3.2/AndroidManifest.xml:30:13-72
+92        <activity
+92-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:23:9-27:75
+93            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+93-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:24:13-93
+94            android:excludeFromRecents="true"
+94-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:25:13-46
+95            android:exported="false"
+95-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:26:13-37
+96            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+96-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:27:13-72
+97        <!--
+98            Service handling Google Sign-In user revocation. For apps that do not integrate with
+99            Google Sign-In, this service will never be started.
+100        -->
+101        <service
+101-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:33:9-37:51
+102            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+102-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:34:13-89
+103            android:exported="true"
+103-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:35:13-36
+104            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+104-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:36:13-107
+105            android:visibleToInstantApps="true" />
+105-->[com.google.android.gms:play-services-auth:18.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/cf909b5569259daf355a80d7cbbba3b2/jetified-play-services-auth-18.1.0/AndroidManifest.xml:37:13-48
+106
+107        <activity
+107-->[com.google.android.gms:play-services-base:17.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/6cbc35316c2a79880c143c7aff678ef1/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+108            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+108-->[com.google.android.gms:play-services-base:17.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/6cbc35316c2a79880c143c7aff678ef1/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+109            android:exported="false"
+109-->[com.google.android.gms:play-services-base:17.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/6cbc35316c2a79880c143c7aff678ef1/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+110            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+110-->[com.google.android.gms:play-services-base:17.1.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/6cbc35316c2a79880c143c7aff678ef1/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+111
+112        <receiver
+112-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:29:9-33:20
+113            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+113-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:30:13-85
+114            android:enabled="true"
+114-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:31:13-35
+115            android:exported="false" >
+115-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:32:13-37
+116        </receiver>
+117
+118        <service
+118-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:35:9-38:40
+119            android:name="com.google.android.gms.measurement.AppMeasurementService"
+119-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:36:13-84
+120            android:enabled="true"
+120-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:37:13-35
+121            android:exported="false" />
+121-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:38:13-37
+122        <service
+122-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:39:9-43:72
+123            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+123-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:40:13-87
+124            android:enabled="true"
+124-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:41:13-35
+125            android:exported="false"
+125-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:42:13-37
+126            android:permission="android.permission.BIND_JOB_SERVICE" />
+126-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/4751a5d331de3c44c24855000848297f/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:43:13-69
+127
+128        <provider
+128-->[com.google.firebase:firebase-common:19.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/895c00878ca22d739bd6b038a27b3f05/jetified-firebase-common-19.3.1/AndroidManifest.xml:26:9-31:39
+129            android:name="com.google.firebase.provider.FirebaseInitProvider"
+129-->[com.google.firebase:firebase-common:19.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/895c00878ca22d739bd6b038a27b3f05/jetified-firebase-common-19.3.1/AndroidManifest.xml:27:13-77
+130            android:authorities="com.hyunkwak.watacook.firebaseinitprovider"
+130-->[com.google.firebase:firebase-common:19.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/895c00878ca22d739bd6b038a27b3f05/jetified-firebase-common-19.3.1/AndroidManifest.xml:28:13-72
+131            android:directBootAware="true"
+131-->[com.google.firebase:firebase-common:19.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/895c00878ca22d739bd6b038a27b3f05/jetified-firebase-common-19.3.1/AndroidManifest.xml:29:13-43
+132            android:exported="false"
+132-->[com.google.firebase:firebase-common:19.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/895c00878ca22d739bd6b038a27b3f05/jetified-firebase-common-19.3.1/AndroidManifest.xml:30:13-37
+133            android:initOrder="100" />
+133-->[com.google.firebase:firebase-common:19.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/895c00878ca22d739bd6b038a27b3f05/jetified-firebase-common-19.3.1/AndroidManifest.xml:31:13-36
+134
+135        <meta-data
+135-->[com.google.android.gms:play-services-basement:17.1.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/83581cfb7bc0b2d1cf47e3b0bfb34210/jetified-play-services-basement-17.1.1/AndroidManifest.xml:23:9-25:69
+136            android:name="com.google.android.gms.version"
+136-->[com.google.android.gms:play-services-basement:17.1.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/83581cfb7bc0b2d1cf47e3b0bfb34210/jetified-play-services-basement-17.1.1/AndroidManifest.xml:24:13-58
+137            android:value="@integer/google_play_services_version" />
+137-->[com.google.android.gms:play-services-basement:17.1.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/83581cfb7bc0b2d1cf47e3b0bfb34210/jetified-play-services-basement-17.1.1/AndroidManifest.xml:25:13-66
+138
+139        <provider
+139-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/d724b6a680f72aee6c47480ba428286b/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+140            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+140-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/d724b6a680f72aee6c47480ba428286b/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+141            android:authorities="com.hyunkwak.watacook.lifecycle-process"
+141-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/d724b6a680f72aee6c47480ba428286b/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+142            android:exported="false"
+142-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/d724b6a680f72aee6c47480ba428286b/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+143            android:multiprocess="true" />
+143-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/d724b6a680f72aee6c47480ba428286b/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+144
+145        <service
+145-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/48e1cb7075524ec05199793772ffbf5d/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:29:9-35:19
+146            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+146-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/48e1cb7075524ec05199793772ffbf5d/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:30:13-103
+147            android:exported="false" >
+147-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/48e1cb7075524ec05199793772ffbf5d/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:31:13-37
+148            <meta-data
+148-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/48e1cb7075524ec05199793772ffbf5d/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:32:13-34:39
+149                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+149-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/48e1cb7075524ec05199793772ffbf5d/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:33:17-94
+150                android:value="cct" />
+150-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/48e1cb7075524ec05199793772ffbf5d/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:34:17-36
+151        </service>
+152        <service
+152-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/0c756e0e5ed9d059f990c4098ab8852a/jetified-transport-runtime-2.2.4/AndroidManifest.xml:26:9-30:19
+153            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+153-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/0c756e0e5ed9d059f990c4098ab8852a/jetified-transport-runtime-2.2.4/AndroidManifest.xml:27:13-117
+154            android:exported="false"
+154-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/0c756e0e5ed9d059f990c4098ab8852a/jetified-transport-runtime-2.2.4/AndroidManifest.xml:28:13-37
+155            android:permission="android.permission.BIND_JOB_SERVICE" >
+155-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/0c756e0e5ed9d059f990c4098ab8852a/jetified-transport-runtime-2.2.4/AndroidManifest.xml:29:13-69
+156        </service>
+157
+158        <receiver
+158-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/0c756e0e5ed9d059f990c4098ab8852a/jetified-transport-runtime-2.2.4/AndroidManifest.xml:32:9-34:40
+159            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+159-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/0c756e0e5ed9d059f990c4098ab8852a/jetified-transport-runtime-2.2.4/AndroidManifest.xml:33:13-132
+160            android:exported="false" />
+160-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/HyunKwak/.gradle/caches/transforms-2/files-2.1/0c756e0e5ed9d059f990c4098ab8852a/jetified-transport-runtime-2.2.4/AndroidManifest.xml:34:13-37
+161    </application>
+162
+163</manifest>

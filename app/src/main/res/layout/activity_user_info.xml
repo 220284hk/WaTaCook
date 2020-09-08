@@ -9,6 +9,8 @@
 
     <TextView
         android:id="@+id/user_info_title"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
         style="@style/AppTheme.BasicActivity"
         android:layout_marginBottom="@dimen/margin_medium"
         android:text="@string/user_info"
@@ -16,23 +18,19 @@
 
     <TextView
         android:id="@+id/user_info_full_name_textView"
-        style="@style/AppTheme.LargeText"
-        android:text="@string/full_name_template" />
+        style="@style/AppTheme.LargeText" />
 
     <TextView
         android:id="@+id/user_info_user_name_textView"
-        style="@style/AppTheme.LargeText"
-        android:text="@string/user_name_template" />
+        style="@style/AppTheme.LargeText" />
 
     <TextView
         android:id="@+id/user_info_email_address_textView"
-        style="@style/AppTheme.LargeText"
-        android:text="@string/email_address_template" />
+        style="@style/AppTheme.LargeText" />
 
     <TextView
         android:id="@+id/user_info_phone_number_textView"
-        style="@style/AppTheme.LargeText"
-        android:text="@string/phone_number_template" />
+        style="@style/AppTheme.LargeText" />
 
     <LinearLayout
         android:layout_width="match_parent"

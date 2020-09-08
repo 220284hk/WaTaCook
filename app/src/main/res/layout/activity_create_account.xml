@@ -53,8 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lobster"
-                    android:inputType="textShortMessage"
-                    android:text="Hyun Kwak" />
+                    android:inputType="textShortMessage" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,8 +67,7 @@
                     android:id="@+id/user_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textShortMessage"
-                    android:text="220284hk" />
+                    android:inputType="textShortMessage"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,7 +81,6 @@
                     android:id="@+id/email_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="220284hk@gmail.com"
                     android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -99,8 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:maxLength="11"
-                    android:text="01072921518" />
+                    android:maxLength="11"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,8 +111,7 @@
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:text="220284hk" />
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

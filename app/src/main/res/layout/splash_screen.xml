@@ -10,32 +10,31 @@
         android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.15"
-
+        android:alpha=".3"
         android:contentDescription="@string/splash_background_image"
         android:scaleType="centerCrop"
         android:src="@drawable/s2"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/s2" />
 
     <TextView
         android:id="@+id/title_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:theme="@style/AppTheme.Lobster"
         android:letterSpacing=".2"
         android:text="@string/app_name"
         android:textColor="@color/colorPrimaryMain"
-        android:textSize="@dimen/title_medium"
+        android:textSize="@dimen/title_large"
         android:textStyle="bold"
+        android:theme="@style/AppTheme.Lobster"
+        app:layout_constraintBottom_toTopOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="@dimen/splash_image"
+        android:layout_height="@dimen/splash_image"
         android:transitionName="@string/transition_name_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
