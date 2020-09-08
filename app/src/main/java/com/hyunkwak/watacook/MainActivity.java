@@ -14,7 +14,6 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.hyunkwak.watacook.auxiliaryClasses.User;
 import com.hyunkwak.watacook.mainMenuActivities.AboutActivity;
 import com.hyunkwak.watacook.mainMenuActivities.FeedbackActivity;
-import com.hyunkwak.watacook.mainMenuActivities.TempDeleteActivity;
+import com.hyunkwak.watacook.mainMenuActivities.DislikedActivity;
 import com.hyunkwak.watacook.mainMenuActivities.UserInfoActivity;
 
 import static com.hyunkwak.watacook.auxiliaryClasses.Strings.TAG;
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 //        return super.onOptionsItemSelected(item);
         switch (item.getItemId()) {
             case R.id.userInfo_settings:
-                Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, UserInfoActivity.class));
                 return true;
             case R.id.feedback_settings:
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(), "Reset clicked", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.show_dislikes_settings:
-                startActivity(new Intent(this, TempDeleteActivity.class));
+                startActivity(new Intent(this, DislikedActivity.class));
                 return true;
             case R.id.check_updates_settings:
                 userRef.addListenerForSingleValueEvent(new ValueEventListener() {

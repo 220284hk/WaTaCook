@@ -72,7 +72,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         alertDialogBuilder.setNegativeButton("Hmm, I'll think about it..", this);
         dialog = alertDialogBuilder.create();
         dialog.show();
-        dialog.getButton(BUTTON_POSITIVE).setBackgroundColor(getColor(R.color.black));
+//        dialog.getButton(BUTTON_POSITIVE).setBackgroundColor(getColor(R.color.black));
     }
 
     @Override

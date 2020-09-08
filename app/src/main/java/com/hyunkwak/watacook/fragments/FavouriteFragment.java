@@ -1,17 +1,13 @@
 package com.hyunkwak.watacook.fragments;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -27,8 +23,9 @@ import com.hyunkwak.watacook.login.LoginActivity;
 import java.util.ArrayList;
 import java.util.Map;
 
+import static com.hyunkwak.watacook.auxiliaryClasses.Strings.FAVOURITES;
+
 public class FavouriteFragment extends Fragment {
-    private static Integer TWO = 2;
     private RecyclerView recyclerView;
     private RecipesAdapter recipesAdapter;
 
@@ -59,7 +56,7 @@ public class FavouriteFragment extends Fragment {
                 arrayList.add(recipe);
             }
         }
-        recipesAdapter = new RecipesAdapter(getContext(), arrayList, TWO);
+        recipesAdapter = new RecipesAdapter(getContext(), arrayList, FAVOURITES);
         recyclerView.setAdapter(recipesAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }

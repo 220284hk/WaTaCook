@@ -15,10 +15,11 @@ import com.hyunkwak.watacook.fragments.SearchFragment;
 
 import java.util.ArrayList;
 
+import static com.hyunkwak.watacook.auxiliaryClasses.Strings.SEARCH;
+
 public class SearchResultsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecipesAdapter recipesAdapter;
-    private static Integer ONE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class SearchResultsActivity extends AppCompatActivity {
         MyParcelable object = b.getParcelable(SearchFragment.KEY);
         assert object != null;
         ArrayList<Recipe> arrayList = object.getArrList();
-        recipesAdapter = new RecipesAdapter(this, arrayList, ONE);
+        recipesAdapter = new RecipesAdapter(this, arrayList, SEARCH);
         recyclerView.setAdapter(recipesAdapter);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recipesAdapter.notifyDataSetChanged();

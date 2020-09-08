@@ -14,20 +14,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.hyunkwak.watacook.EasterEgg;
-import com.hyunkwak.watacook.auxiliaryClasses.MyParcelable;
 import com.hyunkwak.watacook.NoResultsActivity;
 import com.hyunkwak.watacook.R;
 import com.hyunkwak.watacook.SearchResultsActivity;
+import com.hyunkwak.watacook.auxiliaryClasses.MyParcelable;
 import com.hyunkwak.watacook.auxiliaryClasses.Recipe;
 import com.hyunkwak.watacook.auxiliaryClasses.User;
-import com.hyunkwak.watacook.viewmodel.SearchViewModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,16 +43,16 @@ import static com.hyunkwak.watacook.auxiliaryClasses.Strings.TITLE;
 public class SearchFragment extends Fragment implements View.OnClickListener {
     public final static String KEY = "REQUEST_RESULT";
     private static int NUMBER_OF_RECIPES = 10;
+    private static int LIMIT = 3;
     private ImageView searchButton;
     private EditText searchText;
-//    private SearchViewModel mViewModel;
+    //    private SearchViewModel mViewModel;
     private RequestQueue requestQueue;
     private ImageView[] ingredientsImages;
     private String[] ingredientsStringArray;
-//    private ArrayList arrayList;
+    //    private ArrayList arrayList;
     private boolean[] ingredientsSelected;
     private int size, count;
-    private static int LIMIT = 3;
 
     public static SearchFragment newInstance() {
         return new SearchFragment();

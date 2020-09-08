@@ -24,27 +24,29 @@ import com.hyunkwak.watacook.auxiliaryClasses.User;
 import java.util.ArrayList;
 
 import static androidx.core.content.ContextCompat.startActivity;
+import static com.hyunkwak.watacook.auxiliaryClasses.Strings.FAVOURITES;
 import static com.hyunkwak.watacook.auxiliaryClasses.Strings.FILLED;
 import static com.hyunkwak.watacook.auxiliaryClasses.Strings.NOT_FILLED;
+import static com.hyunkwak.watacook.auxiliaryClasses.Strings.SEARCH;
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeViewHolder> {
     private LayoutInflater mInflater;
     private ArrayList<Recipe> recipeArray;
     private Context context;
-    private Integer type;
+    private Integer TYPE;
 
-    public RecipesAdapter(Context context, ArrayList<Recipe> recipeArray, Integer type) {
+    public RecipesAdapter(Context context, ArrayList<Recipe> recipeArray, Integer TYPE) {
         this.mInflater = LayoutInflater.from(context);
         this.recipeArray = recipeArray;
         this.context = context;
-        this.type = type;
+        this.TYPE = TYPE;
     }
 
     @NonNull
     @Override
     public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ConstraintLayout constraintLayout;
-        if (type == 1) {
+        if (TYPE == SEARCH) {
             constraintLayout = (ConstraintLayout) mInflater.inflate(R.layout.item_view, parent, false);
             return new RecipeViewHolder(constraintLayout, this);
         } else {
@@ -60,7 +62,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         holder.mTitleTextView.setText(recipe.getTitle());
         Glide.with(context).load(recipe.getImageURL()).into(holder.mImageView);
 //        Log.d(TAG, holder.mImageView.toString());
-        if (type == 1) {
+        if (TYPE == SEARCH) {
             holder.id.setText(recipe.getId());
             holder.mServingsSizeTextView.setText(recipe.getServings());
             holder.mPrepTimeTextView.setText(recipe.getPrepTime());
@@ -97,7 +99,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
                     }
                 });
             }
-        } else {
+        } else if (TYPE == FAVOURITES){
             holder.shareIcon.setOnClickListener(v -> {
                 Intent share = new Intent(android.content.Intent.ACTION_SEND);
                 share.setType("text/plain");
@@ -154,21 +156,23 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         }
 
         private void setupViews() {
-            if (type == 1) {
+            this.mTitleTextView = itemView.findViewById(R.id.title_textview);
+            this.mImageView = itemView.findViewById(R.id.imageView);
+            this.id = itemView.findViewById(R.id.id);
+            if (TYPE == SEARCH) {
                 this.view = itemView.findViewById(R.id.recipeConstraintLayout);
                 this.mPrepTimeTextView = itemView.findViewById(R.id.time_required_textview);
                 this.mServingsSizeTextView = itemView.findViewById(R.id.servings_textview);
                 this.mLikesImageView = itemView.findViewById(R.id.likes_imageView);
+                this.mDislikeImageView = itemView.findViewById(R.id.dislike_imageView);
                 this.view.setOnClickListener(this);
-            } else {
+            } else if (TYPE == FAVOURITES){
                 this.cardView = itemView.findViewById(R.id.cardView);
                 this.shareIcon = itemView.findViewById(R.id.share_icon);
+                this.mDislikeImageView = itemView.findViewById(R.id.dislike_imageView);
                 this.cardView.setOnClickListener(this);
             }
-            this.mDislikeImageView = itemView.findViewById(R.id.dislike_imageView);
-            this.mTitleTextView = itemView.findViewById(R.id.title_textview);
-            this.mImageView = itemView.findViewById(R.id.imageView);
-            this.id = itemView.findViewById(R.id.id);
+
         }
     }
 }

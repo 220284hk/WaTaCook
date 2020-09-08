@@ -14,15 +14,21 @@ import com.hyunkwak.watacook.auxiliaryClasses.User;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class TempDeleteActivity extends AppCompatActivity {
+import static com.hyunkwak.watacook.auxiliaryClasses.Strings.HIDDEN;
+
+public class DislikedActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecipesAdapter recipesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temp_delete);
-        setUpRecyclerView();
+        if (User.getDislikesMap().isEmpty()) {
+            setContentView(R.layout.activity_disliked_empty);
+        } else {
+            setContentView(R.layout.activity_disliked);
+            setUpRecyclerView();
+        }
     }
 
     private void setUpRecyclerView() {
@@ -34,7 +40,7 @@ public class TempDeleteActivity extends AppCompatActivity {
         }
 //        Log.d(TAG, "2 arrayList" + arrayList);
 
-        recipesAdapter = new RecipesAdapter(getApplicationContext(), arrayList, 2);
+        recipesAdapter = new RecipesAdapter(getApplicationContext(), arrayList, HIDDEN);
         recyclerView.setAdapter(recipesAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
