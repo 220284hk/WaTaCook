@@ -16,6 +16,7 @@
     <dimen name="title_large">60sp</dimen>
     <dimen name="title_medium_large">52sp</dimen>
     <dimen name="title_medium">40sp</dimen>
+    <dimen name="title_small">32sp</dimen>
 
     <!--    Text-->
     <dimen name="text_large">32sp</dimen>
@@ -43,5 +44,6 @@
     -->
     <dimen name="inner_frame_layout_padding">5dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="small_screen_image_logo">100dp</dimen>
 
 </resources>

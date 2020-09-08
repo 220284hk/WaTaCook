@@ -18,10 +18,10 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:elevation">2dp</item>
-        <item name="android:paddingStart">@dimen/margin_large</item>
-        <item name="android:paddingEnd">@dimen/margin_large</item>
+        <item name="android:paddingStart">@dimen/margin_medium</item>
+        <item name="android:paddingEnd">@dimen/margin_medium</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:textSize">@dimen/title_medium_large</item>
+        <item name="android:textSize">@dimen/title_small</item>
     </style>
 
     <style name="AppTheme.BasicActivity.paragraph">

@@ -11,6 +11,7 @@
         android:id="@+id/no_results_title_textview"
         style="@style/AppTheme.BasicActivity"
         android:text="@string/no_results_title"
+        android:textSize="@dimen/title_medium_large"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/no_results"
         app:layout_constraintEnd_toEndOf="parent"

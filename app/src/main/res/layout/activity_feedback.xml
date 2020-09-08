@@ -16,7 +16,6 @@
             style="@style/AppTheme.BasicActivity"
             android:layout_marginTop="@dimen/margin_medium"
             android:text="@string/feedback_title"
-            android:textSize="@dimen/title_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,8 +35,8 @@
             android:id="@+id/activity_feedback_nsfaq_title"
             style="@style/AppTheme.BasicActivity"
             android:layout_marginTop="@dimen/margin_medium"
+            android:textSize="@dimen/text_medium_large"
             android:text="@string/feedback_nsfaq_title"
-            android:textSize="@dimen/title_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/activity_feedback_paragraph" />
@@ -53,68 +52,70 @@
 
             <TextView
                 style="@style/AppTheme.BasicActivity.paragraph"
-                android:text="Here are some answers to the questions you may have!"
+                android:text="@string/feedback_preemptive_p"
                 android:textColor="@color/colorLightGrey"
                 android:textSize="@dimen/text_medium_small" />
 
             <TextView
                 style="@style/AppTheme.BasicActivity.paragraph"
                 android:layout_marginTop="@dimen/margin_small"
-                android:text="Your app sucks"
+                android:text="@string/your_app_sucks_q"
                 android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/text_medium_small" />
 
             <TextView
                 style="@style/AppTheme.BasicActivity.paragraph"
-                android:text="Err.. that's not really a question but I am working hard on it!"
+                android:text="@string/your_app_sucks_response_a"
                 android:textColor="@color/colorLightGrey"
                 android:textSize="@dimen/text_medium_small" />
 
             <TextView
                 style="@style/AppTheme.BasicActivity.paragraph"
                 android:layout_marginTop="@dimen/margin_small"
-                android:text="I input my information incorrectly, can I change it?"
+                android:text="@string/feedback_change_info_q"
                 android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/text_medium_small" />
 
             <TextView
                 style="@style/AppTheme.BasicActivity.paragraph"
-                android:text="Unfortunately, that feature is not yet available. Please send me an email with the info you would like to change and I'll see what I can do :)"
+                android:text="@string/feedback_change_info_a"
                 android:textColor="@color/colorLightGrey"
                 android:textSize="@dimen/text_medium_small" />
 
             <TextView
                 style="@style/AppTheme.BasicActivity.paragraph"
                 android:layout_marginTop="@dimen/margin_small"
-                android:text="What features are you going to implement next?"
+                android:text="@string/feedback_next_implementation_q"
                 android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/text_medium_small" />
 
             <TextView
                 style="@style/AppTheme.BasicActivity.paragraph"
-                android:text="I want to implement a filter feature for favourited recipes and enable users to organise it in a meaningful way (and preserve it)."
+                android:text="@string/feedback_next_implementation_a"
                 android:textColor="@color/colorLightGrey"
                 android:textSize="@dimen/text_medium_small" />
 
             <TextView
                 style="@style/AppTheme.BasicActivity.paragraph"
                 android:layout_marginTop="@dimen/margin_small"
-                android:text="I have a great app idea that will make us billionaires. We can split it! Do you want to work with me?"
+                android:text="@string/feedback_great_idea_q"
                 android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/text_medium_small" />
 
             <TextView
                 style="@style/AppTheme.BasicActivity.paragraph"
-                android:text="Sure thing! Click on the link below to send me an email!"
+                android:text="@string/feedback_great_idea_a"
                 android:textColor="@color/colorLightGrey"
                 android:textSize="@dimen/text_medium_small" />
             <Button
                 android:id="@+id/activity_feedback_email_me_button"
                 android:layout_gravity="center"
+                android:background="@drawable/button"
+                android:textColor="@color/white"
                 android:text="email me!"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginBottom="@dimen/margin_small"
