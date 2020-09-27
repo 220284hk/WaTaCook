@@ -30,6 +30,7 @@ public class User {
     private static HashMap<String, String> userInfo;
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private DatabaseReference databaseReference;
+    public static boolean SaidHi = false;
 
     public User(HashMap<String, String> userInfo) {
         User.userInfo = userInfo;

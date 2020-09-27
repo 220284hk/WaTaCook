@@ -42,7 +42,7 @@ import static com.hyunkwak.watacook.auxiliaryClasses.Strings.TITLE;
 @SuppressWarnings("ConstantConditions")
 public class SearchFragment extends Fragment implements View.OnClickListener {
     public final static String KEY = "REQUEST_RESULT";
-    private static int NUMBER_OF_RECIPES = 10;
+    private final static int NUMBER_OF_RECIPES = 20;
     private static int LIMIT = 3;
     private ImageView searchButton;
     private EditText searchText;

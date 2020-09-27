@@ -47,7 +47,7 @@ public class FavouriteFragment extends Fragment {
     }
 
 
-    private void setUpRecyclerView() {
+    public void setUpRecyclerView() {
         recyclerView = getActivity().findViewById(R.id.favourites_recyclerView);
         ArrayList<Recipe> arrayList = new ArrayList<Recipe>();
         if (User.getLikesMap() != null) {
@@ -56,7 +56,7 @@ public class FavouriteFragment extends Fragment {
                 arrayList.add(recipe);
             }
         }
-        recipesAdapter = new RecipesAdapter(getContext(), arrayList, FAVOURITES);
+        recipesAdapter = new RecipesAdapter(getActivity(), arrayList, FAVOURITES);
         recyclerView.setAdapter(recipesAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }

@@ -1,6 +1,12 @@
 package com.hyunkwak.watacook.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,7 +36,7 @@ import static com.hyunkwak.watacook.auxiliaryClasses.Strings.USERS;
 
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
-//    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    //    private FirebaseAuth.AuthStateListener mAuthStateListener;
     private EditText mUserName, mPassword;
     private Button loginButton;
 //    public static User user;
@@ -71,7 +77,13 @@ public class LoginActivity extends AppCompatActivity {
         mPassword = findViewById(R.id.password_edittext);
         loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(v -> {
+
+            if (!connectedToInternet()) {
+                Toast.makeText(this, "Check connection to internet", Toast.LENGTH_SHORT).show();
+                return;
+            }
             if (isFieldEmpty()) { return; }
+
             Toast.makeText(getApplicationContext(), "Attempting to log in...", Toast.LENGTH_SHORT).show();
             mFirebaseAuth.signInWithEmailAndPassword(mUserName.getText().toString(), mPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -114,4 +126,19 @@ public class LoginActivity extends AppCompatActivity {
             });
         });
     }
+
+    private boolean connectedToInternet() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm != null) {
+//            if (Build.VERSION.SDK_INT < 23) { then they do not satisfy minimum sdk
+            final Network n = cm.getActiveNetwork();
+
+            if (n != null) {
+                final NetworkCapabilities nc = cm.getNetworkCapabilities(n);
+                return (nc.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) || nc.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR));
+            }
+        }
+        return false;
+    }
+
 }

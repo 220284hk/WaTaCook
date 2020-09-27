@@ -5,7 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -99,11 +102,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
                     }
                 });
             }
-        } else if (TYPE == FAVOURITES){
+        } else if (TYPE == FAVOURITES) {
             holder.shareIcon.setOnClickListener(v -> {
                 Intent share = new Intent(android.content.Intent.ACTION_SEND);
                 share.setType("text/plain");
-                share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+//                share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
                 share.putExtra(Intent.EXTRA_SUBJECT, recipe.getTitle() + " recipe");
                 share.putExtra(Intent.EXTRA_TEXT, "Hey, check this recipe out!\n\n" + recipe.getSourceUrl());
                 context.startActivity(Intent.createChooser(share, "Share link to..."));
@@ -137,11 +140,29 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
         public RecipeViewHolder(@NonNull ConstraintLayout itemView, RecipesAdapter recipesAdapter) {
             super(itemView);
             setupViews();
+
         }
+
 
         public RecipeViewHolder(@NonNull CardView cardView, RecipesAdapter recipesAdapter) {
             super(cardView);
             setupViews();
+
+//            FOR FUTURE VERSIONS
+//            cardView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+//                @Override
+//                public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+//                    MenuItem delete = menu.add("Delete");
+//                    System.out.println(menu.toString() + v + menuInfo);
+//                    delete.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+//                        @Override
+//                        public boolean onMenuItemClick(MenuItem item) {
+//                            Toast.makeText(context, "deleted", Toast.LENGTH_SHORT).show();
+//                            return true;
+//                        }
+//                    });
+//                }
+//            });
         }
 
         @Override
@@ -166,13 +187,21 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
                 this.mLikesImageView = itemView.findViewById(R.id.likes_imageView);
                 this.mDislikeImageView = itemView.findViewById(R.id.dislike_imageView);
                 this.view.setOnClickListener(this);
-            } else if (TYPE == FAVOURITES){
+            } else if (TYPE == FAVOURITES) {
                 this.cardView = itemView.findViewById(R.id.cardView);
                 this.shareIcon = itemView.findViewById(R.id.share_icon);
                 this.mDislikeImageView = itemView.findViewById(R.id.dislike_imageView);
                 this.cardView.setOnClickListener(this);
             }
+//            else {
+//                this.cardView = itemView.findViewById(R.id.cardView);
+//                ((Activity) context).registerForContextMenu(cardView);
+//          }
 
         }
+
+
     }
+
+
 }

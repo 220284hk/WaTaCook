@@ -4,12 +4,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hyunkwak.watacook.MainActivity;
 import com.hyunkwak.watacook.R;
 import com.hyunkwak.watacook.auxiliaryClasses.User;
 
@@ -83,11 +85,14 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case BUTTON_POSITIVE:
                 if (FLAG == 1) {
-                    Toast.makeText(getApplicationContext(), "Likes has been reset. Adios", Toast.LENGTH_SHORT).show();
                     User.getLikesMap().clear();
+                    Toast.makeText(getApplicationContext(), "Likes has been reset. Adios", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(this, MainActivity.class ));
+                    finish();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Dislikes has been reset. Tschüß!", Toast.LENGTH_SHORT).show();
                     User.getDislikesMap().clear();
+                    Toast.makeText(getApplicationContext(), "Dislikes has been reset. Tschüß!", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 User.getInstance().updateDBPreferences();
                 break;

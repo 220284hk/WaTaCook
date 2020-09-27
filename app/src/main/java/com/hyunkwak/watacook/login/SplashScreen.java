@@ -26,11 +26,6 @@ public class SplashScreen extends AppCompatActivity {
     private TextView title, subtitle;
     private ImageView logo;
 
-    //    TEMP
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
-//    TEMP
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,14 +49,13 @@ public class SplashScreen extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent, options.toBundle());
             }
-        }, 2500);
+        }, 2000);
     }
 
     private void setViews() {
         title = findViewById(R.id.title_textview);
         subtitle = findViewById(R.id.subtitle_textview);
         logo = findViewById(R.id.logo);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 
     private void setAnimation() {

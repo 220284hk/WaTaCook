@@ -5,18 +5,18 @@
     <dimen name="padding_large">64dp</dimen>
 
     <!--    Margin-->
-    <dimen name="margin_large">72dp</dimen>
-    <dimen name="margin_medium">48dp</dimen>
-    <dimen name="margin_medium_small">36dp</dimen>
-    <dimen name="margin_small">24dp</dimen>
+    <dimen name="margin_large">60dp</dimen>
+    <dimen name="margin_medium">42dp</dimen>
+    <dimen name="margin_medium_small">33dp</dimen>
+    <dimen name="margin_small">22dp</dimen>
     <dimen name="margin_x_small">16dp</dimen>
     <dimen name="margin_x_x_small">8dp</dimen>
     <dimen name="margin_nano">4dp</dimen>
 
     <!--    Title-->
-    <dimen name="title_large">60sp</dimen>
-    <dimen name="title_medium_large">52sp</dimen>
-    <dimen name="title_medium">40sp</dimen>
+    <dimen name="title_large">50sp</dimen>
+    <dimen name="title_medium_large">42sp</dimen>
+    <dimen name="title_medium">35sp</dimen>
     <dimen name="title_small">32sp</dimen>
 
     <!--    Text-->

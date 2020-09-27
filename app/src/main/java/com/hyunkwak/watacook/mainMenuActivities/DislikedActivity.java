@@ -1,6 +1,9 @@
 package com.hyunkwak.watacook.mainMenuActivities;
 
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -38,10 +41,15 @@ public class DislikedActivity extends AppCompatActivity {
             Recipe recipe = x.getValue();
             arrayList.add(recipe);
         }
-//        Log.d(TAG, "2 arrayList" + arrayList);
-
         recipesAdapter = new RecipesAdapter(getApplicationContext(), arrayList, HIDDEN);
         recyclerView.setAdapter(recipesAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
+
+//    @Override
+//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+//        super.onCreateContextMenu(menu, v, menuInfo);
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.menu_context, menu);
+//    }
 }

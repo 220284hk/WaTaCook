@@ -8,8 +8,10 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
@@ -27,6 +29,7 @@ import com.hyunkwak.watacook.mainMenuActivities.UserInfoActivity;
 
 import static com.hyunkwak.watacook.auxiliaryClasses.Strings.TAG;
 import static com.hyunkwak.watacook.auxiliaryClasses.Strings.VERSION;
+import static com.hyunkwak.watacook.auxiliaryClasses.User.SaidHi;
 
 public class MainActivity extends AppCompatActivity {
     private DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Version");
@@ -38,7 +41,13 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navBar = findViewById(R.id.bottom_menu);
         NavController controller = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navBar, controller);
-        greetUser();
+        navBar.setOnNavigationItemReselectedListener(i -> { return; });  //This line took me 3 hours :))
+
+        if (!SaidHi) {
+            Log.d(TAG, "This has been called");
+            greetUser();
+            SaidHi = true;
+        }
 
     }
 
