@@ -47,5 +47,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="small_screen_image_logo">100dp</dimen>
     <dimen name="splash_image">400dp</dimen>
+    <dimen name="small_icon_itemview">35dp</dimen>
 
 </resources>

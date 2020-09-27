@@ -27,7 +27,7 @@
         android:layout_margin="5dp"
         android:padding="10dp"
         android:text="@string/title_template_text_long"
-        android:textSize="@dimen/text_medium"
+        android:textSize="@dimen/text_title_itemview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -79,16 +79,16 @@
 
         <ImageView
             android:id="@+id/likes_imageView"
-            android:layout_width="@dimen/small_icon"
-            android:layout_height="@dimen/small_icon"
+            android:layout_width="@dimen/small_icon_itemview"
+            android:layout_height="@dimen/small_icon_itemview"
             android:layout_marginLeft="@dimen/margin_nano"
             android:onClick="pleaseLogIn"
             app:srcCompat="@drawable/favourite_pre_icon" />
 
         <ImageView
             android:id="@+id/dislike_imageView"
-            android:layout_width="@dimen/small_icon"
-            android:layout_height="@dimen/small_icon"
+            android:layout_width="@dimen/small_icon_itemview"
+            android:layout_height="@dimen/small_icon_itemview"
             android:contentDescription="@string/dislike_button"
             android:onClick="pleaseLogIn"
             app:srcCompat="@drawable/dislike_icon"
