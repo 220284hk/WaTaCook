@@ -14,9 +14,9 @@
     <dimen name="margin_nano">4dp</dimen>
 
     <!--    Title-->
-    <dimen name="title_large">60sp</dimen>
-    <dimen name="title_medium_large">52sp</dimen>
-    <dimen name="title_medium">40sp</dimen>
+    <dimen name="title_large">50sp</dimen>
+    <dimen name="title_medium_large">42sp</dimen>
+    <dimen name="title_medium">35sp</dimen>
     <dimen name="title_small">32sp</dimen>
 
     <!--    Text-->
@@ -47,6 +47,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="small_screen_image_logo">100dp</dimen>
     <dimen name="splash_image">250dp</dimen>
-    <dimen name="text_icon">13sp</dimen>
 
 </resources>

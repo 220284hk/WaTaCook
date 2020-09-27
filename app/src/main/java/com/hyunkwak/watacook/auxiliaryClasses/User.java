@@ -91,6 +91,7 @@ public class User {
         data.put(DISLIKES, dislikesMap);
         Log.d(TAG, "updateDBPreferences likesMap: " + likesMap);
         Log.d(TAG, "updateDBPreferences dislikesMap: " + dislikesMap);
+        Log.d(TAG, "Data being uploaded " + data);
         tempRef.setValue(data).addOnCompleteListener(t -> {
             if (t.isSuccessful()) {
                 databaseReference.removeValue().addOnCompleteListener(a -> {

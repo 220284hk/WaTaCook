@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:text="@string/servings_template_text"
-        android:textSize="@dimen/text_medium_small"
+        android:textSize="@dimen/text_icon"
         app:drawableStartCompat="@drawable/servings_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:text="@string/time_template_text"
-        android:textSize="@dimen/text_medium_small"
+        android:textSize="@dimen/text_icon"
         app:drawableLeftCompat="@drawable/timer_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
