@@ -1,8 +1,8 @@
 # WaTaCook
-This repository contains the code for WaTaCook. <br/>WaTaCook is an app that helps reduce food waste by suggesting recipes for users to cook based on what is in their fridge. 
+This repository contains the code for WaTaCook. <br/> Not sure WaTaCook (what to cook)? Using this app will have people screaming WaTaCook (What a cook)*! WaTaCook is an app that helps reduce food waste by suggesting recipes for users to cook based on what is in their fridge. 
 
 ## Introduction
-Not sure WaTaCook (what to cook)? Using this app will have people screaming WaTaCook (What a cook)*! This app is created in Java using **Firebase (db and auth)**, **Glide**, **Volley** and the **Spoonacular api**.
+This app is created in Java using **Firebase (db and auth)**, **Glide**, **Volley** and the **Spoonacular api**. It is created without using any kind of architectural pattern.
 
 ## Thoughts
 This is the first proper app I created that I released onto Google Play. 
